@@ -1,6 +1,6 @@
   @extends('home')
 
-  @section('title', 'All Posts')
+  @section('title', 'All Comments')
   
   @section('content')
   <div class="content-wrapper">
@@ -20,6 +20,30 @@
     <section class="content">
       <!-- Small boxes (Stat box) -->
       <div class="row">
+      <div class="col-md-12">
+            @if (Session::has('success'))
+
+                <div class="alert alert-info" role="alert">
+                    <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <strong>Success:</strong> {{ Session::get('success') }}
+                </div>
+
+            @endif
+
+            @if (count($errors) > 0)
+
+            <div class="alert alert-danger" role="alert">
+                    <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <strong>Errors:</strong>
+                    <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                    </ul>
+                </div> 
+
+            @endif
+        </div>
         <div class="col-md-12">
           <div class="box">
             <div class="box-header">
@@ -46,7 +70,12 @@
                     <td>{{ substr(strip_tags($comment->comment), 0, 50) }}{{ strlen($comment->comment) > 50 ? "..." : "" }}</td>
                     <td>{{ $comment->created_at }}</td>
                     <td>
-                      <a style="color:#fff" href="{{ route('posts.show', $comment->post_id) }}" class="btn btn-info btn-flat btn-sm">View</a> <a style="color:#fff" href="{{ route('comments.edit', $comment->id )}}" class="btn btn-success btn-flat btn-sm">Edit</a>
+                      <a style="color:#fff" href="{{ route('posts.show', $comment->post_id) }}" class="btn btn-info btn-flat btn-sm">View</a> <a style="color:#fff" href="{{ route('comments.edit', $comment->id )}}" class="btn btn-success btn-flat btn-sm">Edit</a> 
+                      @if($comment->approved == 0)
+                        <a href="{{ route('approvedApplications', $comment->id )}}" class="btn btn-primary btn-flat btn-sm">Approve</a>
+                      @else
+                        <a href="{{ route('disapprovedApplications', $comment->id )}}" class="btn btn-danger btn-flat btn-sm">Disapprove</a>
+                      @endif
                     </td>
                   </tr>
                 @endforeach

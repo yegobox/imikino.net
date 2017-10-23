@@ -19,6 +19,7 @@ class PagesController extends Controller
         $aside = DB::table('posts')->where('views', '>=', 20)->orderBy('views', 'desc')->limit(3)->get();
         $newone = DB::table('posts')->orderBy('created_at', 'desc')->limit(3)->get();
         $tag = Tag::find($id);
+        //$tags = $tag->posts()->paginate(5);
         return view('pages.tag')->withTag($tag)->withAsides($aside)->withNewones($newone);
     }
 

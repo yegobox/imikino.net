@@ -1,6 +1,6 @@
   @extends('home')
 
-  @section('title', 'All Posts')
+  @section('title', 'Delete this comment')
   
   @section('content')
   <div class="content-wrapper">

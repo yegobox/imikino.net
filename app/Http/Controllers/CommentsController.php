@@ -25,6 +25,27 @@ class CommentsController extends Controller
         $comments = Comment::orderBy('id', 'desc')->paginate(5);
         return view('adminpages.comments.index')->withComments($comments);
     }
+
+    public function postApprove($id)
+    {
+        $comment = Comment::find($id);
+        if($comment){
+            $comment->approved = 1;
+            $comment->save();
+            return redirect()->back()->with('success', 'Comment approved');
+        }
+        
+    }
+    public function postDisapprove($id)
+    {
+        $comment = Comment::find($id);
+        if($comment){
+            $comment->approved = 0;
+            $comment->save();
+            return redirect()->back()->with('success', 'Comment approved');
+        }
+        
+    }
     public function store(Request $request, $post_id)
     {
         $this->validate($request, array(
@@ -64,7 +85,6 @@ class CommentsController extends Controller
         $comment = Comment::find($id);
         return view('adminpages.comments.edit')->withComment($comment);
     }
-
     /**
      * Update the specified resource in storage.
      *

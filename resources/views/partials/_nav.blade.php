@@ -9,12 +9,12 @@
 			</a>
 		</div>
 		<div class="collapse navbar-collapse navbar-ex1-collapse">
-			<ul class="nav navbar-nav">
+			<ul id="navmain" class="nav navbar-nav">
 				<li><a href="/">Home</a></li>
 				<li><a href="/rwanda">Rwanda</a></li>
 				<li><a href="/africa">Africa</a></li>
 				<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Ibwotamasimbi <i class="fa fa-arrow-circle-o-down"></i></a>
-					<div class="dropdown-menu">
+					<div style="background-color: #B0FABF;" class="dropdown-menu">
 						<div class="dropdown-inner">
 							<ul class="list-unstyled">
 								<li><a href="/england">England</a></li>
@@ -31,7 +31,7 @@
 				</li>
 				
 				<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">More Sports <i class="fa fa-arrow-circle-o-down"></i></a>
-					<div class="dropdown-menu" style="margin-left: -203.625px;">
+					<div id="sport" class="dropdown-menu" style="margin-left: -203.625px;background-color: #B0FABF">
 						<div class="dropdown-inner">
 							<ul class="list-unstyled">
 								<li><a href="/basketball">Basketball</a></li>

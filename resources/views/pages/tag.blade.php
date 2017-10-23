@@ -36,6 +36,7 @@
 				@endforeach
 					<div class="box">
 						<center>
+						
 						<!--<ul class="pagination">
 							<li>
 							  <a href="#" aria-label="Previous">

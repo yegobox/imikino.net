@@ -21,7 +21,7 @@
                                 </li>
                                 <li><a href="#" class="btn btn-twitter"><i class="fa fa-twitter"></i> Tweet</a></li>
                                 <li><a href="#" class="btn btn-google"><i class="fa fa-google-plus-square"></i> Google+</a></li>
-                                <li><a href="#" id="whatss" class="btn" style="background-color:green;color:white"><i class="fa fa-whatsapp"></i> WhatsApp</a></li>
+                                <!--<li><a href="#" id="whatss" class="btn" style="background-color:green;color:white"><i class="fa fa-whatsapp"></i> WhatsApp</a></li>-->
                             </ul>
                         </div>
                         <div class="line"></div><br />
@@ -75,6 +75,7 @@
 								<div class="row">
 									<div class="col-md-12">
 										@foreach ($post->comments as $comment)
+											@if($comment->approved == 1 )
 											<div class="comment">
 												<div class="author-info">
 													<img src="{{ "https://www.gravatar.com/avatar/" . md5(strtolower(trim($comment->email))) . "?d=mm" }}" class="author-image">
@@ -87,6 +88,7 @@
 													{{ $comment->comment }}
 												</div>
 											</div>
+											@endif
 										@endforeach
 									</div>
 								</div>

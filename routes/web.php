@@ -66,10 +66,11 @@ Route::resource('locations', 'LocationController', ['except' => ['create']]);
 Route::resource('tags', 'TagController', ['except' => ['create']]);
 
 // Comments
-
 Route::post('comments/{post_id}', ['uses' => 'CommentsController@store', 'as' => 'comments.store']);
 Route::get('comments', 'CommentsController@index')->name('comments.index');
 Route::get('comments/{id}/edit', ['uses' => 'CommentsController@edit', 'as' => 'comments.edit']);
+Route::get('comments/approve{id}', ['uses' => 'CommentsController@postApprove', 'as' => 'approvedApplications']);
+Route::get('comments/disapprove{id}', ['uses' => 'CommentsController@postDisapprove', 'as' => 'disapprovedApplications']);
 Route::put('comments/{id}', ['uses' => 'CommentsController@update', 'as' => 'comments.update']);
 Route::delete('comments/{id}', ['uses' => 'CommentsController@destroy', 'as' => 'comments.destroy']);
 Route::get('comments/{id}/delete', ['uses' => 'CommentsController@delete', 'as' => 'comments.delete']);
