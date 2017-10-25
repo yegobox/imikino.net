@@ -82,7 +82,8 @@ class PostController extends Controller
             //or $filename = time() . '.' . $image->encode('png');
             $location = public_path('images/news/' . $filename);
             //or $location = storage_path('/app/posts/');
-            Image::make($image)->resize(1366, 768)->save($location);
+            $image->move($location, $filename);
+            //Image::make($image)->resize(1366, 768)->save($location);
 
             $post->image = $filename;
         }
