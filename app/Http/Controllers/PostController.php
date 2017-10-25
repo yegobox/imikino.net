@@ -80,7 +80,7 @@ class PostController extends Controller
             $image = $request->file('featured_image');
             $filename = time() . '.' . $image->getClientOriginalExtension();
             //or $filename = time() . '.' . $image->encode('png');
-            $location = public_path('images/news/' . $filename);
+            $location = public_path('images/news/');
             //or $location = storage_path('/app/posts/');
             $image->move($location, $filename);
             //Image::make($image)->resize(1366, 768)->save($location);
@@ -173,7 +173,7 @@ class PostController extends Controller
             // add the new photo
             $image = $request->file('featured_image');
             $filename = time() . '.' . $image->getClientOriginalExtension();
-            $location = public_path('images/news/' . $filename);
+            $location = public_path('images/news/');
             //Image::make($image)->resize(1366, 768)->save($location);
             $image->move($location, $filename);
             $oldFilename = $post->image;
