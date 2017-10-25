@@ -50,7 +50,7 @@
             <!-- /.box-header -->
             <div class="box-body">
               <h3 class="text-center">{{ $post->title }}</h3>
-              <img class="img-responsive pad" src="{{asset('images/news/'. $post->image) }}" alt="No Picture Available">
+              <img class="img-responsive pad" src="{{URL::to('/images/news/'. $post->image) }}" alt="No Picture Available">
 
               <p>{!! $post->body !!}</p>
               <span class="description">Posted on - {{ date('M j, Y h:i A', strtotime($post->created_at)) }}</span>

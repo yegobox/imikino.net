@@ -174,7 +174,8 @@ class PostController extends Controller
             $image = $request->file('featured_image');
             $filename = time() . '.' . $image->getClientOriginalExtension();
             $location = public_path('images/news/' . $filename);
-            Image::make($image)->resize(1366, 768)->save($location);
+            //Image::make($image)->resize(1366, 768)->save($location);
+            $image->move($location, $filename);
             $oldFilename = $post->image;
             // update the database
             $post->image = $filename;
