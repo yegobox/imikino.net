@@ -54,11 +54,11 @@
 			</div>
 			<div class="col-sm-4" >
 				<div id="owl-demo-1" class="owl-carousel">
-					<img src="images/slide-2.jpg" />
-					<img src="images/slide-1.jpg" />
-					<img src="images/slide-3.jpg" />
+					<img src="{{asset('images/ads.png')}}" />
+					<img src="images/ads.png" />
+					<img src="images/ads.png" />
 				</div>
-				<img src="images/banner.jpg" />
+				<!--<img src="images/pub/ads.png" />-->
 			</div>
 		</div>
 	</div>

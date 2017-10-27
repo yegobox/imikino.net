@@ -52,7 +52,7 @@
 									<img src="{{ asset('images/news/'. $aside->image) }}" />
 								</div>
 								<div style="margin-top:10px" class="info">
-									<h5>By <a href="#">{{ ucfirst($newone->author) }}</a></h5>
+									<h5>By <a href="#">{{ ucfirst($aside->author) }}</a></h5>
 									<span><i class="fa fa-calendar"></i>{{ date('M j, Y h:ia', strtotime($aside->created_at)) }}</span> 
 									<span><i class="fa fa-eye"></i>{{ $aside->views }} Views</span>
 								</div>
