@@ -88,7 +88,7 @@
 											<img src="{{ asset('images/news/'. $list->image) }}" />
 										</div>
 										<div class="info">
-											<h5>By <a href="#">{{ $list->author }}</a></h5>
+											<p>By <a href="#">{{ $list->author }}</a></p>
 											<span><i class="fa fa-calendar"></i>{{ date('M j, Y h:ia', strtotime($list->created_at)) }}</span> 
 											<span><i class="fa fa-eye"></i>{{ $list->views }} Views</span>
 										</div>
@@ -101,7 +101,7 @@
 								<div style="margin-bottom:20px" class="col-lg-12 col-sm-12">
 									<a href="{{ url($list->slug) }}"><img src="{{ asset('images/news/'. $list->image) }}" /></a>
 									<h3 class="text-center"><a href="{{ url($list->slug) }}">{{ substr($list->title, 0, 150) }}{{ strlen($list->title) > 150 ? '...' : "" }}</a></h3>
-									<h5>By <a href="#">{{ $list->author }}</a></h5>
+									<p>By <a href="#">{{ $list->author }}</a></p>
 									<span><i class="fa fa-calendar"></i> {{ date('M j, Y h:ia', strtotime($list->created_at)) }} / <i class="fa fa-eye"></i>{{ $list->views }} Views</span>
 								</div>
 							@endforeach
