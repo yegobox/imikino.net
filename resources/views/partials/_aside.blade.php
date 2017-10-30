@@ -37,7 +37,7 @@
 					</div>
 					<!---- Start Widget ---->
 					<div class="widget ">
-						<div class="heading"><h4>Izikuzwe Cyane</h4></div>
+						<div class="heading"><h4>Izikunzwe Cyane</h4></div>
 						<div class="content">
 							@foreach( $asides as $aside)
 							<div style="margin-bottom:12px" class="wrap-vid">

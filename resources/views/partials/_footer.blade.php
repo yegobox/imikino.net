@@ -32,6 +32,9 @@
 						<div class="footer-heading"><center><h4>Inkuru Zigezweho</h4></center></div>
 						<div class="content">
 							<ul>
+							@foreach($titles as $title)
+								<li>{{ ucfirst($title->title) }}</li>
+							@endforeach
 							</ul>
 						</div>
 					</div>

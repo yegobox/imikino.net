@@ -180,7 +180,7 @@
 				<div class="col-md-3">
 					<!---- Start Widget ---->
 					<div class="widget wid-tags">
-						<div class="heading"><h4>Search</h4></div>
+						<div class="heading"><h4>Shakisha</h4></div>
 						<div class="content">
 							<form role="form" class="form-horizontal" method="post" action="">
 								<input type="text" placeholder="Enter Search Keywords" value="" name="v_search" id="v_search" class="form-control">

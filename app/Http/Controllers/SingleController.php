@@ -15,6 +15,7 @@ class SingleController extends Controller
         $sames = DB::table('posts')->where('sport_id', '=', $post->sport_id)->orWhere('location_id', '=', $post->location_id)->limit(3)->get();
         $aside = DB::table('posts')->where('views', '>=', 20)->orderBy('views', 'desc')->limit(3)->get();
         $newone = DB::table('posts')->orderBy('created_at', 'desc')->limit(3)->get();
-        return view('pages.single')->withPost($post)->withAsides($aside)->withNewones($newone)->withSames($sames);
+        $titles= DB::select('select * from posts order by id desc limit 5');
+        return view('pages.single')->withPost($post)->withAsides($aside)->withNewones($newone)->withSames($sames)->withTitles($titles);
     }
 }
