@@ -18,4 +18,11 @@
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} .
     RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+<<<<<<< HEAD
+=======
+	
+    RewriteBase /
+RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+>>>>>>> 03df574d3738ac3eef58dea22a8fe9afdda664c8
 </IfModule>

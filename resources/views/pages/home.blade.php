@@ -54,11 +54,19 @@
 			</div>
 			<div class="col-sm-4" >
 				<div id="owl-demo-1" class="owl-carousel">
+<<<<<<< HEAD
 					<img src="{{asset('images/ads.png')}}" />
 					<img src="images/ads.png" />
 					<img src="images/ads.png" />
 				</div>
 				<!--<img src="images/pub/ads.png" />-->
+=======
+					<img src="images/slide-2.jpg" />
+					<img src="images/slide-1.jpg" />
+					<img src="images/slide-3.jpg" />
+				</div>
+				<img src="images/banner.jpg" />
+>>>>>>> 03df574d3738ac3eef58dea22a8fe9afdda664c8
 			</div>
 		</div>
 	</div>
@@ -88,7 +96,11 @@
 											<img src="{{ asset('images/news/'. $list->image) }}" />
 										</div>
 										<div class="info">
+<<<<<<< HEAD
 											<p>By <a href="#">{{ $list->author }}</a></p>
+=======
+											<h5>By <a href="#">{{ $list->author }}</a></h5>
+>>>>>>> 03df574d3738ac3eef58dea22a8fe9afdda664c8
 											<span><i class="fa fa-calendar"></i>{{ date('M j, Y h:ia', strtotime($list->created_at)) }}</span> 
 											<span><i class="fa fa-eye"></i>{{ $list->views }} Views</span>
 										</div>
@@ -101,7 +113,11 @@
 								<div style="margin-bottom:20px" class="col-lg-12 col-sm-12">
 									<a href="{{ url($list->slug) }}"><img src="{{ asset('images/news/'. $list->image) }}" /></a>
 									<h3 class="text-center"><a href="{{ url($list->slug) }}">{{ substr($list->title, 0, 150) }}{{ strlen($list->title) > 150 ? '...' : "" }}</a></h3>
+<<<<<<< HEAD
 									<p>By <a href="#">{{ $list->author }}</a></p>
+=======
+									<h5>By <a href="#">{{ $list->author }}</a></h5>
+>>>>>>> 03df574d3738ac3eef58dea22a8fe9afdda664c8
 									<span><i class="fa fa-calendar"></i> {{ date('M j, Y h:ia', strtotime($list->created_at)) }} / <i class="fa fa-eye"></i>{{ $list->views }} Views</span>
 								</div>
 							@endforeach
@@ -180,7 +196,11 @@
 				<div class="col-md-3">
 					<!---- Start Widget ---->
 					<div class="widget wid-tags">
+<<<<<<< HEAD
 						<div class="heading"><h4>Shakisha</h4></div>
+=======
+						<div class="heading"><h4>Search</h4></div>
+>>>>>>> 03df574d3738ac3eef58dea22a8fe9afdda664c8
 						<div class="content">
 							<form role="form" class="form-horizontal" method="post" action="">
 								<input type="text" placeholder="Enter Search Keywords" value="" name="v_search" id="v_search" class="form-control">
