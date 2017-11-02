@@ -2,7 +2,7 @@
 		<div class="navbar-header">
 			<button type="button" class="btn btn-navbar navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse"><i class="fa fa-bars"></i></button>
 			<a class="" href="/">
-				<img style="position:relative;width:150px;" src="{{ asset('images/logo.png') }}" alt="logo"/>
+				<img style="height:50px;width:150px;" src="{{ asset('images/logo2.png') }}" alt="logo"/>
 				<!--<div style="font-family:cursive;font-size:20px;font-style:italic;text-shadow: 5px 4px 4px grey;" class="logo">
 					<span style="color:lightskyblue">Imi</span><span style="color:gold">kino</span><span style="color:seagreen">.net</span>
 				</div>-->
