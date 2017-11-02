@@ -27,11 +27,7 @@
                   <h1>DELETE THIS COMMENT</h1>
                   <p>
                       <strong>Name:</strong> {{ $comment->name }}<hr>
-<<<<<<< HEAD
                       <strong>Email:</strong> {{ $comment->email }}<hr>
-=======
-                      <strong>Email:</strong> {{ $comment->email }}<hr
->>>>>>> 03df574d3738ac3eef58dea22a8fe9afdda664c8
                       <strong>Comment:</strong> {{ $comment->comment }}<hr>
 
                       {{ Form::open(['route' => ['comments.destroy', $comment->id], 'method' => 'DELETE']) }}

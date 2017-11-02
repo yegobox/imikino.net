@@ -142,11 +142,7 @@
 									<div style="margin-bottom:12px" class="wrap-vid">
 										<div class="zoom-container">
 											<div class="zoom-caption">
-<<<<<<< HEAD
 												<span class="vimeo"></span>
-=======
-												<span class="vimeo">{{ $same->sport_id }}</span>
->>>>>>> 03df574d3738ac3eef58dea22a8fe9afdda664c8
 												<a href="{{ url( $same->slug ) }}">
 													<i class="fa fa-file-text-o fa-5x" style="color: lightskyblue"></i>
 												</a>
@@ -157,11 +153,7 @@
 										<p style="font-size: 0.5em; font-weight: lighter;" class="vid-name hidden-lg hidden-md"><a href="{{ url($same->slug) }}">{{ substr($same->title, 0, 150) }}{{ strlen($same->title) > 150 ? '...' : "" }}</a></p>
 										<div class="info">
 											<br />
-<<<<<<< HEAD
 											<h5>By <a href="#">{{ ucfirst($same->author) }}</a></h5>
-=======
-											<h5>By <a href="#"></a></h5>
->>>>>>> 03df574d3738ac3eef58dea22a8fe9afdda664c8
 											<span><i class="fa fa-calendar"></i>{{ date('M j, Y', strtotime($same->created_at)) }}</span> 
 											<span><i class="fa fa-eye"></i>{{ $same->views }} Views</span>
 										</div>

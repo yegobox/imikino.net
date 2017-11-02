@@ -37,11 +37,7 @@
 					</div>
 					<!---- Start Widget ---->
 					<div class="widget ">
-<<<<<<< HEAD
 						<div class="heading"><h4>Izikunzwe Cyane</h4></div>
-=======
-						<div class="heading"><h4>Izikuzwe Cyane</h4></div>
->>>>>>> 03df574d3738ac3eef58dea22a8fe9afdda664c8
 						<div class="content">
 							@foreach( $asides as $aside)
 							<div style="margin-bottom:12px" class="wrap-vid">
@@ -51,20 +47,12 @@
 										<a href="{{ url($aside->slug) }}">
 											<i class="fa fa-play-text-o fa-5x" style="color:lightbluesky"></i>
 										</a>
-<<<<<<< HEAD
 										<p style="font-size: 1.5em; font-weight: lighter; text-shadow: 5px 2px 4px #052B41;">{{ ucfirst(substr($aside->title, 0, 150)) }}{{ ucfirst(strlen($aside->title) > 150 ? '...' : "") }}</p>
-=======
-										<p style="font-size: 1.5em; font-weight: lighter; text-shadow: 5px 2px 4px #052B41;">{{ substr($aside->title, 0, 150) }}{{ strlen($aside->title) > 150 ? '...' : "" }}</p>
->>>>>>> 03df574d3738ac3eef58dea22a8fe9afdda664c8
 									</div>
 									<img src="{{ asset('images/news/'. $aside->image) }}" />
 								</div>
 								<div style="margin-top:10px" class="info">
-<<<<<<< HEAD
 									<h5>By <a href="#">{{ ucfirst($aside->author) }}</a></h5>
-=======
-									<h5>By <a href="#">Kelvin</a></h5>
->>>>>>> 03df574d3738ac3eef58dea22a8fe9afdda664c8
 									<span><i class="fa fa-calendar"></i>{{ date('M j, Y h:ia', strtotime($aside->created_at)) }}</span> 
 									<span><i class="fa fa-eye"></i>{{ $aside->views }} Views</span>
 								</div>
@@ -84,20 +72,12 @@
 										<a href="{{ url($newone->slug) }}">
 											<i class="fa fa-play-text-o fa-5x" style="color:lightbluesky"></i>
 										</a>
-<<<<<<< HEAD
 										<p style="font-size: 1.5em; font-weight: lighter; text-shadow: 5px 2px 4px #052B41;">{{ ucfirst(substr($newone->title, 0, 150)) }}{{ ucfirst(strlen($newone->title) > 150 ? '...' : "") }}</p>
-=======
-										<p style="font-size: 1.5em; font-weight: lighter; text-shadow: 5px 2px 4px #052B41;">{{ substr($newone->title, 0, 150) }}{{ strlen($newone->title) > 150 ? '...' : "" }}</p>
->>>>>>> 03df574d3738ac3eef58dea22a8fe9afdda664c8
 									</div>
 									<img src="{{ asset('images/news/'. $newone->image) }}" />
 								</div>
 								<div style="margin-top:10px" class="info">
-<<<<<<< HEAD
 									<h5>By <a href="#">{{ ucfirst($newone->author) }}</a></h5>
-=======
-									<h5>By <a href="#">Kelvin</a></h5>
->>>>>>> 03df574d3738ac3eef58dea22a8fe9afdda664c8
 									<span><i class="fa fa-calendar"></i>{{ date('M j, Y h:ia', strtotime($newone->created_at)) }}</span> 
 									<span><i class="fa fa-eye"></i>{{ $newone->views }} Views</span>
 								</div>
