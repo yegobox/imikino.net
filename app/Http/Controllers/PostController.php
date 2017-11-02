@@ -82,8 +82,8 @@ class PostController extends Controller
             //or $filename = time() . '.' . $image->encode('png');
             $location = public_path('images/news/');
             //or $location = storage_path('/app/posts/');
-            $image->move($location, $filename);
-            //Image::make($image)->resize(1366, 768)->save($location);
+            //$image->move($location, $filename);
+            Image::make($image)->resize(1366, 768)->save($location);
 
             $post->image = $filename;
         }
@@ -174,8 +174,8 @@ class PostController extends Controller
             $image = $request->file('featured_image');
             $filename = time() . '.' . $image->getClientOriginalExtension();
             $location = public_path('images/news/');
-            //Image::make($image)->resize(1366, 768)->save($location);
-            $image->move($location, $filename);
+            Image::make($image)->resize(1366, 768)->save($location);
+            //$image->move($location, $filename);
             $oldFilename = $post->image;
             // update the database
             $post->image = $filename;
