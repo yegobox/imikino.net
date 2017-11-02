@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Location;
+use App\Comment;
 
 class LocationController extends Controller
 {
@@ -21,8 +22,9 @@ class LocationController extends Controller
         // it will also have a form to create a new category
 
         $locations = Location::all();
+        $commentss = Comment::where('approved', '=', 0)->orderBy('id', 'desc');
         
-                return view('adminpages.locations.index')->withLocations($locations);
+                return view('adminpages.locations.index')->withLocations($locations)->withComs($commentss);
     }
 
     /**

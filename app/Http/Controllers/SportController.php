@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Sport;
-
+use App\Comment;
 class SportController extends Controller
 {
     public function __construct(){
@@ -21,8 +21,9 @@ class SportController extends Controller
          // it will also have a form to create a new category
  
          $sports = Sport::all();
+         $commentss = Comment::where('approved', '=', 0)->orderBy('id', 'desc');
          
-                 return view('adminpages.sports.index')->withSports($sports);
+                 return view('adminpages.sports.index')->withSports($sports)->withComs($commentss);
      }
 
     /**

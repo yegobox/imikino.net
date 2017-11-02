@@ -7,6 +7,7 @@ use App\Post;
 use App\Location;
 use App\Sport;
 use App\Tag;
+use App\Comment;
 use Purifier;
 use Session;
 use Image;
@@ -27,7 +28,8 @@ class PostController extends Controller
     public function index()
     {
         $posts = Post::orderBy('id', 'desc')->paginate(5);
-        return view('adminpages.posts.index')->withPosts($posts);
+        $commentss = Comment::where('approved', '=', 0)->orderBy('id', 'desc');
+        return view('adminpages.posts.index')->withPosts($posts)->withComs($commentss);
     }
 
     /**
@@ -40,9 +42,10 @@ class PostController extends Controller
         // Tag
         $tags = Tag::all();
         $sports = Sport::all();
+        $commentss = Comment::where('approved', '=', 0)->orderBy('id', 'desc');
 
         $locations = Location::all();
-        return view('adminpages.posts.create')->withSports($sports)->withLocations($locations)->withTags($tags);
+        return view('adminpages.posts.create')->withSports($sports)->withLocations($locations)->withTags($tags)->withComs($commentss);
     }
 
     /**
@@ -108,7 +111,8 @@ class PostController extends Controller
     public function show($id)
     {
         $post = Post::find($id);
-        return view('adminpages.posts.show')->withPost($post);
+        $commentss = Comment::where('approved', '=', 0)->orderBy('id', 'desc');
+        return view('adminpages.posts.show')->withPost($post)->withComs($commentss);
     }
 
     /**
@@ -120,6 +124,7 @@ class PostController extends Controller
     public function edit($id)
     {
         $post = Post::find($id);
+        $commentss = Comment::where('approved', '=', 0)->orderBy('id', 'desc');
         $sports = Sport::all();
         $sports2 = array();
         foreach($sports as $sport) {
@@ -135,7 +140,7 @@ class PostController extends Controller
         foreach ($tags as $tag) {
             $tags2[$tag->id] = $tag->name;
         }
-        return view('adminpages.posts.edit')->withPost($post)->withLocations($locations2)->withSports($sports2)->withTags($tags2);
+        return view('adminpages.posts.edit')->withPost($post)->withLocations($locations2)->withSports($sports2)->withTags($tags2)->withComs($commentss);
     }
 
     /**

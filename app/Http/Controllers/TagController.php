@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Tag;
+use App\Comment;
 use Session;
 
 class TagController extends Controller
@@ -19,7 +20,8 @@ class TagController extends Controller
     public function index()
     {
         $tags = Tag::all();
-        return view('adminpages.tags.index')->withTags($tags);
+        $commentss = Comment::where('approved', '=', 0)->orderBy('id', 'desc');
+        return view('adminpages.tags.index')->withTags($tags)->withComs($commentss);
     }
 
     /**
@@ -49,7 +51,8 @@ class TagController extends Controller
     public function show($id)
     {
         $tag = Tag::find($id);
-        return view('adminpages.tags.show')->withTag($tag);
+        $commentss = Comment::where('approved', '=', 0)->orderBy('id', 'desc');
+        return view('adminpages.tags.show')->withTag($tag)->withComs($commentss);
     }
 
     /**
@@ -61,7 +64,8 @@ class TagController extends Controller
     public function edit($id)
     {
         $tag = Tag::find($id);
-        return view('adminpages.tags.edit')->withTag($tag);
+        $commentss = Comment::where('approved', '=', 0)->orderBy('id', 'desc');
+        return view('adminpages.tags.edit')->withTag($tag)->withComs($commentss);
     }
 
     /**
