@@ -22,8 +22,10 @@ class CommentsController extends Controller
      */
     public function index()
     {
+
+        $commentss = Comment::where('approved', '=', 0)->orderBy('id', 'desc');
         $comments = Comment::orderBy('id', 'desc')->paginate(5);
-        return view('adminpages.comments.index')->withComments($comments);
+        return view('adminpages.comments.index')->withComments($comments)->withComs($commentss);
     }
 
     public function postApprove($id)
@@ -82,8 +84,10 @@ class CommentsController extends Controller
      */
     public function edit($id)
     {
+
+        $commentss = Comment::where('approved', '=', 0)->orderBy('id', 'desc');
         $comment = Comment::find($id);
-        return view('adminpages.comments.edit')->withComment($comment);
+        return view('adminpages.comments.edit')->withComment($comment)->withComs($commentss);
     }
     /**
      * Update the specified resource in storage.
@@ -111,7 +115,8 @@ class CommentsController extends Controller
     public function delete($id)
     {
         $comment = Comment::find($id);
-        return view('adminpages.comments.delete')->withComment($comment);
+        $commentss = Comment::where('approved', '=', 0)->orderBy('id', 'desc');
+        return view('adminpages.comments.delete')->withComment($comment)->withComs($commentss);
     }
 
     /**

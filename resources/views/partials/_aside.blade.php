@@ -47,7 +47,7 @@
 										<a href="{{ url($aside->slug) }}">
 											<i class="fa fa-play-text-o fa-5x" style="color:lightbluesky"></i>
 										</a>
-										<p style="font-size: 1.5em; font-weight: lighter; text-shadow: 5px 2px 4px #052B41;">{{ substr($aside->title, 0, 150) }}{{ strlen($aside->title) > 150 ? '...' : "" }}</p>
+										<p style="font-size: 1.5em; font-weight: lighter; text-shadow: 5px 2px 4px #052B41;">{{ ucfirst(substr($aside->title, 0, 150)) }}{{ ucfirst(strlen($aside->title) > 150 ? '...' : "") }}</p>
 									</div>
 									<img src="{{ asset('images/news/'. $aside->image) }}" />
 								</div>
@@ -72,7 +72,7 @@
 										<a href="{{ url($newone->slug) }}">
 											<i class="fa fa-play-text-o fa-5x" style="color:lightbluesky"></i>
 										</a>
-										<p style="font-size: 1.5em; font-weight: lighter; text-shadow: 5px 2px 4px #052B41;">{{ substr($newone->title, 0, 150) }}{{ strlen($newone->title) > 150 ? '...' : "" }}</p>
+										<p style="font-size: 1.5em; font-weight: lighter; text-shadow: 5px 2px 4px #052B41;">{{ ucfirst(substr($newone->title, 0, 150)) }}{{ ucfirst(strlen($newone->title) > 150 ? '...' : "") }}</p>
 									</div>
 									<img src="{{ asset('images/news/'. $newone->image) }}" />
 								</div>

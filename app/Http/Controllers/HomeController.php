@@ -28,7 +28,8 @@ class HomeController extends Controller
     public function index()
     {
         $posts = Post::all();
+        $commentss = Comment::where('approved', '=', 0)->orderBy('id', 'desc');
         $comments = Comment::all();
-        return view('adminpages.index')->withPosts($posts)->withComments($comments);
+        return view('adminpages.index')->withPosts($posts)->withComments($comments)->withComs($commentss);
     }
 }

@@ -33,7 +33,7 @@
 						<div class="content">
 							<ul>
 							@foreach($titles as $title)
-								<li>{{ ucfirst($title->title) }}</li>
+								<li><a href="{{ url($title->slug) }}">{{ ucfirst($title->title) }}</a></li>
 							@endforeach
 							</ul>
 						</div>
