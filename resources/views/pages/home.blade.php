@@ -99,10 +99,20 @@
 							<div class="row hidden-lg hidden-md">
 							@foreach($lists as $list)
 								<div style="margin-bottom:20px" class="col-lg-12 col-sm-12">
-									<a href="{{ url($list->slug) }}"><img src="{{ asset('images/news/'. $list->image) }}" /></a>
-									<h3 class="text-center"><a href="{{ url($list->slug) }}">{{ substr($list->title, 0, 150) }}{{ strlen($list->title) > 150 ? '...' : "" }}</a></h3>
-									<p>By <a href="#">{{ $list->author }}</a></p>
-									<span><i class="fa fa-calendar"></i> {{ date('M j, Y h:ia', strtotime($list->created_at)) }} / <i class="fa fa-eye"></i>{{ $list->views }} Views</span>
+									<div class="row">
+										<div class="col-lg-6 col-sm-6 col-xs-6">
+											<a href="{{ url($list->slug) }}"><img class="img-responsive" src="{{ asset('images/news/'. $list->image) }}" /></a>
+											<p>
+												</br>
+												<span style="font-size: 0.8em;">By <a href="#">{{ $list->author }}</a></span>
+												<br/>
+												<span style="font-size: 0.5em;"><i class="fa fa-calendar"></i> {{ date('D jS, M h:ia', strtotime($list->created_at)) }} <br/> <i class="fa fa-eye"></i>{{ $list->views }} Views</span>
+											</p>
+										</div>
+										<div style="font-size: 0.9em;" class="col-lg-6 col-sm-6 col-xs-6">
+											<a href="{{ url($list->slug) }}">{{ substr($list->title, 0, 150) }}{{ strlen($list->title) > 150 ? '...' : "" }}</a>
+										</div>
+									</div>
 								</div>
 							@endforeach
 							</div>
