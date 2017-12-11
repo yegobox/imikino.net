@@ -42,6 +42,6 @@
 			</div>
 		</div>
 		<div class="copy-right">
-			<p>Copyright 2017 - 2020 <a href="/" rel="nofollow">Imikino.net</a> Designed by <a href="https://www.facebook.com/spartacus.amphoteric" target="_blank" rel="nofollow">Eng. Igor Jean-Luc NDIRAMIYE</a></p>
+			<p>Copyright 2018 <a href="/" rel="nofollow">Imikino.net</a>All Rights Reserved. Developed by <a href="https://www.facebook.com/spartacus.amphoteric" target="_blank" rel="nofollow">Eng. Igor Jean-Luc NDIRAMIYE</a></p>
 		</div>
 	</footer>
