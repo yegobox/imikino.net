@@ -32,7 +32,17 @@
                         </div>
                         <h4 class="vid-name text-center">{{ $post->title }}</h4>
                         <h4 class="vid-name text-center"></h4>
-                        <p style="margin-top: 20px">{!! $post->body !!}</p>
+						<p style="margin-top: 20px">{!! $post->body !!}</p>
+						<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+						<ins class="adsbygoogle"
+							 style="display:block; text-align:center;"
+							 data-ad-layout="in-article"
+							 data-ad-format="fluid"
+							 data-ad-client="ca-pub-1410948886873143"
+							 data-ad-slot="7692118961"></ins>
+						<script>
+							 (adsbygoogle = window.adsbygoogle || []).push({});
+						</script>
 						<hr>
 						<div class="tags">
 							@foreach($post->tags as $tag)
