@@ -92,7 +92,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::prefix('journalistadmin')->group(function() {
     Route::get('/login', 'Auth\JournalistLoginController@showLoginForm')->name('journalist.login');
     Route::post('/login', 'Auth\JournalistLoginController@login')->name('journalist.login.submit');
-    Route::get('/', 'JournalistController@index')->name('journalist.dashboard');
+    Route::get('/dashboard', 'JournalistController@index')->name('journalist.dashboard');
 });
 
 Route::get('inkuru/{tag}', 'PagesController@getTags')->name('tags');
