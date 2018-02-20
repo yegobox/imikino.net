@@ -34,7 +34,7 @@ class PagesController extends Controller
         $tags = DB::select('select * from tags order by id desc limit 0,40');
         $first = DB::select('select * from posts order by id desc limit 0,1');
         $other = DB::select('select * from posts order by id desc limit 1,4');
-        $list = DB::select('select * from posts order by id desc limit 0,19');
+        $list = DB::select('select * from posts order by id desc limit 0,20');
         $imgs1 = DB::select('select image,slug from posts order by id desc limit 0,2');
         $imgs2 = DB::select('select image,slug from posts order by id desc limit 2,2');
         $imgs3 = DB::select('select image,slug from posts order by id desc limit 4,2');
