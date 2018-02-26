@@ -50,3 +50,21 @@
             forceParse: 0
         });
     </script>
+    <script id="spout-tag-911a7d45-a7c6-4f9c-b183-902227549288">
+        (function() {
+          var r = encodeURIComponent(top.document.referrer.substring(0,250)),
+              p = encodeURIComponent(top.document.location.href.substring(0,250)),
+              t = Date.now(),
+              u = '911a7d45-a7c6-4f9c-b183-902227549288',
+              e = document.createElement('script'),
+              s = sessionStorage.getItem('spoutable-' + u);
+          if (!s) {
+            var m = Math.random.bind(Math);
+            s = JSON.stringify({ sessionId: [ t, m(), m(), m(), m(), m(), m(), m(), m(), m(), m(), m(), m() ]});
+            sessionStorage.setItem('spoutable-' + u, s);
+          }
+          e.async = true;
+          e.src='//s.spoutable.com/s?u='+u+'&s='+encodeURIComponent(s)+'&t='+t+'&r='+r+'&p='+p;
+          document.head.appendChild(e);
+        })();
+    </script>

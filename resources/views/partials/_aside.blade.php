@@ -59,6 +59,8 @@
 							</div>
 							@endforeach
 						</div>
+						<script type="text/javascript" src="//ylx-1.com/bnr.php?section=General&pub=838947&format=300x250&ga=g"></script>
+						<noscript><a href="https://yllix.com/publishers/838947" target="_blank"><img src="//ylx-aff.advertica-cdn.com/pub/300x250.png" style="border:none;margin:0;padding:0;vertical-align:baseline;" /></a></noscript>
 					</div>
 					<!---- Start Widget ---->
 					<div class="widget ">
