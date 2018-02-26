@@ -3,10 +3,10 @@
 @section('title', ucfirst($post->title))
 
 @section('content')
-
-<script type="text/javascript" src="//ylx-1.com/bnr.php?section=General&pub=838947&format=728x90&ga=g"></script>
-<noscript><a href="https://yllix.com/publishers/838947" target="_blank"><img src="//ylx-aff.advertica-cdn.com/pub/728x90.png" style="border:none;margin:0;padding:0;vertical-align:baseline;" /></a></noscript>
-	
+	<div align="center" class="text-center featured container">
+		<script type="text/javascript" src="//ylx-1.com/bnr.php?section=General&pub=838947&format=728x90&ga=g"></script>
+		<noscript><a href="https://yllix.com/publishers/838947" target="_blank"><img src="//ylx-aff.advertica-cdn.com/pub/728x90.png" style="border:none;margin:0;padding:0;vertical-align:baseline;" /></a></noscript>
+	</div>
 	<!-- /////////////////////////////////////////Content -->
 	<div id="page-content" class="archive-page container">
 		<div class="">
