@@ -130,7 +130,7 @@
 
                 <div class="row">
                     <div class="col-sm-6">
-                        {!! Html::linkRoute('posts.show', 'Cancel', array($post->id ),array('class' => 'btn btn-danger btn-block')) !!}
+                        {!! Html::linkRoute('reporterposts.show', 'Cancel', array($post->id ),array('class' => 'btn btn-danger btn-block')) !!}
                     </div>
 
                     <div class="col-sm-6"> 
