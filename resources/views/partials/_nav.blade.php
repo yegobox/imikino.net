@@ -58,6 +58,7 @@
 				<li><a href="#"><i class="fa fa-instagram"></i></a></li>
 				<li><a href="#"><i class="fa fa-google-plus-square"></i></a></li>
 				<li><a href="#"><i class="fa fa-whatsapp"></i></a></li>
+				<li><a href="{{ route('journalist.login') }}" target="_blank"><i class="fa fa-users"></i></a></li>
 				<li><a href="{{ route('login') }}" target="_blank"><i class="fa fa-user"></i></a></li>
 			</ul>
 		</div>
