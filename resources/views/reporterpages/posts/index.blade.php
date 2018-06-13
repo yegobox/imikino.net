@@ -46,7 +46,7 @@
                     <td>{{ substr(strip_tags($post->body), 0, 50) }}{{ strlen($post->body) > 50 ? "..." : "" }}</td>
                     <td>{{ $post->created_at }}</td>
                     <td>
-                      <a style="color:#fff" href="{{ route('posts.show', $post->id) }}" class="btn btn-info btn-flat btn-sm">View</a> <a style="color:#fff" href="{{ route('posts.edit', $post->id )}}" class="btn btn-success btn-flat btn-sm">Edit</a>
+                      <a style="color:#fff" href="{{ route('reporterposts.show', $post->id) }}" class="btn btn-info btn-flat btn-sm">View</a> <a style="color:#fff" href="{{ route('reporterposts.edit', $post->id )}}" class="btn btn-success btn-flat btn-sm">Edit</a>
                     </td>
                   </tr>
                 @endforeach

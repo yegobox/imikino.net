@@ -61,7 +61,7 @@
 
           @endif
         </div>
-        {!! Form::model($post, ['route' => ['posts.update', $post->id], 'method' => 'PUT', 'files' => true]) !!}
+        {!! Form::model($post, ['route' => ['reporterposts.update', $post->id], 'method' => 'PUT', 'files' => true]) !!}
         <div class="col-md-8">
           <div class="box box-warning">
             <div class="box-body">
