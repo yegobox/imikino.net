@@ -89,10 +89,11 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 //Route::get('/journalistadmin', 'JournalistController@index');
-Route::prefix('journalistadmin')->group(function() {
+Route::prefix('reporter')->group(function() {
     Route::get('/login', 'Auth\JournalistLoginController@showLoginForm')->name('journalist.login');
     Route::post('/login', 'Auth\JournalistLoginController@login')->name('journalist.login.submit');
     Route::get('/dashboard', 'JournalistController@index')->name('journalist.dashboard');
+    Route::resource('reporterposts', 'ReporterPostController');
 });
 
 Route::get('inkuru/{tag}', 'PagesController@getTags')->name('tags');

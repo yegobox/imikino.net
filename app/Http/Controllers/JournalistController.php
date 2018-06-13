@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-//use App\Post;
-
-//use App\Comment;
+use App\Post;
+use App\Comment;
+use App\Journalist;
 
 class JournalistController extends Controller
 {
@@ -27,8 +27,9 @@ class JournalistController extends Controller
      */
     public function index()
     {
-        //$posts = Post::all();
-        //$comments = Comment::all();
-        return view('adminpages.journalist')/*->withPosts($posts)->withComments($comments)*/;
+        $posts = Post::all();
+        $comments = Comment::all();
+        $commentss = Comment::where('approved', '=', 0)->orderBy('id', 'desc');
+        return view('adminpages.journalist')->withPosts($posts)->withComments($comments)->withComs($commentss);
     }
 }

@@ -41,17 +41,17 @@
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
-  @include('adminpartials._nav')
+  @include('reporterpartials._nav')
   <!-- Left side column. contains the logo and sidebar -->
-  @include('adminpartials._aside')
+  @include('reporterpartials._aside')
 
   <!-- Content Wrapper. Contains page content -->
   @yield('content')
   <!-- /.content-wrapper -->
-  @include('adminpartials._footer')
+  @include('reporterpartials._footer')
 
   <!-- Control Sidebar -->
-  @include('adminpartials._asideright')
+  @include('reporterpartials._asideright')
   <!-- /.control-sidebar -->
   <!-- Add the sidebar's background. This div must be placed
        immediately after the control sidebar -->
