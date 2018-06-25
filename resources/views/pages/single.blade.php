@@ -2,6 +2,10 @@
 
 @section('title', ucfirst($post->title))
 
+@section('stylesheets')
+	<script src="//platform-api.sharethis.com/js/sharethis.js#property=5b30b0478b44f200124f3ba4&product=inline-share-buttons"></script>
+@endsection
+
 @section('content')
 	<!--<div style="background:none; border: none" align="center" class="text-center featured container">
 		<script type="text/javascript" src="//ylx-1.com/bnr.php?section=General&pub=838947&format=728x90&ga=g"></script>
@@ -13,29 +17,32 @@
 			<div class="row">
 				<div id="main-content" class="col-md-8">
 					<div class="box">
+                        <h4 class="vid-name text-center">{{ ucfirst($post->title) }}</h4>
+                        <div class="info text-center">
+							<div style="display:inline">
+								<span>By <b><a href="#">{{ ucfirst($post->author) }}</a></b></span>
+								<span><i class="fa fa-calendar"></i>{{ date('M j, Y h:ia', strtotime($post->created_at)) }}</span> 
+								<span><i class="fa fa-eye"></i>{{ $post->views }} Views</span>
+                        	</div>
+                        </div><br/>
                         <div style="margin-bottom:12px" class="wrap-vid">
                             <div align="center"><img style="position:relative" src="{{asset('images/news/'. $post->image) }}" /></div>
                             <p style="margin-top:5px" class="text-center"><b>{{ $post->title }}</b></p>
                         </div>
+                        <div class="line"></div><br />
+                        <h4 class="vid-name text-center"></h4>
+						<p style="margin-top: 20px">{!! $post->body !!}</p>
                         <div style="margin-top:5px" class="share">
                             <ul class="list-inline center">
-                                <li class="fb-share-button" data-href="https://imikino.net/{{ $post->slug }}" data-layout="button" data-size="small" data-mobile-iframe="true"><a  class="fb-xfbml-parse-ignore btn btn-facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fimikino.net%2F{{ $post->slug }}&amp;src=sdkpreparse"><i class="fa fa-facebook"></i> Share</a>
+                                <li class="fb-share-button" data-href="https://imikino.net/{{ $post->slug }}" data-layout="button" data-size="small" data-mobile-iframe="true"><a  class="fb-xfbml-parse-ignore btn btn-facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fimikino.net%2F{{ $post->slug }}&amp;src=sdkpreparse"><i class="fa fa-facebook"></i> Facebook</a>
                                     <!--<div><a>Share</a></div>-->
                                 </li>
                                 <li><a href="#" class="btn btn-twitter"><i class="fa fa-twitter"></i> Tweet</a></li>
-                                <li><a href="#" class="btn btn-google"><i class="fa fa-google-plus-square"></i> Google+</a></li>
+								<li><a href="#" class="btn btn-google"><i class="fa fa-google-plus-square"></i> Google+</a></li>
+								<div class="sharethis-inline-share-buttons">WhatsApp</div>
                                 <!--<li><a href="#" id="whatss" class="btn" style="background-color:green;color:white"><i class="fa fa-whatsapp"></i> WhatsApp</a></li>-->
                             </ul>
                         </div>
-                        <div class="line"></div><br />
-                        <div class="info text-center">
-                            <h5>By <a href="#">{{ $post->author }}</a></h5>
-                            <span><i class="fa fa-calendar"></i>{{ date('M j, Y h:ia', strtotime($post->created_at)) }}</span> 
-                            <span><i class="fa fa-eye"></i>{{ $post->views }} Views</span>
-                        </div>
-                        <h4 class="vid-name text-center">{{ $post->title }}</h4>
-                        <h4 class="vid-name text-center"></h4>
-						<p style="margin-top: 20px">{!! $post->body !!}</p>
 						<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 						<ins class="adsbygoogle"
 							 style="display:block; text-align:center;"
