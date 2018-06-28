@@ -1,4 +1,4 @@
-  @extends('home')
+  @extends('reporter')
 
   @section('title', 'Dashboard')
   
@@ -31,7 +31,7 @@
             <div class="icon">
               <i class="ion ion-stats-bars"></i>
             </div>
-            <a href="{{ route('posts.index') }}" class="small-box-footer">More <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="{{ route('reporterposts.index') }}" class="small-box-footer">More <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
