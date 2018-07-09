@@ -1,7 +1,8 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="author" content="Igor Jean-Luc Ndiramiye">
+	<meta name="author" content="Igor Jean-Luc Ndiramiye">
+	<meta property="fb:use_automatic_ad_placement" content="enable=true ad_density=default">
 	
     <title>@yield('title') | Imikino.net</title>
 	
@@ -33,15 +34,14 @@
 	<script src="/js/jquery-2.1.1.js"></script>
 	
 	<!-- Core JavaScript Files -->  	 
-    <script src="/js/bootstrap.min.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
 	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 	<script>
-		(adsbygoogle = window.adsbygoogle || []).push({
-			google_ad_client: "ca-pub-1410948886873143",
-			enable_page_level_ads: true
-		});
+	(adsbygoogle = window.adsbygoogle || []).push({
+		google_ad_client: "ca-pub-4272898722681959",
+		enable_page_level_ads: true
+	});
 	</script>
-	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 	
 	@yield('stylesheets')
 

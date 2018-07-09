@@ -3,7 +3,7 @@
 @section('title', ucfirst($post->title))
 
 @section('stylesheets')
-	<script src="//platform-api.sharethis.com/js/sharethis.js#property=5b30b0478b44f200124f3ba4&product=inline-share-buttons"></script>
+<script type='text/javascript' src='//platform-api.sharethis.com/js/sharethis.js#property=5b30b0478b44f200124f3ba4&product=inline-share-buttons' async='async'></script>
 @endsection
 
 @section('content')
@@ -32,27 +32,7 @@
                         <div class="line"></div><br />
                         <h4 class="vid-name text-center"></h4>
 						<p style="margin-top: 20px">{!! $post->body !!}</p>
-                        <div style="margin-top:5px" class="share">
-                            <ul class="list-inline center">
-                                <li class="fb-share-button" data-href="https://imikino.net/{{ $post->slug }}" data-layout="button" data-size="small" data-mobile-iframe="true"><a  class="fb-xfbml-parse-ignore btn btn-facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fimikino.net%2F{{ $post->slug }}&amp;src=sdkpreparse"><i class="fa fa-facebook"></i> Facebook</a>
-                                    <!--<div><a>Share</a></div>-->
-                                </li>
-                                <li><a href="#" class="btn btn-twitter"><i class="fa fa-twitter"></i> Tweet</a></li>
-								<li><a href="#" class="btn btn-google"><i class="fa fa-google-plus-square"></i> Google+</a></li>
-								<div class="sharethis-inline-share-buttons">WhatsApp</div>
-                                <!--<li><a href="#" id="whatss" class="btn" style="background-color:green;color:white"><i class="fa fa-whatsapp"></i> WhatsApp</a></li>-->
-                            </ul>
-                        </div>
-						<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-						<ins class="adsbygoogle"
-							 style="display:block; text-align:center;"
-							 data-ad-layout="in-article"
-							 data-ad-format="fluid"
-							 data-ad-client="ca-pub-1410948886873143"
-							 data-ad-slot="7692118961"></ins>
-						<script>
-							 (adsbygoogle = window.adsbygoogle || []).push({});
-						</script>
+						<div class="sharethis-inline-share-buttons share"></div>
 						<div class="tags">
 							@foreach($post->tags as $tag)
 								<a href="{{ route('tags', $tag->id) }}"><span class="label label-success">{{ $tag->name }}</span></a>
@@ -148,23 +128,6 @@
 								</div>
 							{{ Form::close() }}
 						</div>
-
-						
-						<hr>
-						<!-- Composite Start -->
-						<!--<div id="M311506ScriptRootC203917">
-							<div id="M311506PreloadC203917">
-							Loading...    </div>
-							<script>
-									(function(){
-								var D=new Date(),d=document,b='body',ce='createElement',ac='appendChild',st='style',ds='display',n='none',gi='getElementById';
-								var i=d[ce]('iframe');i[st][ds]=n;d[gi]("M311506ScriptRootC203917")[ac](i);try{var iw=i.contentWindow.document;iw.open();iw.writeln("<ht"+"ml><bo"+"dy></bo"+"dy></ht"+"ml>");iw.close();var c=iw[b];}
-								catch(e){var iw=d;var c=d[gi]("M311506ScriptRootC203917");}var dv=iw[ce]('div');dv.id="MG_ID";dv[st][ds]=n;dv.innerHTML=203917;c[ac](dv);
-								var s=iw[ce]('script');s.async='async';s.defer='defer';s.charset='utf-8';s.src="//jsc.mgid.com/i/m/imikino.net.203917.js?t="+D.getYear()+D.getMonth()+D.getDate()+D.getHours();c[ac](s);})();
-						</script>
-						</div>-->
-						<!-- Composite End -->
-						<hr>
 					</div>
 					<hr class="line">
 					<div class="box">
