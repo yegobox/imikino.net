@@ -2,7 +2,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta name="author" content="Igor Jean-Luc Ndiramiye">
-	<meta property="fb:use_automatic_ad_placement" content="enable=true ad_density=default">
+	<meta property="fb:pages" content="331259140367167" />
 	
     <title>@yield('title') | Imikino.net</title>
 	
