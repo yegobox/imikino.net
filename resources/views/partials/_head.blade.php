@@ -3,6 +3,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta name="author" content="Igor Jean-Luc Ndiramiye">
 	<meta property="fb:pages" content="286094315130272" />
+	<meta property="fb:use_automatic_ad_placement" content="enable=true ad_density=default">
 	
     <title>@yield('title') | Imikino.net</title>
 	
