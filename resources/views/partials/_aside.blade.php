@@ -1,37 +1,44 @@
 <div id="sidebar" class="col-md-4">
 					<!---- Start Widget ---->
 					<div class="widget wid-follow">
-						<div class="heading"><h4>Follow Us</h4></div>
+						<div class="heading"><h4>Shakisha</h4></div>
 						<div class="content">
+							{{ Form::open(['route' => 'pages.postSearch', 'data-parsley-validate' => 'true']) }}
+								<div class="input-group">
+									{{ Form::text('search',null,['style' => 'height:35px', 'method'=>'get','class' => 'form-control','placeholder' => 'Andika ijambo ushakisha' ,'required']) }}
+									<span class="input-group-btn">
+										<button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
+									</span>
+								</div>
+							{{ Form::close() }}
+						</div>
+						<div class="heading"><h4>Dukurikire kuzindi mbuga</h4></div>
+						<div class="content">
+							<center>
 							<ul class="list-inline">
 								<li>
-									<a href="facebook.com/">
+									<a target="_blank" href="https://www.facebook.com/imikino.net/">
 										<div class="box-facebook">
 											<span class="fa fa-facebook fa-2x icon"></span>
-											<!--<span>1250</span>
-											<span>Fans</span>-->
 										</div>
 									</a>
 								</li>
 								<li>
-									<a href="facebook.com/">
+									<a target="_blank" href="https://twitter.com/ImikinoCom?lang=en">
 										<div class="box-twitter">
 											<span class="fa fa-twitter fa-2x icon"></span>
-											<!--<span>1250</span>
-											<span>Fans</span>-->
 										</div>
 									</a>
 								</li>
 								<li>
-									<a href="facebook.com/">
+									<a target="_blank" href="https://plus.google.com/112885630146322775647">
 										<div class="box-google">
 											<span class="fa fa-google-plus fa-2x icon"></span>
-											<!--<span>1250</span>
-											<span>Fans</span>-->
 										</div>
 									</a>
 								</li>
 							</ul>
+							</center>
 							<!--<img src="images/banner.jpg" />-->
 						</div>
 					</div>
@@ -43,7 +50,7 @@
 							<div style="margin-bottom:12px" class="wrap-vid">
 								<div class="zoom-container">
 									<div class="zoom-caption">
-										<!--<span class="vimeo">{{ $aside->sport_id }}</span>-->
+										<span class="vimeo">{{ $aside->sport->name }}</span>
 										<a href="{{ url($aside->slug) }}">
 											<i class="fa fa-play-text-o fa-5x" style="color:lightbluesky"></i>
 										</a>
@@ -59,10 +66,6 @@
 							</div>
 							@endforeach
 						</div>
-					<!--
-						<script type="text/javascript" src="//ylx-1.com/bnr.php?section=General&pub=838947&format=300x250&ga=g"></script>
-						<noscript><a href="https://yllix.com/publishers/838947" target="_blank"><img src="//ylx-aff.advertica-cdn.com/pub/300x250.png" style="border:none;margin:0;padding:0;vertical-align:baseline;" /></a></noscript>
-					-->
 					</div>
 					<!---- Start Widget ---->
 					<div class="widget ">
@@ -72,7 +75,7 @@
 							<div style="margin-bottom:12px" class="wrap-vid">
 								<div class="zoom-container">
 									<div class="zoom-caption">
-										<!--<span class="vimeo">{{ $newone->sport_id }}</span>-->
+										<span class="vimeo">{{ $newone->location->name }}</span>
 										<a href="{{ url($newone->slug) }}">
 											<i class="fa fa-play-text-o fa-5x" style="color:lightbluesky"></i>
 										</a>
@@ -89,19 +92,6 @@
 							@endforeach
 						</div>
 						<!-- Composite Start -->
-						<!--
-						<div id="M311506ScriptRootC203917">
-							<div id="M311506PreloadC203917">
-							Loading...    </div>
-							<script>
-									(function(){
-								var D=new Date(),d=document,b='body',ce='createElement',ac='appendChild',st='style',ds='display',n='none',gi='getElementById';
-								var i=d[ce]('iframe');i[st][ds]=n;d[gi]("M311506ScriptRootC203917")[ac](i);try{var iw=i.contentWindow.document;iw.open();iw.writeln("<ht"+"ml><bo"+"dy></bo"+"dy></ht"+"ml>");iw.close();var c=iw[b];}
-								catch(e){var iw=d;var c=d[gi]("M311506ScriptRootC203917");}var dv=iw[ce]('div');dv.id="MG_ID";dv[st][ds]=n;dv.innerHTML=203917;c[ac](dv);
-								var s=iw[ce]('script');s.async='async';s.defer='defer';s.charset='utf-8';s.src="//jsc.mgid.com/i/m/imikino.net.203917.js?t="+D.getYear()+D.getMonth()+D.getDate()+D.getHours();c[ac](s);})();
-						</script>
-						</div>
-					-->
 						<!-- Composite End -->
 					</div>
 				</div>

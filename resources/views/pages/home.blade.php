@@ -101,6 +101,9 @@
 									</div>
 								</div>
 							@endforeach
+								<div class="box">
+									{{ $lists->links() }}
+								</div>
 							</div>
 							<div class="row hidden-lg hidden-md">
 							@foreach($lists as $list)
@@ -121,6 +124,12 @@
 									</div>
 								</div>
 							@endforeach
+								<hr class="line">
+								<div class="box">
+									<center>
+										{!! $lists->links() !!}
+									</center>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -217,19 +226,6 @@
 									</script>
 								</div>
 								<!-- Composite Start -->
-							<!--
-								<div class="col-md-12" id="M311506ScriptRootC203917">
-									<div id="M311506PreloadC203917">
-									Loading...    </div>
-									<script>
-											(function(){
-										var D=new Date(),d=document,b='body',ce='createElement',ac='appendChild',st='style',ds='display',n='none',gi='getElementById';
-										var i=d[ce]('iframe');i[st][ds]=n;d[gi]("M311506ScriptRootC203917")[ac](i);try{var iw=i.contentWindow.document;iw.open();iw.writeln("<ht"+"ml><bo"+"dy></bo"+"dy></ht"+"ml>");iw.close();var c=iw[b];}
-										catch(e){var iw=d;var c=d[gi]("M311506ScriptRootC203917");}var dv=iw[ce]('div');dv.id="MG_ID";dv[st][ds]=n;dv.innerHTML=203917;c[ac](dv);
-										var s=iw[ce]('script');s.async='async';s.defer='defer';s.charset='utf-8';s.src="//jsc.mgid.com/i/m/imikino.net.203917.js?t="+D.getYear()+D.getMonth()+D.getDate()+D.getHours();c[ac](s);})();
-								</script>
-								</div>
-							-->
 								<!-- Composite End -->
 							</div>
 						</div>
@@ -240,9 +236,15 @@
 					<div class="widget wid-tags">
 						<div class="heading"><h4>Shakisha</h4></div>
 						<div class="content">
-							<form role="form" class="form-horizontal" method="post" action="">
-								<input type="text" placeholder="Enter Search Keywords" value="" name="v_search" id="v_search" class="form-control">
-							</form>
+							{{ Form::open(['route' => 'pages.postSearch', 'data-parsley-validate' => 'true']) }}
+							<form id="form">
+								<div class="input-group">
+									{{ Form::text('search',null,['style' => 'height:35px', 'method'=>'get','class' => 'form-control','placeholder' => 'Andika ijambo ushakisha' ,'required']) }}
+									<span class="input-group-btn">
+										<button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
+									</span>
+								</div>
+							{{ Form::close() }}
 						</div>
 					</div>
 
@@ -335,18 +337,18 @@
 					<div class="widget wid-calendar">
 						<div class="heading"><h4>Calendar</h4></div>
 						<div class="content">
-							<center><form action="" role="form">        
-								<div class="">
-									<div class="input-group date form_date" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">                </div>
-									<input type="hidden" id="dtp_input2" value="" /><br/>
-								</div>
-							</form></center>
+							<center>
+								<form action="" role="form">        
+									<div class="">
+										<div class="input-group date form_date" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">                </div>
+										<input type="hidden" id="dtp_input2" value="" /><br/>
+									</div>
+								</form>
+							</center>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-
-
 @endsection

@@ -31,7 +31,7 @@
             <div class="icon">
               <i class="ion ion-md-pulse"></i>
             </div>
-            <a href="{{ route('reporterposts.index') }}" class="small-box-footer">More <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="{{ route('reporterposts.index') }}" class="small-box-footer">More <ion-icon name="pulse"></ion-icon></a>
           </div>
         </div>
         <!-- ./col -->

@@ -1,6 +1,6 @@
 @extends('main')
 
-@section('title', 'Africa')
+@section('title', 'Search')
 
 @section('content')
 	<!-- /////////////////////////////////////////Content -->
@@ -8,6 +8,7 @@
 		<div class="">
 			<div class="row">
 				<div id="main-content" class="col-md-8">
+			@if( count($posts) > 0)
 				@foreach( $posts as $post)
 					<div class="box">
 						<div style="margin-bottom:12px" class="wrap-vid">
@@ -31,6 +32,12 @@
 					</div>
 					<hr class="line">
 				@endforeach
+			@else
+				<div class="box">
+					<center><h2>Tubiseguyeho, ntagisubizo tubashije kubona!</h2></center>
+				</div>
+					
+			@endif
 					<div class="box">
 						<center>
 							{!! $posts->links() !!}
@@ -58,4 +65,6 @@
 			</div>
 		</div>
 	</div>
+
+
 @endsection

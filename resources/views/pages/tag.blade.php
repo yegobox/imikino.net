@@ -9,31 +9,29 @@
 		<div class="">
 			<div class="row">
 				<div id="main-content" class="col-md-8">
-				@foreach( $tag->posts as $post)
-					<div class="box">
-						<a href="{{ url($post->slug) }}"><h4 style="font-size:20px" class="vid-name">{{ $post->sport->name }}</h4></a>
-						<div class="info">
-							<h5>By <a href="#"></a></h5>
-							<span><i class="fa fa-calendar"></i> {{ date('M j, Y', strtotime($post->created_at)) }}</span> 
-							<!--<span><i class="fa fa-comment"></i> 0 Comments</span>
-							<span><i class="fa fa-eye"></i>'.$row['Views'].' Views</span>-->
-						</div>
-						<div style="margin-bottom:12px" class="wrap-vid">
-							<div class="zoom-container">
-								<div class="zoom-caption">
-									<span class="vimeo">{{ $post->locations }}</span>
-									<a href="{{ url($post->slug) }}">
-										<i class="fa fa-file-text-o fa-5x" style="color: lightskyblue"></i>
-									</a>
-									<p>{{ substr($post->title, 0, 25) }}{{ strlen($post->title) > 25 ? '...' : "" }}</p>
+						@foreach( $posts as $post)
+						<div class="box">
+							<div style="margin-bottom:12px" class="wrap-vid">
+								<div class="zoom-container">
+									<div class="zoom-caption">
+										<span class="vimeo">{{ $post->location->name }}</span>
+										<a href="{{ url($post->slug) }}">
+											<i class="fa fa-file-text-o fa-5x" style="color: lightskyblue"></i>
+										</a>
+										<p style="font-size: 1.5em; font-weight: lighter; text-shadow: 5px 2px 4px #052B41;">{{ substr($post->title, 0, 25) }}{{ strlen($post->title) > 25 ? '...' : "" }}</p>
+									</div>
+									<div align="center"><img style="position:relative;height:150px" src="{{ asset('images/news/'.$post->image) }}" /></div>
 								</div>
-								<div align="center"><img style="position:relative;height:150px" src="{{ asset('images/news/'.$post->image) }}" /></div>
+								<p>{{ substr(strip_tags($post->body), 0, 250) }}{{ strlen(strip_tags($post->body)) > 250 ? '...' : "" }} <a href="{{ url($post->slug) }}" class="btn btn-success btn-xs">Soma iyi nkuru</a></p>
 							</div>
-							<p>{{ substr(strip_tags($post->body), 0, 250) }}{{ strlen(strip_tags($post->body)) > 250 ? '...' : "" }} <a href="{{ url($post->slug) }}">MORE...</a></p>
+							<div class="info">
+								<span><i class="fa fa-calendar"></i> {{ date('M j, Y', strtotime($post->created_at)) }}</span> 
+								<span><i class="fa fa-comment"></i> {{ $post->comments()->count() }} Comments</span>
+								<span><i class="fa fa-eye"></i>{{ $post->views }} Views</span>
+							</div>
 						</div>
-					</div>
-					<hr class="line">
-				@endforeach
+						<hr class="line">
+					@endforeach
 					<div class="box">
 						<center>
 						

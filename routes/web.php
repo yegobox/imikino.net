@@ -11,7 +11,12 @@
 |
 */
 
+
+
+
+
 Route::get('contact', ['uses' => 'PagesController@getContact', 'as' => 'contact']);
+
 Route::post('contact', 'PagesController@postContact');
 
 Route::get('athletic', 'PagesController@getAthletic');
@@ -75,6 +80,23 @@ Route::put('comments/{id}', ['uses' => 'CommentsController@update', 'as' => 'com
 Route::delete('comments/{id}', ['uses' => 'CommentsController@destroy', 'as' => 'comments.destroy']);
 Route::get('comments/{id}/delete', ['uses' => 'CommentsController@delete', 'as' => 'comments.delete']);
 
+
+Route::get('inkuru/{tag}', 'PagesController@getTags')->name('tags');
+
+Route::get('{slug}', ['as' => 'single', 'uses' => 'SingleController@getSingle'])
+->where('slug', '[\w\d\-\_]+');
+
+/*Route::post('getSearch', function(Request $req){
+    $find = Post::where('title','like','%'.$req->search.'%')->get();
+    return view('pages.search')->withPosts($find);
+})->name('pages.postSearch');*/
+
+Route::post('getSearch', 'searchController@getSearch')->name('pages.postSearch');
+
+Route::get('search', 'searchController@index')->name('pages.search');
+//Route::get('{search}', ['as' => 'pages.search', 'uses' => 'searchController@index'])
+//->where('search', '[\w\d\-\_]+');
+
 // Messages
 Route::get('messages', 'MsgController@index')->name('messages.index');
 // Password Reset Routes
@@ -96,7 +118,3 @@ Route::prefix('reporter')->group(function() {
     Route::resource('reporterposts', 'ReporterPostController');
 });
 
-Route::get('inkuru/{tag}', 'PagesController@getTags')->name('tags');
-
-Route::get('{slug}', ['as' => 'single', 'uses' => 'SingleController@getSingle'])
-->where('slug', '[\w\d\-\_]+');

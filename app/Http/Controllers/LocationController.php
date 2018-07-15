@@ -24,7 +24,7 @@ class LocationController extends Controller
         $locations = Location::all();
         $commentss = Comment::where('approved', '=', 0)->orderBy('id', 'desc');
         
-                return view('adminpages.locations.index')->withLocations($locations)->withComs($commentss);
+        return view('adminpages.locations.index')->withLocations($locations)->withComs($commentss);
     }
 
     /**

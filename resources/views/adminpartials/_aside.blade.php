@@ -39,10 +39,7 @@
           </ul>
         </li>
         <li class="treeview {{ Request::is('posts') ? "active" : ""}}
-        {{ Request::is('posts/create') ? "active" : ""}}
-        {{ Request::is('locations') ? "active" : ""}}
-        {{ Request::is('sports') ? "active" : ""}}
-        {{ Request::is('tags') ? "active" : ""}}">
+        {{ Request::is('posts/create') ? "active" : ""}}">
           <a href="#">
             <i class="fa fa-files-o"></i>
             <span>Posts</span>
@@ -52,10 +49,6 @@
           </a>
           <ul class="treeview-menu">
             <li class="{{ Request::is('posts/create') ? "active" : ""}}"><a href="{{ route('posts.create') }}"><i class="fa fa-circle-o"></i> Create New Post</a></li>
-            <li class="{{ Request::is('sports') ? "active" : ""}}"><a href="{{ route('sports.index') }}"><i class="fa fa-circle-o"></i> Sport Categories</a></li>
-            <li class="{{ Request::is('locations') ? "active" : ""}}"><a href="{{ route('locations.index') }}"><i class="fa fa-circle-o"></i> Locations</a></li>
-            <li class="{{ Request::is('tags') ? "active" : ""}}"><a href="{{ route('tags.index') }}"><i class="fa fa-circle-o"></i> Tags</a></li>
-          </ul>
         </li>
         <li>
           <a href="#">

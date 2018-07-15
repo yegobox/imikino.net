@@ -5,7 +5,9 @@
 	<meta property="fb:pages" content="286094315130272" />
 	<meta property="fb:use_automatic_ad_placement" content="enable=true ad_density=default">
 	
-    <title>@yield('title') | Imikino.net</title>
+	<title>@yield('title') | Imikino.net</title>
+	
+	<meta name="csrf-token" content="{{ csrf_token() }}">
 	
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css"  type="text/css">

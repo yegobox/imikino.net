@@ -1,3 +1,6 @@
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.26/vue.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-resource/1.0.1/vue-resource.min.js"></script>
+    <script src="/js/app.js"></script>
     <script src="/owl-carousel/owl.carousel.js"></script>
     <script>
         $(document).ready(function() {
@@ -14,7 +17,7 @@
         });
         });
     </script>
-    <script src="dashboard/dist/js/sb-admin-2.js"></script>
+	<script src="/js/jquery-2.1.1.js"></script>
 	<script type="text/javascript" src="/js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
 	<script type="text/javascript" src="/js/locales/bootstrap-datetimepicker.fr.js" charset="UTF-8"></script>
 	<script type="text/javascript">
