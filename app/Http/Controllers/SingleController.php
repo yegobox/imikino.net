@@ -12,7 +12,7 @@ class SingleController extends Controller
     public function getSingle($slug) {
         DB::table('posts')->where('slug', $slug)->increment('views');
         $post = Post::where('slug', '=', $slug)->first();
-        $sames = DB::table('posts')->where('location_id', '=', $post->location_id)->limit(3)->get();
+        $sames = Post::where('location_id', $post->location->id)->limit(3)->get();
         $aside = Post::where('views', '>=', 1000)->orderBy('views', 'desc')->limit(5)->get();
         $newone = Post::orderBy('created_at', 'desc')->limit(5)->get();
         $titles= DB::select('select * from posts order by id desc limit 5');

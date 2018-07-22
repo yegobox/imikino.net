@@ -15,6 +15,38 @@
 
 
 
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+Route::resource('posts', 'PostController');
+
+// Sports
+Route::resource('sports', 'SportController', ['except' => ['create']]);
+
+// Locations
+Route::resource('locations', 'LocationController', ['except' => ['create']]);
+
+// Tags
+Route::resource('tags', 'TagController', ['except' => ['create']]);
+
+Route::get('comments', 'CommentsController@index')->name('comments.index');
+Route::get('comments/{id}/edit', ['uses' => 'CommentsController@edit', 'as' => 'comments.edit']);
+Route::get('comments/approve{id}', ['uses' => 'CommentsController@postApprove', 'as' => 'approvedApplications']);
+Route::get('comments/disapprove{id}', ['uses' => 'CommentsController@postDisapprove', 'as' => 'disapprovedApplications']);
+Route::put('comments/{id}', ['uses' => 'CommentsController@update', 'as' => 'comments.update']);
+Route::delete('comments/{id}', ['uses' => 'CommentsController@destroy', 'as' => 'comments.destroy']);
+Route::get('comments/{id}/delete', ['uses' => 'CommentsController@delete', 'as' => 'comments.delete']);
+
+Route::prefix('reporter')->group(function() {
+    Route::get('/login', 'Auth\JournalistLoginController@showLoginForm')->name('journalist.login');
+    Route::post('/login', 'Auth\JournalistLoginController@login')->name('journalist.login.submit');
+    Route::get('/dashboard', 'JournalistController@index')->name('journalist.dashboard');
+    Route::resource('reporterposts', 'ReporterPostController');
+});
+
+
 Route::get('contact', ['uses' => 'PagesController@getContact', 'as' => 'contact']);
 
 Route::post('contact', 'PagesController@postContact');
@@ -59,41 +91,19 @@ Route::get('rwanda', 'PagesController@getRwanda');
 
 Route::get('/', ['uses' => 'PagesController@getIndex', 'as' => '/']);
 
-Route::resource('posts', 'PostController');
+Route::get('inkuru/{tag}', 'PagesController@getTags')->name('tags');
 
-// Sports
-Route::resource('sports', 'SportController', ['except' => ['create']]);
 
-// Locations
-Route::resource('locations', 'LocationController', ['except' => ['create']]);
-
-// Tags
-Route::resource('tags', 'TagController', ['except' => ['create']]);
 
 // Comments
 Route::post('comments/{post_id}', ['uses' => 'CommentsController@store', 'as' => 'comments.store']);
-Route::get('comments', 'CommentsController@index')->name('comments.index');
-Route::get('comments/{id}/edit', ['uses' => 'CommentsController@edit', 'as' => 'comments.edit']);
-Route::get('comments/approve{id}', ['uses' => 'CommentsController@postApprove', 'as' => 'approvedApplications']);
-Route::get('comments/disapprove{id}', ['uses' => 'CommentsController@postDisapprove', 'as' => 'disapprovedApplications']);
-Route::put('comments/{id}', ['uses' => 'CommentsController@update', 'as' => 'comments.update']);
-Route::delete('comments/{id}', ['uses' => 'CommentsController@destroy', 'as' => 'comments.destroy']);
-Route::get('comments/{id}/delete', ['uses' => 'CommentsController@delete', 'as' => 'comments.delete']);
 
-
-Route::get('inkuru/{tag}', 'PagesController@getTags')->name('tags');
-
-Route::get('{slug}', ['as' => 'single', 'uses' => 'SingleController@getSingle'])
-->where('slug', '[\w\d\-\_]+');
 
 /*Route::post('getSearch', function(Request $req){
     $find = Post::where('title','like','%'.$req->search.'%')->get();
     return view('pages.search')->withPosts($find);
 })->name('pages.postSearch');*/
 
-Route::post('getSearch', 'searchController@getSearch')->name('pages.postSearch');
-
-Route::get('search', 'searchController@index')->name('pages.search');
 //Route::get('{search}', ['as' => 'pages.search', 'uses' => 'searchController@index'])
 //->where('search', '[\w\d\-\_]+');
 
@@ -106,15 +116,9 @@ Route::post('password/email', ['as'=>'password.email', 'uses' => 'Auth\ForgotPas
 Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 */
 
+Route::get('{slug}', ['as' => 'single', 'uses' => 'SingleController@getSingle'])
+->where('slug', '[\w\d\-\_]+');
 
-Auth::routes();
+Route::post('getSearch', 'searchController@getSearch')->name('pages.postSearch');
 
-Route::get('/home', 'HomeController@index')->name('home');
-//Route::get('/journalistadmin', 'JournalistController@index');
-Route::prefix('reporter')->group(function() {
-    Route::get('/login', 'Auth\JournalistLoginController@showLoginForm')->name('journalist.login');
-    Route::post('/login', 'Auth\JournalistLoginController@login')->name('journalist.login.submit');
-    Route::get('/dashboard', 'JournalistController@index')->name('journalist.dashboard');
-    Route::resource('reporterposts', 'ReporterPostController');
-});
-
+Route::get('search', 'searchController@index')->name('pages.search');
