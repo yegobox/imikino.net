@@ -63,7 +63,17 @@ class ReporterPostController extends Controller
             'sport_id'    => 'required|integer',
             'location_id'    => 'required|integer',
             'body'           => 'required',
-            'featured_image' => 'sometimes|image',
+            'featured_image' => 'required|image',
+            'image1' => 'sometimes|image',
+            'image2' => 'sometimes|image',
+            'image3' => 'sometimes|image',
+            'image4' => 'sometimes|image',
+            'image5' => 'sometimes|image',
+            'image1_txt'          => 'required|max:255',
+            'image2_txt'          => 'required|max:255',
+            'image3_txt'          => 'required|max:255',
+            'image4_txt'          => 'required|max:255',
+            'image5_txt'          => 'required|max:255',
             'author' => 'required'
         ));
 
@@ -77,6 +87,11 @@ class ReporterPostController extends Controller
         $post->sport_id = $request->sport_id;
         $post->location_id = $request->location_id;
         $post->body = Purifier::clean($request->body);
+        $post->image1_txt = $request->image1_txt;
+        $post->image2_txt = $request->image2_txt;
+        $post->image3_txt = $request->image3_txt;
+        $post->image4_txt = $request->image4_txt;
+        $post->image5_txt = $request->image5_txt;
 
         //save our image
         if($request->hasFile('featured_image')) {
@@ -90,6 +105,76 @@ class ReporterPostController extends Controller
             Image::make($image)->resize(1366, 768)->save($location);
 
             $post->image = $filename;
+        }
+
+        //save our image 1
+        if($request->hasFile('image1')) {
+            $image1 = $request->file('image1');
+            $filename = time() . '.' . $image1->getClientOriginalExtension();
+            $location = public_path('images/news/image1' . $filename);
+            //or $filename = time() . '.' . $image->encode('png');
+            //$location = public_path('images/news/');
+            //or $location = storage_path('/app/posts/');
+            //$image->move($location, $filename);
+            Image::make($image1)->resize(1366, 768)->save($location);
+
+            $post->image1 = $filename;
+        }
+
+        //save our image 2
+        if($request->hasFile('image2')) {
+            $image2 = $request->file('image1');
+            $filename = time() . '.' . $image2->getClientOriginalExtension();
+            $location = public_path('images/news/image2' . $filename);
+            //or $filename = time() . '.' . $image->encode('png');
+            //$location = public_path('images/news/');
+            //or $location = storage_path('/app/posts/');
+            //$image->move($location, $filename);
+            Image::make($image2)->resize(1366, 768)->save($location);
+
+            $post->image2 = $filename;
+        }
+
+        //save our image 3
+        if($request->hasFile('image3')) {
+            $image3 = $request->file('image3');
+            $filename = time() . '.' . $image3->getClientOriginalExtension();
+            $location = public_path('images/news/image3' . $filename);
+            //or $filename = time() . '.' . $image->encode('png');
+            //$location = public_path('images/news/');
+            //or $location = storage_path('/app/posts/');
+            //$image->move($location, $filename);
+            Image::make($image3)->resize(1366, 768)->save($location);
+
+            $post->image3 = $filename;
+        }
+
+        //save our image 4
+        if($request->hasFile('image4')) {
+            $image4 = $request->file('image4');
+            $filename = time() . '.' . $image4->getClientOriginalExtension();
+            $location = public_path('images/news/image4' . $filename);
+            //or $filename = time() . '.' . $image->encode('png');
+            //$location = public_path('images/news/');
+            //or $location = storage_path('/app/posts/');
+            //$image->move($location, $filename);
+            Image::make($image4)->resize(1366, 768)->save($location);
+
+            $post->image4 = $filename;
+        }
+
+        //save our image 5
+        if($request->hasFile('image5')) {
+            $image5 = $request->file('image5');
+            $filename = time() . '.' . $image5->getClientOriginalExtension();
+            $location = public_path('images/news/image5' . $filename);
+            //or $filename = time() . '.' . $image->encode('png');
+            //$location = public_path('images/news/');
+            //or $location = storage_path('/app/posts/');
+            //$image->move($location, $filename);
+            Image::make($image5)->resize(1366, 768)->save($location);
+
+            $post->image5 = $filename;
         }
 
         $post->save();
@@ -189,12 +274,87 @@ class ReporterPostController extends Controller
             Storage::delete($oldFilename);
         }
 
+        //save our image 1
+        if($request->hasFile('image1')) {
+            $image1 = $request->file('image1');
+            $filename = time() . '.' . $image1->getClientOriginalExtension();
+            $location = public_path('images/news/image1' . $filename);
+            //or $filename = time() . '.' . $image->encode('png');
+            //$location = public_path('images/news/');
+            //or $location = storage_path('/app/posts/');
+            //$image->move($location, $filename);
+            Image::make($image1)->resize(1366, 768)->save($location);
+
+            $post->image1 = $filename;
+        }
+
+        //save our image 2
+        if($request->hasFile('image2')) {
+            $image2 = $request->file('image1');
+            $filename = time() . '.' . $image2->getClientOriginalExtension();
+            $location = public_path('images/news/image2' . $filename);
+            //or $filename = time() . '.' . $image->encode('png');
+            //$location = public_path('images/news/');
+            //or $location = storage_path('/app/posts/');
+            //$image->move($location, $filename);
+            Image::make($image2)->resize(1366, 768)->save($location);
+
+            $post->image2 = $filename;
+        }
+
+        //save our image 3
+        if($request->hasFile('image3')) {
+            $image3 = $request->file('image3');
+            $filename = time() . '.' . $image3->getClientOriginalExtension();
+            $location = public_path('images/news/image3' . $filename);
+            //or $filename = time() . '.' . $image->encode('png');
+            //$location = public_path('images/news/');
+            //or $location = storage_path('/app/posts/');
+            //$image->move($location, $filename);
+            Image::make($image3)->resize(1366, 768)->save($location);
+
+            $post->image3 = $filename;
+        }
+
+        //save our image 4
+        if($request->hasFile('image4')) {
+            $image4 = $request->file('image4');
+            $filename = time() . '.' . $image4->getClientOriginalExtension();
+            $location = public_path('images/news/image4' . $filename);
+            //or $filename = time() . '.' . $image->encode('png');
+            //$location = public_path('images/news/');
+            //or $location = storage_path('/app/posts/');
+            //$image->move($location, $filename);
+            Image::make($image4)->resize(1366, 768)->save($location);
+
+            $post->image4 = $filename;
+        }
+
+        //save our image 5
+        if($request->hasFile('image5')) {
+            $image5 = $request->file('image5');
+            $filename = time() . '.' . $image5->getClientOriginalExtension();
+            $location = public_path('images/news/image5' . $filename);
+            //or $filename = time() . '.' . $image->encode('png');
+            //$location = public_path('images/news/');
+            //or $location = storage_path('/app/posts/');
+            //$image->move($location, $filename);
+            Image::make($image5)->resize(1366, 768)->save($location);
+
+            $post->image5 = $filename;
+        }
+
         $post->title = $request->title;
         $post->slug = $request->slug;
         $post->sport_id = $request->sport_id;
         $post->author = $request->author;
         $post->location_id = $request->location_id;
         $post->body = Purifier::clean($request->body);
+        $post->image1_txt = $request->image1_txt;
+        $post->image2_txt = $request->image2_txt;
+        $post->image3_txt = $request->image3_txt;
+        $post->image4_txt = $request->image4_txt;
+        $post->image5_txt = $request->image5_txt;
 
         if (isset($request->tags)) {
             $post->tags()->sync($request->tags, true);

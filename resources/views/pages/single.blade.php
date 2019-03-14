@@ -7,10 +7,6 @@
 @endsection
 
 @section('content')
-	<!--<div style="background:none; border: none" align="center" class="text-center featured container">
-		<script type="text/javascript" src="//ylx-1.com/bnr.php?section=General&pub=838947&format=728x90&ga=g"></script>
-		<noscript><a href="https://yllix.com/publishers/838947" target="_blank"><img src="//ylx-aff.advertica-cdn.com/pub/728x90.png" style="border:none;margin:0;padding:0;vertical-align:baseline;" /></a></noscript>
-	</div>-->
 	<!-- /////////////////////////////////////////Content -->
 	<div id="page-content" class="archive-page container">
 		<div class="">
@@ -31,7 +27,34 @@
                         </div>
                         <div class="line"></div><br />
                         <h4 class="vid-name text-center"></h4>
+						<div class="sharethis-inline-share-buttons share"></div>
 						<p style="margin-top: 20px">{!! $post->body !!}</p>
+
+						@if(isset($post->image1))
+						<img class="img-responsive pad" src="{{asset('images/news/image1'. $post->image1) }}" alt="No Picture Available">
+						<p class="text-center"><b>{{ $post->image1_txt }}</b></p>
+						@endif
+
+						@if(isset($post->image2))
+						<img class="img-responsive pad" src="{{asset('images/news/image2'. $post->image2) }}" alt="No Picture Available">
+						<p class="text-center"><b>{{ $post->image2_txt }}</b></p>
+						@endif
+
+						@if(isset($post->image3))
+						<img class="img-responsive pad" src="{{asset('images/news/image3'. $post->image3) }}" alt="No Picture Available">
+						<p class="text-center"><b>{{ $post->image3_txt }}</b></p>
+						@endif
+
+						@if(isset($post->image4))
+						<img class="img-responsive pad" src="{{asset('images/news/image4'. $post->image4) }}" alt="No Picture Available">
+						<p class="text-center"><b>{{ $post->image4_txt }}</b></p>
+						@endif
+
+						@if(isset($post->image5))
+						<img class="img-responsive pad" src="{{asset('images/news/image5'. $post->image5) }}" alt="No Picture Available">
+						<p class="text-center"><b>{{ $post->image5_txt }}</b></p>
+						@endif
+
 						<div class="sharethis-inline-share-buttons share"></div>
 						<div class="tags">
 							@foreach($post->tags as $tag)

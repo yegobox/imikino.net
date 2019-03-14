@@ -9,7 +9,7 @@
 		<div class="">
 			<div class="row">
 				<div id="main-content" class="col-md-8">
-						@foreach( $posts as $post)
+						@foreach( $tag->posts as $post)
 						<div class="box">
 							<div style="margin-bottom:12px" class="wrap-vid">
 								<div class="zoom-container">

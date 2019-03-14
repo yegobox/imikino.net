@@ -53,6 +53,32 @@
               <img class="img-responsive pad" src="{{asset('images/news/'. $post->image) }}" alt="No Picture Available">
 
               <p>{!! $post->body !!}</p>
+
+              @if(isset($post->image1))
+              <img class="img-responsive pad" src="{{asset('images/news/image1'. $post->image1) }}" alt="No Picture Available">
+              <p class="text-center"><b>{{ $post->image1_txt }}</b></p>
+              @endif
+
+              @if(isset($post->image2))
+              <img class="img-responsive pad" src="{{asset('images/news/image2'. $post->image2) }}" alt="No Picture Available">
+              <p class="text-center"><b>{{ $post->image2_txt }}</b></p>
+              @endif
+
+              @if(isset($post->image3))
+              <img class="img-responsive pad" src="{{asset('images/news/image3'. $post->image3) }}" alt="No Picture Available">
+              <p class="text-center"><b>{{ $post->image3_txt }}</b></p>
+              @endif
+
+              @if(isset($post->image4))
+              <img class="img-responsive pad" src="{{asset('images/news/image4'. $post->image4) }}" alt="No Picture Available">
+              <p class="text-center"><b>{{ $post->image4_txt }}</b></p>
+              @endif
+
+              @if(isset($post->image5))
+              <img class="img-responsive pad" src="{{asset('images/news/image5'. $post->image5) }}" alt="No Picture Available">
+              <p class="text-center"><b>{{ $post->image5_txt }}</b></p>
+              @endif
+
               <span class="description">Posted on - {{ date('M j, Y h:i A', strtotime($post->created_at)) }}</span>
               <!--<button type="button" class="btn btn-default btn-xs"><i class="fa fa-share"></i> Share</button>
               <button type="button" class="btn btn-default btn-xs"><i class="fa fa-thumbs-o-up"></i> Like</button>

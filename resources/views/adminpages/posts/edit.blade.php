@@ -83,6 +83,57 @@
                 </div>
 
                 <div class="row">
+                    <div class="form-group col-md-6">
+                        {{ Form::label('image1', 'Update Featured Image 1:') }}
+                        {{ Form::file('image1') }}
+                    </div>
+                    <div class="form-group col-md-6">
+                        {{ Form::label('image1_txt', 'Update details Image 1:') }}
+                        {{ Form::text('image1_txt', null, ['class' =>'form-control']) }}
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        {{ Form::label('image2', 'Update Featured Image 2:') }}
+                        {{ Form::file('image2') }}
+                    </div>
+                    <div class="form-group col-md-6">
+                        {{ Form::label('image2_txt', 'Update details Image 2:') }}
+                        {{ Form::text('image2_txt', null, ['class' =>'form-control']) }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        {{ Form::label('image3', 'Update Featured Image 3:') }}
+                        {{ Form::file('image3') }}
+                    </div>
+                    <div class="form-group col-md-6">
+                        {{ Form::label('image3_txt', 'Update details Image 3:') }}
+                        {{ Form::text('image3_txt', null, ['class' =>'form-control']) }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        {{ Form::label('image4', 'Update Featured Image 4:') }}
+                        {{ Form::file('image4') }}
+                    </div>
+                    <div class="form-group col-md-6">
+                        {{ Form::label('image4_txt', 'Update details Image 4:') }}
+                        {{ Form::text('image4_txt', null, ['class' =>'form-control']) }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        {{ Form::label('image5', 'Update Featured Image 5:') }}
+                        {{ Form::file('image5') }}
+                    </div>
+                    <div class="form-group col-md-6">
+                        {{ Form::label('image5_txt', 'Update details Image 5:') }}
+                        {{ Form::text('image5_txt', null, ['class' =>'form-control']) }}
+                    </div>
+                </div>
+                <div class="row">
                   <div class="form-group col-md-6">
                       {{ Form::label('sport_id', 'Sport:') }}
                       {{ Form::select('sport_id', $sports, /*default value*/$post->sport_id, ['class' =>'form-control']) }}
