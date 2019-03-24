@@ -2,9 +2,6 @@
 
 @section('title', ucfirst($post->title))
 
-@section('stylesheets')
-<script type='text/javascript' src='//platform-api.sharethis.com/js/sharethis.js#property=5b30b0478b44f200124f3ba4&product=inline-share-buttons' async='async'></script>
-@endsection
 
 @section('content')
 	<!-- /////////////////////////////////////////Content -->
@@ -27,7 +24,6 @@
                         </div>
                         <div class="line"></div><br />
                         <h4 class="vid-name text-center"></h4>
-						<div class="sharethis-inline-share-buttons share"></div>
 						<p style="margin-top: 20px">{!! $post->body !!}</p>
 
 						@if(isset($post->image1))
@@ -54,8 +50,6 @@
 						<img class="img-responsive pad" src="{{asset('images/news/image5'. $post->image5) }}" alt="No Picture Available">
 						<p class="text-center"><b>{{ $post->image5_txt }}</b></p>
 						@endif
-
-						<div class="sharethis-inline-share-buttons share"></div>
 						<div class="tags">
 							@foreach($post->tags as $tag)
 								<a href="{{ route('tags', $tag->id) }}"><span class="label label-success">{{ $tag->name }}</span></a>
@@ -192,4 +186,9 @@
 	</div>
 
 
+@endsection
+
+@section('scripts')
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5c974adcf1220f3d"></script>
 @endsection
