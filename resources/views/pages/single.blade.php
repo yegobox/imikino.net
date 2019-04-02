@@ -1,4 +1,4 @@
-@extends('main')
+@extends('main1')
 
 @section('title', ucfirst($post->title))
 
