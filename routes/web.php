@@ -22,6 +22,12 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('posts', 'PostController');
 
+Route::post('ajax_upload/action', 'AjaxUploadController@action')->name('ajaxupload.action');
+Route::post('ajax_upload/action2', 'AjaxUploadController@action2')->name('ajaxupload.action2');
+Route::post('ajax_upload/action3', 'AjaxUploadController@action3')->name('ajaxupload.action3');
+Route::post('ajax_upload/action4', 'AjaxUploadController@action4')->name('ajaxupload.action4');
+Route::post('ajax_upload/action5', 'AjaxUploadController@action5')->name('ajaxupload.action5');
+
 // Sports
 Route::resource('sports', 'SportController', ['except' => ['create']]);
 

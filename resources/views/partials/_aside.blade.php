@@ -3,9 +3,9 @@
 					<div class="widget wid-follow">
 						<div class="heading"><h4>Shakisha</h4></div>
 						<div class="content">
-							{{ Form::open(['route' => 'pages.postSearch', 'data-parsley-validate' => 'true']) }}
+							{{ Form::open(['route' => 'pages.postSearch', 'method'=>'get', 'data-parsley-validate' => 'true']) }}
 								<div class="input-group">
-									{{ Form::text('search',null,['style' => 'height:35px', 'method'=>'get','class' => 'form-control','placeholder' => 'Andika ijambo ushakisha' ,'required']) }}
+									{{ Form::text('search',null,['style' => 'height:35px', 'class' => 'form-control','placeholder' => 'Andika ijambo ushakisha' ,'required']) }}
 									<span class="input-group-btn">
 										<button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
 									</span>

@@ -38,8 +38,7 @@
             <li><a href="#"><i class="fa fa-circle-o"></i> Change Image</a></li>
           </ul>
         </li>
-        <li class="treeview {{ Request::is('posts') ? "active" : ""}}
-        {{ Request::is('posts/create') ? "active" : ""}}">
+        <li class="treeview {{ Request::is('posts') ? "active" : ""}}{{ Request::is('posts/create') ? "active" : ""}}">
           <a href="#">
             <i class="fa fa-files-o"></i>
             <span>Posts</span>
@@ -49,26 +48,45 @@
           </a>
           <ul class="treeview-menu">
             <li class="{{ Request::is('posts/create') ? "active" : ""}}"><a href="{{ route('posts.create') }}"><i class="fa fa-circle-o"></i> Create New Post</a></li>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fa fa-users"></i>
+                <span>Journalists</span>
+              </a>
+            </li>
+            <li class="{{ Request::is('comments') ? "active" : ""}}">
+              <a href="{{ route('comments.index') }}">
+                <i class="fa fa-comment"></i>
+                <span>Comments</span>
+              </a>
+            </li>
+            <li>
+              <a href="{{ route('messages.index') }}">
+                <i class="fa fa-envelope"></i>
+                <span>Messages</span>
+              </a>
+            </li>
+          </ul>
         </li>
-        <li>
-          <a href="#">
-            <i class="fa fa-users"></i>
-            <span>Journalists</span>
+        <li class="{{ Request::is('tags') ? "active" : ""}}">
+          <a href="{{ route('tags.index') }}">
+            <i class="fa fa-tags"></i>
+            <span>Tags</span>
           </a>
         </li>
-        <li class="{{ Request::is('comments') ? "active" : ""}}">
-          <a href="{{ route('comments.index') }}">
-            <i class="fa fa-comment"></i>
-            <span>Comments</span>
+        <li class="{{ Request::is('locations') ? "active" : ""}}">
+          <a href="{{ route('locations.index') }}">
+            <i class="fa fa-location-arrow"></i>
+            <span>Locations</span>
           </a>
         </li>
-        <li>
-          <a href="{{ route('messages.index') }}">
-            <i class="fa fa-envelope"></i>
-            <span>Messages</span>
+        <li class="{{ Request::is('sports') ? "active" : ""}}">
+          <a href="{{ route('sports.index') }}">
+            <i class="fa fa-group"></i>
+            <span>Sports</span>
           </a>
         </li>
-      </ul>
     </section>
     <!-- /.sidebar -->
   </aside>

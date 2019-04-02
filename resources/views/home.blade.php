@@ -6,6 +6,7 @@
   <title>Admin | @yield('title')</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <meta name="_token" content="{{csrf_token()}}" />
   <!-- Bootstrap 3.3.6 -->
   <link rel="stylesheet" href="/admin/bootstrap/css/bootstrap.min.css">
   <!-- Font Awesome -->
@@ -59,14 +60,12 @@
 </div>
 <!-- ./wrapper -->
 
+<script src="{{ asset('js/jquery-2.1.1.js') }}"></script>
+@yield('scripts')
 <!-- jQuery 2.2.3 -->
 <script src="/admin/plugins/jQuery/jquery-2.2.3.min.js"></script>
 <!-- jQuery UI 1.11.4 -->
 <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
-<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-<script>
-  $.widget.bridge('uibutton', $.ui.button);
-</script>
 <!-- Bootstrap 3.3.6 -->
 <script src="/admin/bootstrap/js/bootstrap.min.js"></script>
 <!-- Morris.js charts -->
@@ -97,6 +96,5 @@
 <!-- AdminLTE for demo purposes -->
 <script src="/admin/dist/js/demo.js"></script>
 
-@yield('scripts')
 </body>
 </html>

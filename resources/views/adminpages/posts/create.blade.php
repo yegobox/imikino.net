@@ -3,7 +3,7 @@
   @section('title', 'Create New Post')
 
   @section('stylesheets')
-    {!! Html::style('/css/parsley.min.css') !!}
+    {!! Html::style('/css/parsley.css') !!}
     {!! Html::style('/css/select2.min.css') !!}
     <script src="/js/tiny/tinymce.min.js"></script>
 
@@ -84,58 +84,6 @@
                   </div>
                 </div>
 
-                <div class="row">
-                    <div class="form-group col-md-6">
-                        {{ Form::label('image1', 'Add Featured Image 1:') }}
-                        {{ Form::file('image1') }}
-                    </div>
-                    <div class="form-group col-md-6">
-                        {{ Form::label('image1_txt', 'Add details of image 1:') }}
-                        {{ Form::text('image1_txt', null, ['class' =>'form-control']) }}
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="form-group col-md-6">
-                        {{ Form::label('image2', 'Add Featured Image 2:') }}
-                        {{ Form::file('image2') }}
-                    </div>
-                    <div class="form-group col-md-6">
-                        {{ Form::label('image2_txt', 'Add details of image 2:') }}
-                        {{ Form::text('image2_txt', null, ['class' =>'form-control']) }}
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="form-group col-md-6">
-                        {{ Form::label('image3', 'Add Featured Image 3:') }}
-                        {{ Form::file('image3') }}
-                    </div>
-                    <div class="form-group col-md-6">
-                        {{ Form::label('image3_txt', 'Add details of image 3:') }}
-                        {{ Form::text('image3_txt', null, ['class' =>'form-control']) }}
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="form-group col-md-6">
-                        {{ Form::label('image4', 'Add Featured Image 4:') }}
-                        {{ Form::file('image4') }}
-                    </div>
-                    <div class="form-group col-md-6">
-                        {{ Form::label('image4_txt', 'Add details of image 4:') }}
-                        {{ Form::text('image4_txt', null, ['class' =>'form-control']) }}
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="form-group col-md-6">
-                        {{ Form::label('image5', 'Add Featured Image 5:') }}
-                        {{ Form::file('image5') }}
-                    </div>
-                    <div class="form-group col-md-6">
-                        {{ Form::label('image5_txt', 'Add details of image 5:') }}
-                        {{ Form::text('image5_txt', null, ['class' =>'form-control']) }}
-                    </div>
-                </div>
-                
                 <div class="form-group">
                   {{ Form::hidden('author', Auth::user()->name, ['required' => '']) }}
                 </div>
@@ -182,7 +130,6 @@
           </div>
           <!-- /.box -->
         </div>
-        <!-- ./col -->
       </div>
       <!-- /.row -->
 
