@@ -9197,7 +9197,7 @@ $(document).ready(function() {
         // var file = $('#select_file').val();
         // var data = 'select_file=' + file;
         $.ajax({
-            url: "../ajax_upload/action",
+            url: "../../ajax_upload/action",
             method: "post",
             dataType: 'JSON',
             data: new FormData(this),
@@ -9230,7 +9230,7 @@ $(document).ready(function() {
         // var file = $('#select_file').val();
         // var data = 'select_file=' + file;
         $.ajax({
-            url: "../ajax_upload/action2",
+            url: "../../ajax_upload/action2",
             method: "post",
             dataType: 'JSON',
             data: new FormData(this),
@@ -9263,7 +9263,7 @@ $(document).ready(function() {
         // var file = $('#select_file').val();
         // var data = 'select_file=' + file;
         $.ajax({
-            url: "../ajax_upload/action3",
+            url: "../../ajax_upload/action3",
             method: "post",
             dataType: 'JSON',
             data: new FormData(this),
@@ -9296,7 +9296,7 @@ $(document).ready(function() {
         // var file = $('#select_file').val();
         // var data = 'select_file=' + file;
         $.ajax({
-            url: "../ajax_upload/action4",
+            url: "../../ajax_upload/action4",
             method: "post",
             dataType: 'JSON',
             data: new FormData(this),
@@ -9329,7 +9329,7 @@ $(document).ready(function() {
         // var file = $('#select_file').val();
         // var data = 'select_file=' + file;
         $.ajax({
-            url: "../ajax_upload/action5",
+            url: "../../ajax_upload/action5",
             method: "post",
             dataType: 'JSON',
             data: new FormData(this),

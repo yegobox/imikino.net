@@ -84,7 +84,7 @@
                   </div>
                 </div>
 
-                <div class="row">
+                {{-- <div class="row">
                     <div class="form-group col-md-6">
                         {{ Form::label('image1', 'Add Featured Image 1:') }}
                         {{ Form::file('image1') }}
@@ -134,7 +134,7 @@
                         {{ Form::label('image5_txt', 'Add details of image 5:') }}
                         {{ Form::text('image5_txt', null, ['class' =>'form-control']) }}
                     </div>
-                </div>
+                </div> --}}
 
                 <div class="form-group">
                   {{ Form::hidden('author', Auth::user()->name, ['required' => '']) }}

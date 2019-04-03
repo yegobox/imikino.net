@@ -21,6 +21,7 @@
       <!-- Small boxes (Stat box) -->
       <div class="row">
         <div class="col-md-12">
+          <div class="alert" id="message" style="display: none" role="alert"></div>
             @if (Session::has('success'))
 
                 <div class="alert alert-info" role="alert">
@@ -54,7 +55,22 @@
 
               <p>{!! $post->body !!}</p>
 
-              @if(isset($post->image1))
+              <span id="uploaded_image"></span>
+              <p id="txt1" class="text-center"></p>
+
+              <span id="uploaded_image2"></span>
+              <p id="txt2" class="text-center"></p>
+
+              <span id="uploaded_image3"></span>
+              <p id="txt3" class="text-center"></p>
+
+              <span id="uploaded_image4"></span>
+              <p id="txt4" class="text-center"></p>
+
+              <span id="uploaded_image5"></span>
+              <p id="txt5" class="text-center"></p>
+
+              {{-- @if(isset($post->image1))
               <img class="img-responsive pad" src="{{asset('images/news/image1'. $post->image1) }}" alt="No Picture Available">
               <p class="text-center"><b>{{ $post->image1_txt }}</b></p>
               @endif
@@ -77,7 +93,7 @@
               @if(isset($post->image5))
               <img class="img-responsive pad" src="{{asset('images/news/image5'. $post->image5) }}" alt="No Picture Available">
               <p class="text-center"><b>{{ $post->image5_txt }}</b></p>
-              @endif
+              @endif --}}
 
               <span class="description">Posted on - {{ date('M j, Y h:i A', strtotime($post->created_at)) }}</span>
               <!--<button type="button" class="btn btn-default btn-xs"><i class="fa fa-share"></i> Share</button>
@@ -120,6 +136,161 @@
           <!-- /.box -->
         </div>
         <!-- ./col -->
+        <div class="col-md-4">
+          <div class="box box-primary">
+            <div class="box-header with-border">
+              <h3 class="box-title">Upload other images here</h3>
+            </div>
+            <div class="box-body">
+                
+                {{--  {!! Form::open(['route' => 'ajaxupload.action','method' => 'post', 'id' => 'upload-form', 'files' => true]) !!}  --}}
+                
+                <form id="upload-form" enctype="multipart/form-data">
+                  <div class="row">
+                      <div class="form-group col-md-6">
+                          {{--  {{ Form::label('image1', 'Add Featured Image 1:') }}  --}}
+                          <input type="file" name="image1" id="image1"/>
+                          {{ Form::label('image1_txt', 'Add details of image 1:') }}
+                          {{ Form::text('image1_txt', null, ['class' =>'form-control']) }}
+                          <input style="display: none" type="text"  name="post" id="title" value="{{ $post->id }}"/>
+                      </div>
+                      <div class="form-group col-md-6">
+                        <button id="upload" class="btn btn-block btn-flat btn-primary">Upload</button>
+                      </div>
+                  </div>
+                  {{--  <div class="progress">
+                      <div class="progress-bar progress-bar-striped active"  role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 45%">
+                        <span class="sr-only">45% Complete</span>
+                      </div>
+                  </div>  --}}
+                </form>
+
+                <form id="upload-form2" enctype="multipart/form-data">
+                  <div class="row">
+                      <div class="form-group col-md-6">
+                          {{--  {{ Form::label('image1', 'Add Featured Image 1:') }}  --}}
+                          <input type="file" name="image2" id="image2"/>
+                          {{ Form::label('image2_txt', 'Add details of image 2:') }}
+                          {{ Form::text('image2_txt', null, ['class' =>'form-control']) }}
+                          <input style="display: none" type="text"  name="post" id="title" value="{{ $post->id }}"/>
+                      </div>
+                      <div class="form-group col-md-6">
+                        <button id="upload2" class="btn btn-block btn-flat btn-primary">Upload</button>
+                      </div>
+                  </div>
+                  {{--  <div class="progress">
+                      <div class="progress-bar progress-bar-striped active"  role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 45%">
+                        <span class="sr-only">45% Complete</span>
+                      </div>
+                  </div>  --}}
+                </form>
+
+                <form id="upload-form3" enctype="multipart/form-data">
+                  <div class="row">
+                      <div class="form-group col-md-6">
+                          {{--  {{ Form::label('image1', 'Add Featured Image 1:') }}  --}}
+                          <input type="file" name="image3" id="image3"/>
+                          {{ Form::label('image3_txt', 'Add details of image 3:') }}
+                          {{ Form::text('image3_txt', null, ['class' =>'form-control']) }}
+                          <input style="display: none" type="text"  name="post" id="title" value="{{ $post->id }}"/>
+                      </div>
+                      <div class="form-group col-md-6">
+                        <button id="upload3" class="btn btn-block btn-flat btn-primary">Upload</button>
+                      </div>
+                  </div>
+                  {{--  <div class="progress">
+                      <div class="progress-bar progress-bar-striped active"  role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 45%">
+                        <span class="sr-only">45% Complete</span>
+                      </div>
+                  </div>  --}}
+                </form>
+                
+                <form id="upload-form4" enctype="multipart/form-data">
+                  <div class="row">
+                      <div class="form-group col-md-6">
+                          {{--  {{ Form::label('image1', 'Add Featured Image 1:') }}  --}}
+                          <input type="file" name="image4" id="image4"/>
+                          {{ Form::label('image4_txt', 'Add details of image 4:') }}
+                          {{ Form::text('image4_txt', null, ['class' =>'form-control']) }}
+                          <input style="display: none" type="text"  name="post" id="title" value="{{ $post->id }}"/>
+                      </div>
+                      <div class="form-group col-md-6">
+                        <button id="upload4" class="btn btn-block btn-flat btn-primary">Upload</button>
+                      </div>
+                  </div>
+                  {{--  <div class="progress">
+                      <div class="progress-bar progress-bar-striped active"  role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 45%">
+                        <span class="sr-only">45% Complete</span>
+                      </div>
+                  </div>  --}}
+                </form>
+
+                
+                <form id="upload-form5" enctype="multipart/form-data">
+                  <div class="row">
+                      <div class="form-group col-md-6">
+                          {{--  {{ Form::label('image1', 'Add Featured Image 1:') }}  --}}
+                          <input type="file" name="image5" id="image5"/>
+                          {{ Form::label('image5_txt', 'Add details of image 5:') }}
+                          {{ Form::text('image5_txt', null, ['class' =>'form-control']) }}
+                          <input style="display: none" type="text"  name="post" id="title" value="{{ $post->id }}"/>
+                      </div>
+                      <div class="form-group col-md-6">
+                        <button id="upload5" class="btn btn-block btn-flat btn-primary">Upload</button>
+                      </div>
+                  </div>
+                  {{--  <div class="progress">
+                      <div class="progress-bar progress-bar-striped active"  role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 45%">
+                        <span class="sr-only">45% Complete</span>
+                      </div>
+                  </div>  --}}
+                </form>
+                {{--  {{ Form::close() }}  --}}
+                  {{--  <div class="row">
+                      <div class="form-group col-md-6">
+                          {{ Form::label('image2', 'Add Featured Image 2:') }}
+                          {{ Form::file('image2') }}
+                      </div>
+                      <div class="form-group col-md-6">
+                          {{ Form::label('image2_txt', 'Add details of image 2:') }}
+                          {{ Form::text('image2_txt', null, ['class' =>'form-control']) }}
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="form-group col-md-6">
+                          {{ Form::label('image3', 'Add Featured Image 3:') }}
+                          {{ Form::file('image3') }}
+                      </div>
+                      <div class="form-group col-md-6">
+                          {{ Form::label('image3_txt', 'Add details of image 3:') }}
+                          {{ Form::text('image3_txt', null, ['class' =>'form-control']) }}
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="form-group col-md-6">
+                          {{ Form::label('image4', 'Add Featured Image 4:') }}
+                          {{ Form::file('image4') }}
+                      </div>
+                      <div class="form-group col-md-6">
+                          {{ Form::label('image4_txt', 'Add details of image 4:') }}
+                          {{ Form::text('image4_txt', null, ['class' =>'form-control']) }}
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="form-group col-md-6">
+                          {{ Form::label('image5', 'Add Featured Image 5:') }}
+                          {{ Form::file('image5') }}
+                      </div>
+                      <div class="form-group col-md-6">
+                          {{ Form::label('image5_txt', 'Add details of image 5:') }}
+                          {{ Form::text('image5_txt', null, ['class' =>'form-control']) }}
+                      </div>
+                  </div>  --}}
+                  {{--  {{ Form::submit('Upload images', ['class' => 'btn btn-success btn-lg btn-block'])}}  --}}
+                
+            </div>
+          </div>
+        </div>
         <div class="col-md-4">
             <div class="well">
                 <dl class="dl-horizontal">

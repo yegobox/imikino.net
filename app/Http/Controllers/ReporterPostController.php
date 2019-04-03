@@ -69,11 +69,11 @@ class ReporterPostController extends Controller
             'image3' => 'sometimes|image',
             'image4' => 'sometimes|image',
             'image5' => 'sometimes|image',
-            'image1_txt'          => 'required|max:255',
-            'image2_txt'          => 'required|max:255',
-            'image3_txt'          => 'required|max:255',
-            'image4_txt'          => 'required|max:255',
-            'image5_txt'          => 'required|max:255',
+            'image1_txt'          => 'sometimes|max:255',
+            'image2_txt'          => 'sometimes|max:255',
+            'image3_txt'          => 'sometimes|max:255',
+            'image4_txt'          => 'sometimes|max:255',
+            'image5_txt'          => 'sometimes|max:255',
             'author' => 'required'
         ));
 
