@@ -5,10 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author" content="Igor Jean-Luc Ndiramiye">
-    
+    <meta property="fb:app_id" content="465177240507172" />
     <meta property="og:title" content="{{ ucfirst($post->title) }}"/>
-    <meta property="og:type" content="product"/>
-    <meta property="og:url" content="http://imikino.net/{{ $post->slug }}"/>
+    <meta property="og:type" content="Blog post"/>
+    <meta property="og:type" content="Blog post"/>
+    <meta property="og:url" content="https://imikino.net/{{ $post->slug }}"/>
     <meta property="og:image" content="{{asset('images/news/'. $post->image) }}"/>
     <meta property="og:site_name" content="Imikino.net"/>
     <meta property="og:description" content="{!! $post->body !!}"/>
