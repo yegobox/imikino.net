@@ -12,7 +12,6 @@
     <meta property="og:url" content="https://imikino.net/{{ $post->slug }}"/>
     <meta property="og:image" content="{{asset('images/news/'. $post->image) }}"/>
     <meta property="og:site_name" content="Imikino.net"/>
-    <meta property="og:description" content="{!! $post->body !!}"/>
 	
 	<title>@yield('title') | Imikino.net</title>
 	
