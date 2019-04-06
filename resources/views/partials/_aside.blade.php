@@ -15,7 +15,9 @@
 						<div class="heading"><h4>Dukurikire kuzindi mbuga</h4></div>
 						<div class="content">
 							<center>
-							<ul class="list-inline">
+								<!-- Go to www.addthis.com/dashboard to customize your tools -->
+								<div class="addthis_inline_follow_toolbox"></div>
+							{{--  <ul class="list-inline">
 								<li>
 									<a target="_blank" href="https://www.facebook.com/imikino.net/">
 										<div class="box-facebook">
@@ -37,7 +39,7 @@
 										</div>
 									</a>
 								</li>
-							</ul>
+							</ul>  --}}
 							</center>
 							<!--<img src="images/banner.jpg" />-->
 						</div>
