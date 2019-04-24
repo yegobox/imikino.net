@@ -55,7 +55,7 @@
 			<ul class="list-inline navbar-right top-social">
 				<li><a href="https://www.facebook.com/imikino.net/" target="_blank" rel="nofollow"><i class="fa fa-facebook"></i></a></li>
 				<li><a href="https://twitter.com/ImikinoCom" target="_blank" rel="nofollow"><i class="fa fa-twitter"></i></a></li>
-				<li><a href="#"><i class="fa fa-instagram"></i></a></li>
+				<li><a href="https://www.instagram.com/imikino.net3/"><i class="fa fa-instagram"></i></a></li>
 				<li><a href="#"><i class="fa fa-google-plus-square"></i></a></li>
 				<li><a href="#"><i class="fa fa-whatsapp"></i></a></li>
 				<li><a href="{{ route('journalist.login') }}" target="_blank"><i class="fa fa-users"></i></a></li>

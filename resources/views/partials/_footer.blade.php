@@ -3,7 +3,12 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-4 col-footer footer-1">
-						<div class="footer-heading"><h1><span style="color: #fff;">NEWSPAPER</span></h1></div>
+						<div class="footer-heading">
+							{{--  <h1><span style="color: #fff;">NEWSPAPER</span></h1>  --}}
+						</div>
+						<div class="col-md-12">
+							<center><img class="img-responsive" src="{{ asset('images/logo22.png') }}" alt="logo"/></center>
+						</div>
 						<div class="content">
 							<p>Never missed any post published in our site. Subscribe to our daily newsletter now.</p>
 							<strong>Email address:</strong>
@@ -42,6 +47,6 @@
 			</div>
 		</div>
 		<div class="copy-right">
-			<p>Copyright 2019 <a href="/" rel="nofollow">Imikino.net</a>All Rights Reserved. Developed by <a href="https://www.facebook.com/spartacus.amphoteric" target="_blank" rel="nofollow">Eng. Igor Jean-Luc NDIRAMIYE</a></p>
+			<p>Copyright 2019 <a href="/" rel="nofollow">Imikino.net</a> All Rights Reserved. Developed by <a href="https://www.facebook.com/spartacus.amphoteric" target="_blank" rel="nofollow">Eng. Igor Jean-Luc NDIRAMIYE</a></p>
 		</div>
 	</footer>
