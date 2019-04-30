@@ -213,6 +213,7 @@ body.sub-page .logo {
     padding: 10px 0 0;
     color: #000;
     border-bottom: 1px solid #ddd;
+    box-shadow: 0px 6px 6px -6px rgba(0, 0, 0, 0.486);
 }
 
 #top a {
@@ -267,6 +268,7 @@ body.sub-page .logo {
 #menu {
     background-color: #252628;
     border-radius: 0;
+    box-shadow: 0px 10px 10px -3px rgba(0, 0, 0, 0.486);
 }
 
 #menu a.navbar-brand:hover {
@@ -289,7 +291,7 @@ body.sub-page .logo {
 
 #menu .dropdown-menu {
     background-color: #fff;
-    border: none;
+    border: block;
 }
 
 #menu ul.nav .dropdown-menu li a {
@@ -1211,7 +1213,7 @@ footer .footer-3 ul li a:hover {
 #ff .sendButton {
     border: none;
     cursor: pointer;
-    background-color: #FD0005;
+    background-color: rgba(78, 173, 54, 0.856);
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 3px;
@@ -1438,7 +1440,7 @@ footer .footer-3 ul li a:hover {
 }
 
 .zoom-container .zoom-caption span.vimeo {
-    background-color: #17B3E8;
+    background-color: rgba(78, 173, 54, 0.856);
 }
 
 .zoom-container .zoom-caption p {

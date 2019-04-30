@@ -200,7 +200,9 @@ class PagesController extends Controller
 
     public function getContact() {
         $titles= DB::select('select * from posts order by id desc limit 5');
-        return view('pages.contact')->withTitles($titles);
+        $aside = Post::where('views', '>=', 1000)->orderBy('views', 'desc')->limit(5)->get();
+        $newone = Post::orderBy('created_at', 'desc')->limit(5)->get();
+        return view('pages.contact')->withTitles($titles)->withAsides($aside)->withNewones($newone);
     }
 
     public function postContact(Request $request) {

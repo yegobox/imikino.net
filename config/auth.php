@@ -55,6 +55,14 @@ return [
             'driver' => 'token',
             'provider' => 'journalists',
         ],
+        'follower' => [
+            'driver' => 'session',
+            'provider' => 'followers',
+        ],
+        'follower-api' => [
+            'driver' => 'token',
+            'provider' => 'followers'
+        ],
     ],
 
     /*
@@ -83,6 +91,10 @@ return [
         'journalists' => [
             'driver' => 'eloquent',
             'model' => App\Journalist::class,
+        ],
+        'followers' => [
+            'driver' => 'eloquent',
+            'model' => App\Follower::class,
         ],
 
         // 'users' => [
@@ -116,6 +128,11 @@ return [
             'provider' => 'journalists',
             'table' => 'password_resets',
             'expire' => 15,
+        ],
+        'followers' => [
+            'provider' => 'followers',
+            'table' => 'password_resets',
+            'expire' => 180,
         ],
     ],
 

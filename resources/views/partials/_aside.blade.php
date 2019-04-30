@@ -1,7 +1,7 @@
 <div id="sidebar" class="col-md-4">
 					<!---- Start Widget ---->
 					<div class="widget wid-follow">
-						<div class="heading"><h4>Shakisha</h4></div>
+						{{-- <div class="heading"><h4>Shakisha</h4></div>
 						<div class="content">
 							{{ Form::open(['route' => 'pages.postSearch', 'method'=>'get', 'data-parsley-validate' => 'true']) }}
 								<div class="input-group">
@@ -11,7 +11,7 @@
 									</span>
 								</div>
 							{{ Form::close() }}
-						</div>
+						</div> --}}
 						<div class="heading"><h4>Dukurikire kuzindi mbuga</h4></div>
 						<div class="content">
 							<center>

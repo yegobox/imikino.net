@@ -10,7 +10,7 @@ class JournalistLoginController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('guest:journalist');
+        $this->middleware('guest:journalist')->except(['logout', 'showLoginForm']);
     }
     public function showLoginForm()
     {
@@ -32,5 +32,11 @@ class JournalistLoginController extends Controller
 
         //if unsuccessful, then redirect back to the login with the form data
         return redirect()->back()->withInput($request->only('email', 'remember'));
+    }
+
+    public function logout()
+    {
+        Auth::guard('journalist')->logout();
+        return redirect()->route('journalist.auth.login');
     }
 }

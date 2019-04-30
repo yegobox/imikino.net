@@ -350,11 +350,11 @@ class ReporterPostController extends Controller
         $post->author = $request->author;
         $post->location_id = $request->location_id;
         $post->body = Purifier::clean($request->body);
-        $post->image1_txt = $request->image1_txt;
-        $post->image2_txt = $request->image2_txt;
-        $post->image3_txt = $request->image3_txt;
-        $post->image4_txt = $request->image4_txt;
-        $post->image5_txt = $request->image5_txt;
+        // $post->image1_txt = $request->image1_txt;
+        // $post->image2_txt = $request->image2_txt;
+        // $post->image3_txt = $request->image3_txt;
+        // $post->image4_txt = $request->image4_txt;
+        // $post->image5_txt = $request->image5_txt;
 
         if (isset($request->tags)) {
             $post->tags()->sync($request->tags, true);

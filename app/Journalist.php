@@ -9,8 +9,6 @@ class Journalist extends Authenticatable
 {
     use Notifiable;
 
-    protected $guard = 'journalist';
-
     /**
      * The attributes that are mass assignable.
      *
