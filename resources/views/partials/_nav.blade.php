@@ -1,5 +1,5 @@
     <nav id="menu" class="navbar container">
-		<div class="navbar-header">
+		<div style="margin-right: 5px" class="navbar-header">
 			<button type="button" class="btn btn-navbar navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse"><i class="fa fa-bars"></i></button>
 			<a class="" href="/">
 				<img style="height:50px;width:150px;" src="{{ asset('images/logo2.png') }}" alt="logo"/>
@@ -51,6 +51,7 @@
 						</div>
 					</div>
 				</li>
+				<li><a href="/videos">Videos</a></li>
 			</ul>
 			<ul class="list-inline navbar-right top-social">
 				<li><a href="https://www.facebook.com/imikino.net/" target="_blank" rel="nofollow"><i class="fa fa-facebook"></i></a></li>

@@ -95,6 +95,8 @@ Route::get('africa', 'PagesController@getAfrica');
 
 Route::get('rwanda', 'PagesController@getRwanda');
 
+Route::get('videos', 'PagesController@getVideos');
+
 Route::get('/', ['uses' => 'PagesController@getIndex', 'as' => '/']);
 
 Route::get('inkuru/{tag}', 'PagesController@getTags')->name('tags');

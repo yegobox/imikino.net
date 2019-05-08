@@ -198,6 +198,14 @@ class PagesController extends Controller
         return view('pages.athletic')->withPosts($posts)->withAsides($aside)->withNewones($newone)->withTitles($titles);
     }
 
+    public function getVideos(){
+        $titles= DB::select('select * from posts order by id desc limit 5');
+        $aside = Post::where('views', '>=', 1000)->orderBy('views', 'desc')->limit(5)->get();
+        $newone = Post::orderBy('created_at', 'desc')->limit(5)->get();
+        $posts = Post::where('sport_id', '=', 8)->paginate(5);
+        return view('pages.videos')->withPosts($posts)->withAsides($aside)->withNewones($newone)->withTitles($titles);
+    }
+
     public function getContact() {
         $titles= DB::select('select * from posts order by id desc limit 5');
         $aside = Post::where('views', '>=', 1000)->orderBy('views', 'desc')->limit(5)->get();
