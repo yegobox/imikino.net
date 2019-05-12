@@ -5,7 +5,15 @@
 </head>
 
 <body>
-    <div id="chat">
+        <!-- Your customer chat code -->
+        <div class="fb-customerchat"
+          attribution=setup_tool
+          page_id="286094315130272"
+          theme_color="#13cf13"
+          logged_in_greeting="Chat with Imikino.net now"
+          logged_out_greeting="Chat with Imikino.net now">
+        </div>
+    {{--  <div id="chat">
         <header class="baslik">
             <div class="kapat">-</div>
                 <h4 style="color:white">Chat with Us</h4>
@@ -36,7 +44,7 @@
             </form>
     
         </div>
-    </div>
+    </div>  --}}
     @include('partials._analyticsandface')
     <header>
         <!--Top-->
