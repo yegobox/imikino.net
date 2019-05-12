@@ -1,9 +1,23 @@
 
   <!-- JS -->
   <script src="js/bootstrap.min.js"></script>
-	<script src="owl-carousel/owl.carousel.js"></script>
+  <script src="owl-carousel/owl.carousel.js"></script>
+  <script src="{{ asset('js/chat.js') }}"></script>
   <script>
     $(document).ready(function() {
+      //Check to see if the window is top if not then display button
+      /*$(window).scroll(function() {
+        $('.scrollToTop').fadeIn();
+        $('.scrollToTop').click(function(){
+          $('.scrollToTop').fadeOut();
+          $(.'scrollToTop2').fadeIn();
+        });
+        $('.scrollToTop').click(function() {
+          $('html, body').animate({
+              scrollTop: 0
+          }, 800);
+        });
+      });*/
       $("#owl-demo-1").owlCarousel({
         autoPlay: 3000,
         items : 1,

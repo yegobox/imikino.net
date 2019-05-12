@@ -59,6 +59,164 @@ html {
     height: auto;
 }
 
+#chat>a {
+    text-decoration: none;
+    color: #505050;
+    font-weight: bold;
+}
+
+fieldset,
+h4 {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+#chat>input {
+    border: 0;
+    color: inherit;
+    font-family: inherit;
+    font-size: 100%;
+    line-height: normal;
+    margin: 0;
+}
+
+#chat>p {
+    margin: 0;
+}
+
+#chat {
+    bottom: 0;
+    font-size: 12px;
+    right: 24px;
+    position: fixed;
+    width: 300px;
+    z-index: 999;
+}
+
+#chat header {
+    background: #171717;
+    border-radius: 5px 5px 0 0;
+    color: #fff;
+    cursor: pointer;
+    padding: 16px 24px;
+}
+
+#chat h4:before {
+    background: #1a8a34;
+    border-radius: 50%;
+    content: "";
+    display: inline-block;
+    height: 8px;
+    margin: 0 8px 0 0;
+    width: 8px;
+}
+
+#chat h4 {
+    font-size: 12px;
+}
+
+#chat h5 {
+    font-size: 10px;
+}
+
+#chat form {
+    padding: 24px;
+}
+
+#chat input[type="text"] {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: 8px;
+    outline: none;
+    width: 234px;
+}
+
+.sayac {
+    background: #e62727;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    display: none;
+    font-size: 12px;
+    font-weight: bold;
+    height: 28px;
+    left: 0;
+    line-height: 28px;
+    margin: -15px 0 0 -15px;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: 28px;
+}
+
+.kapat {
+    background: #a00;
+    border-radius: 50%;
+    color: #fff;
+    display: block;
+    float: right;
+    font-size: 20px;
+    height: 16px;
+    line-height: 13px;
+    margin: 0px 0 0 0;
+    text-align: center;
+    width: 16px;
+    border: solid #a00 2px;
+}
+
+.kapat:hover {
+    background: #a00;
+    border: solid 2px rgba(255, 255, 255, 0.2);
+}
+
+.chat {
+    background: #fff;
+}
+
+.mesaj-gecmisi {
+    height: 252px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.o,
+.sen {
+    padding: 8px;
+    outline: none;
+    width: 270px;
+    border-bottom: solid 1px #eee;
+    color: #aaa;
+    position: relative;
+}
+
+.o {
+    text-align: right
+}
+
+.sen {
+    background-color: rgba(0, 0, 0, 0.01);
+    text-align: left
+}
+
+.gizle {
+    margin-bottom: -350px;
+}
+
+img {
+    border-radius: 5px;
+    margin: 0 5px 0 5px;
+    top: 0;
+}
+
+.sil {
+    clear: both;
+}
+
+.islem {
+    color: #ccc;
+    margin: 0 0 -20px 25px;
+}
+
 img {
     max-width: 100%;
     height: auto;
