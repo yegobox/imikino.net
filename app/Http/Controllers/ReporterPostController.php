@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Post;
 use App\Location;
 use App\Sport;
+use Auth;
 use App\Tag;
 use App\Comment;
 use Purifier;
@@ -27,7 +28,7 @@ class ReporterPostController extends Controller
     }
     public function index()
     {
-        $posts = Post::where('author', '=', 'Ngabo Frank')->orderBy('id', 'desc')->paginate(5);
+        $posts = Post::where('author', '=', Auth::user()->name)->orderBy('id', 'desc')->paginate(5);
         $commentss = Comment::where('approved', '=', 0)->orderBy('id', 'desc');
         return view('reporterpages.posts.index')->withPosts($posts)->withComs($commentss);
     }
