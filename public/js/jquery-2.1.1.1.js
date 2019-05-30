@@ -9350,6 +9350,40 @@ $(document).ready(function() {
             }
         })
     });
+
+
+    $('#profile-picture').on('submit', function(event) {
+        event.preventDefault();
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+            }
+        });
+
+        // var file = $('#select_file').val();
+        // var data = 'select_file=' + file;
+        $.ajax({
+            url: "../../ajax_upload/profile",
+            method: "post",
+            dataType: 'JSON',
+            data: new FormData(this),
+            contentType: false,
+            cache: false,
+            processData: false,
+            // uploadProgress: function(event, position, total, percentCompleted) {
+            //     $('.progress-bar').css('width', percentCompleted + "%");
+            //     $('.progress-bar .sr-only').text(percentCompleted + "% Completed");
+
+            // },
+            success: function(data) {
+                window.location.href = "../../reporter/profile";
+                $('#message').css('display', 'block');
+                $('#message').html(data.message);
+                $('#message').addClass(data.class_name);
+                $('#uploaded_image').attr("src", data.uploaded_image);
+            }
+        })
+    });
 });
 
 // $(document).on('submit', 'form', function(e) {

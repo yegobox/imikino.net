@@ -37,6 +37,6 @@ class JournalistLoginController extends Controller
     public function logout()
     {
         Auth::guard('journalist')->logout();
-        return redirect()->route('journalist.auth.login');
+        return redirect()->route('journalist.login');
     }
 }

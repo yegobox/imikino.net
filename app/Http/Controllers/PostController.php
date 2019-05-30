@@ -12,6 +12,7 @@ use Purifier;
 use Session;
 use Image;
 use Storage;
+use App\Contact;
 
 class PostController extends Controller
 {
@@ -28,8 +29,11 @@ class PostController extends Controller
     public function index()
     {
         $posts = Post::orderBy('id', 'desc')->paginate(5);
-        $commentss = Comment::where('approved', '=', 0)->orderBy('id', 'desc');
-        return view('adminpages.posts.index')->withPosts($posts)->withComs($commentss);
+        $commentss = Comment::where('approved', '=', 0)->orderBy('id', 'desc')->limit(5)->get();
+        $notifications = Contact::where('readed', '=', 0)->orderBy('created_at', 'desc')->get();
+        return view('adminpages.posts.index',[
+            'notifications' => $notifications
+        ])->withPosts($posts)->withComs($commentss);
     }
 
     /**
@@ -42,10 +46,13 @@ class PostController extends Controller
         // Tag
         $tags = Tag::all();
         $sports = Sport::all();
-        $commentss = Comment::where('approved', '=', 0)->orderBy('id', 'desc');
+        $commentss = Comment::where('approved', '=', 0)->orderBy('id', 'desc')->limit(5)->get();
+        $notifications = Contact::where('readed', '=', 0)->orderBy('created_at', 'desc')->get();
 
         $locations = Location::all();
-        return view('adminpages.posts.create')->withSports($sports)->withLocations($locations)->withTags($tags)->withComs($commentss);
+        return view('adminpages.posts.create',[
+            'notifications' => $notifications
+        ])->withSports($sports)->withLocations($locations)->withTags($tags)->withComs($commentss);
     }
 
     /**
@@ -197,8 +204,11 @@ class PostController extends Controller
     public function show($id)
     {
         $post = Post::find($id);
-        $commentss = Comment::where('approved', '=', 0)->orderBy('id', 'desc');
-        return view('adminpages.posts.show')->withPost($post)->withComs($commentss);
+        $commentss = Comment::where('approved', '=', 0)->orderBy('id', 'desc')->limit(5)->get();
+        $notifications = Contact::where('readed', '=', 0)->orderBy('created_at', 'desc')->get();
+        return view('adminpages.posts.show',[
+            'notifications' => $notifications
+        ])->withPost($post)->withComs($commentss);
     }
 
     /**
@@ -210,7 +220,8 @@ class PostController extends Controller
     public function edit($id)
     {
         $post = Post::find($id);
-        $commentss = Comment::where('approved', '=', 0)->orderBy('id', 'desc');
+        $commentss = Comment::where('approved', '=', 0)->orderBy('id', 'desc')->limit(5)->get();
+        $notifications = Contact::where('readed', '=', 0)->orderBy('created_at', 'desc')->get();
         $sports = Sport::all();
         $sports2 = array();
         foreach($sports as $sport) {
@@ -226,7 +237,9 @@ class PostController extends Controller
         foreach ($tags as $tag) {
             $tags2[$tag->id] = $tag->name;
         }
-        return view('adminpages.posts.edit')->withPost($post)->withLocations($locations2)->withSports($sports2)->withTags($tags2)->withComs($commentss);
+        return view('adminpages.posts.edit',[
+            'notifications' => $notifications
+        ])->withPost($post)->withLocations($locations2)->withSports($sports2)->withTags($tags2)->withComs($commentss);
     }
 
     /**

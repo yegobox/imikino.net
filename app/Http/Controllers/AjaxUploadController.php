@@ -10,6 +10,7 @@ use App\Sport;
 use App\Tag;
 use App\Comment;
 use Purifier;
+use App\Journalist;
 use Session;
 use Image;
 use Storage;
@@ -156,6 +157,31 @@ class AjaxUploadController extends Controller
                 'message' => $validation->errors()->all(),
                 'uploaded_image5' => '',
                 'txt5' => '',
+                'class_name' => 'alert-danger'
+            ]);
+        }
+    }
+
+    function profile(Request $request){
+        $validation = Validator::make($request->all(), [
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+        ]);
+
+        if($validation->passes()){
+            $image = $request->file('image');
+            $new_name = time(). '.' . $image->getClientOriginalExtension();
+            Image::make($image)->resize(215, 215)->save(public_path('admin/dist/img/' . $new_name));
+            DB::table('journalists')->where('id', $request->user_id)->update(['image' => $new_name]);
+            return response()->json([
+                'message' => 'Image Uploaded Successfully',
+                'uploaded_image5' => '/admin/dist/img/'.$new_name,
+                'class_name' => 'alert-success'
+            ]);
+        }else{
+            $sameImage = Journalist::find($request->user_id);
+            return response()->json([
+                'message' => $validation->errors()->all(),
+                'uploaded_image5' => '/admin/dist/img/'.$sameImage->image,
                 'class_name' => 'alert-danger'
             ]);
         }

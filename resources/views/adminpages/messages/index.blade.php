@@ -48,9 +48,9 @@
                     <td>{{ $comment->phone }}</td>
                     <td>{{ $comment->email }}</td>
                     <td>{{ substr(strip_tags($comment->message), 0, 50) }}{{ strlen($comment->message) > 50 ? "..." : "" }}</td>
-                    <td>{{ $comment->created_at }}</td>
+                    <td>{{ $comment->created_at->diffForHumans() }}</td>
                     <td>
-                      <a style="color:#fff" href="{{ route('posts.show', $comment->post_id) }}" class="btn btn-info btn-flat btn-sm">View</a> <a style="color:#fff" href="{{ route('comments.edit', $comment->id )}}" class="btn btn-success btn-flat btn-sm">Edit</a>
+                      <a style="color:#fff" href="{{ route('messages.show', $comment->id) }}" class="btn btn-info btn-flat btn-sm">View</a>
                     </td>
                   </tr>
                 @endforeach

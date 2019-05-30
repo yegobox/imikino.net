@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Location;
 use App\Comment;
+use App\Contact;
 
 class LocationController extends Controller
 {
@@ -22,9 +23,12 @@ class LocationController extends Controller
         // it will also have a form to create a new category
 
         $locations = Location::all();
-        $commentss = Comment::where('approved', '=', 0)->orderBy('id', 'desc');
+        $commentss = Comment::where('approved', '=', 0)->orderBy('id', 'desc')->limit(5)->get();
+        $notifications = Contact::where('readed', '=', 0)->orderBy('created_at', 'desc')->get();
         
-        return view('adminpages.locations.index')->withLocations($locations)->withComs($commentss);
+        return view('adminpages.locations.index',[
+            'notifications' => $notifications
+        ])->withLocations($locations)->withComs($commentss);
     }
 
     /**

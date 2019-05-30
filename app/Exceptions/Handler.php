@@ -60,10 +60,10 @@ class Handler extends ExceptionHandler
         $guard = array_get($exception->guards(), 0);
         switch ($guard) {
           case 'journalist':
-            $login = 'journalist.auth.login';
+            $login = 'journalist.login';
             break;
           case 'follower':
-            $login = 'follower.auth.login';
+            $login = 'follower.login';
             break;
           default:
             $login = 'login';

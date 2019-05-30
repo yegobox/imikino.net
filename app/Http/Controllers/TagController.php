@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Tag;
 use App\Comment;
+use App\Contact;
 use Session;
 
 class TagController extends Controller
@@ -20,8 +21,11 @@ class TagController extends Controller
     public function index()
     {
         $tags = Tag::all();
-        $commentss = Comment::where('approved', '=', 0)->orderBy('id', 'desc');
-        return view('adminpages.tags.index')->withTags($tags)->withComs($commentss);
+        $commentss = Comment::where('approved', '=', 0)->orderBy('id', 'desc')->limit(5)->get();
+        $notifications = Contact::where('readed', '=', 0)->orderBy('created_at', 'desc')->get();
+        return view('adminpages.tags.index',[
+            'notifications' => $notifications
+        ])->withTags($tags)->withComs($commentss);
     }
 
     /**
@@ -51,8 +55,11 @@ class TagController extends Controller
     public function show($id)
     {
         $tag = Tag::find($id);
-        $commentss = Comment::where('approved', '=', 0)->orderBy('id', 'desc');
-        return view('adminpages.tags.show')->withTag($tag)->withComs($commentss);
+        $commentss = Comment::where('approved', '=', 0)->orderBy('id', 'desc')->limit(5)->get();
+        $notifications = Contact::where('readed', '=', 0)->orderBy('created_at', 'desc')->get();
+        return view('adminpages.tags.show',[
+            'notifications' => $notifications
+        ])->withTag($tag)->withComs($commentss);
     }
 
     /**
@@ -64,8 +71,11 @@ class TagController extends Controller
     public function edit($id)
     {
         $tag = Tag::find($id);
-        $commentss = Comment::where('approved', '=', 0)->orderBy('id', 'desc');
-        return view('adminpages.tags.edit')->withTag($tag)->withComs($commentss);
+        $commentss = Comment::where('approved', '=', 0)->orderBy('id', 'desc')->limit(5)->get();
+        $notifications = Contact::where('readed', '=', 0)->orderBy('created_at', 'desc')->get();
+        return view('adminpages.tags.edit',[
+            'notifications' => $notifications
+        ])->withTag($tag)->withComs($commentss);
     }
 
     /**

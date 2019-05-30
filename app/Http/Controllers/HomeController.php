@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Post;
-
+use App\Contact;
 use App\Comment;
 
 class HomeController extends Controller
@@ -28,8 +28,11 @@ class HomeController extends Controller
     public function index()
     {
         $posts = Post::all();
-        $commentss = Comment::where('approved', '=', 0)->orderBy('id', 'desc');
+        $commentss = Comment::where('approved', '=', 0)->orderBy('id', 'desc')->limit(5)->get();
         $comments = Comment::all();
-        return view('adminpages.index')->withPosts($posts)->withComments($comments)->withComs($commentss);
+        $notifications = Contact::where('readed', '=', 0)->orderBy('created_at', 'desc')->get();
+        return view('adminpages.index',[
+            'notifications' => $notifications
+        ])->withPosts($posts)->withComments($comments)->withComs($commentss);
     }
 }

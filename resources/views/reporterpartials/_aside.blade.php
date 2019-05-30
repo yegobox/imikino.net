@@ -4,7 +4,7 @@
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="/admin/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+          <img src="{{ asset('admin/dist/img/'.Auth::user()->image) }}" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
           <p>{{ Auth::user()->name }}</p>
@@ -26,20 +26,12 @@
       <ul class="sidebar-menu">
         <li class="header">MAIN NAVIGATION</li>
         <!--<li class="active treeview">-->
-        <li class="treeview">
-          <a href="#">
+        <li class="treeview {{ Request::is('reporter/profile') ? " active " : " "}}">
+          <a href="{{ route('journalist.profile') }}">
             <i class="fa fa-user"></i> <span>Profile</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
           </a>
-          <ul class="treeview-menu">
-            <li><!--<li class="active">--><a href="#"><i class="fa fa-circle-o"></i> Edit your profile</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> Change Image</a></li>
-          </ul>
         </li>
-        <li class="treeview {{ Request::is('posts') ? "active" : ""}}
-        {{ Request::is('posts/create') ? "active" : ""}}">
+        <li class="treeview {{ Request::is('reporter/reporterposts') ? "active" : "" || Request::is('reporter/reporterposts/create') ? "active" : ""}}">
           <a href="#">
             <i class="fa fa-files-o"></i>
             <span>Posts</span>
@@ -48,7 +40,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class="{{ Request::is('posts/create') ? "active" : ""}}"><a href="{{ route('reporterposts.create') }}"><i class="fa fa-circle-o"></i> Create New Post</a></li>
+              <li class="{{ Request::is('reporter/reporterposts') ? "active" : ""}}"><a href="{{ route('reporterposts.index') }}"><i class="fa fa-circle-o"></i> All your posts</a></li>
+            <li class="{{ Request::is('reporter/reporterposts/create') ? "active" : ""}}"><a href="{{ route('reporterposts.create') }}"><i class="fa fa-circle-o"></i> Create New Post</a></li>
         </li>
         <!--<li>
           <a href="#">

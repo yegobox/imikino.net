@@ -29,7 +29,7 @@ class ReporterPostController extends Controller
     public function index()
     {
         $posts = Post::where('author', '=', Auth::user()->name)->orderBy('id', 'desc')->paginate(5);
-        $commentss = Comment::where('approved', '=', 0)->orderBy('id', 'desc');
+        $commentss = Comment::where('approved', '=', 0)->orderBy('id', 'desc')->limit(5)->get();
         return view('reporterpages.posts.index')->withPosts($posts)->withComs($commentss);
     }
 
@@ -43,7 +43,7 @@ class ReporterPostController extends Controller
         // Tag
         $tags = Tag::all();
         $sports = Sport::all();
-        $commentss = Comment::where('approved', '=', 0)->orderBy('id', 'desc');
+        $commentss = Comment::where('approved', '=', 0)->orderBy('id', 'desc')->limit(5)->get();
 
         $locations = Location::all();
         return view('reporterpages.posts.create')->withSports($sports)->withLocations($locations)->withTags($tags)->withComs($commentss);
@@ -198,7 +198,7 @@ class ReporterPostController extends Controller
     public function show($id)
     {
         $post = Post::find($id);
-        $commentss = Comment::where('approved', '=', 0)->orderBy('id', 'desc');
+        $commentss = Comment::where('approved', '=', 0)->orderBy('id', 'desc')->limit(5)->get();
         return view('reporterpages.posts.show')->withPost($post)->withComs($commentss);
     }
 
@@ -211,7 +211,7 @@ class ReporterPostController extends Controller
     public function edit($id)
     {
         $post = Post::find($id);
-        $commentss = Comment::where('approved', '=', 0)->orderBy('id', 'desc');
+        $commentss = Comment::where('approved', '=', 0)->orderBy('id', 'desc')->limit(5)->get();
         $sports = Sport::all();
         $sports2 = array();
         foreach($sports as $sport) {

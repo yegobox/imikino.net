@@ -6,7 +6,9 @@ use Illuminate\Http\Request;
 
 use App\Comment;
 use App\Post;
+use App\Contact;
 use Session;
+use DB;
 
 class CommentsController extends Controller
 {
@@ -23,9 +25,12 @@ class CommentsController extends Controller
     public function index()
     {
 
-        $commentss = Comment::where('approved', '=', 0)->orderBy('id', 'desc');
+        $commentss = Comment::where('approved', '=', 0)->orderBy('id', 'desc')->limit(5)->get();
         $comments = Comment::orderBy('id', 'desc')->paginate(5);
-        return view('adminpages.comments.index')->withComments($comments)->withComs($commentss);
+        $notifications = Contact::where('readed', '=', 0)->orderBy('created_at', 'desc')->get();
+        return view('adminpages.comments.index',[
+            'notifications' => $notifications
+        ])->withComments($comments)->withComs($commentss);
     }
 
     public function postApprove($id)
@@ -84,10 +89,13 @@ class CommentsController extends Controller
      */
     public function edit($id)
     {
-
-        $commentss = Comment::where('approved', '=', 0)->orderBy('id', 'desc');
         $comment = Comment::find($id);
-        return view('adminpages.comments.edit')->withComment($comment)->withComs($commentss);
+        $commentss = Comment::where('approved', '=', 0)->orderBy('id', 'desc')->limit(5)->get();
+        $notifications = Contact::where('readed', '=', 0)->orderBy('created_at', 'desc')->get();
+        return view('adminpages.comments.edit',[
+            'notifications' => $notifications,
+            'comment' => $comment
+        ])->withComs($commentss);
     }
     /**
      * Update the specified resource in storage.
@@ -115,8 +123,11 @@ class CommentsController extends Controller
     public function delete($id)
     {
         $comment = Comment::find($id);
-        $commentss = Comment::where('approved', '=', 0)->orderBy('id', 'desc');
-        return view('adminpages.comments.delete')->withComment($comment)->withComs($commentss);
+        $commentss = Comment::where('approved', '=', 0)->orderBy('id', 'desc')->limit(5)->get();
+        $notifications = Contact::where('readed', '=', 0)->orderBy('created_at', 'desc')->get();
+        return view('adminpages.comments.delete',[
+            'notifications' => $notifications
+        ])->withComment($comment)->withComs($commentss);
     }
 
     /**
@@ -134,5 +145,14 @@ class CommentsController extends Controller
         Session::flash('success', 'Deleted Comment');
 
         return redirect()-> route('posts.show', $post_id);
+    }
+
+    public function show($id){
+        $comment = Comment::find($id);
+        $commentss = Comment::where('approved', '=', 0)->orderBy('id', 'desc')->limit(5)->get();
+        $notifications = Contact::where('readed', '=', 0)->orderBy('created_at', 'desc')->get();
+        return view('adminpages.comments.show',[
+            'notifications' => $notifications
+        ])->withComment($comment)->withComs($commentss);
     }
 }

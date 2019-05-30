@@ -226,8 +226,8 @@ class PagesController extends Controller
         $contact->name = $request->name;
         $contact->email = $request->email;
         $contact->phone = $request->phone;
-        $contact->counter = '1';
-        $contact->readed = '1';
+        $contact->counter = '0';
+        $contact->readed = '0';
         $contact->message = Purifier::clean($request->message);
 
         $contact->save();
