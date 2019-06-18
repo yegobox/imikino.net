@@ -12,4 +12,9 @@ class Sport extends Model
         {
             return $this->hasMany('App\Post');
         }
+
+        public function lives()
+        {
+            return $this->hasMany('App\Live');
+        }
 }

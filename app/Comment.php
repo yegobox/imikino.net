@@ -10,4 +10,9 @@ class Comment extends Model
     {
         return $this->belongsTo('App\Post');
     }
+
+    public function live()
+    {
+        return $this->belongsTo('App\Live');
+    }
 }

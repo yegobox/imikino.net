@@ -20,7 +20,7 @@
     <section class="content">
       <!-- Small boxes (Stat box) -->
       <div class="row">
-        <div class="col-lg-12 col-xs-12">
+        <div class="col-lg-6 col-xs-6">
           <!-- small box -->
           <div class="small-box bg-aqua">
             <div class="inner">
@@ -32,6 +32,19 @@
               <i class="ion ion-md-pulse"></i>
             </div>
             <a href="{{ route('reporterposts.index') }}" class="small-box-footer">More <ion-icon name="pulse"></ion-icon></a>
+          </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-6 col-xs-6">
+          <!-- small box -->
+          <div class="small-box bg-yellow">
+            <div class="inner">
+              <center><h3>Live Streaming</h3></center>
+            </div>
+            <div class="icon">
+              <i class="ion ion-md-pulse"></i>
+            </div>
+            <a href="{{ route('livestream.index') }}" class="small-box-footer">More <ion-icon name="pulse"></ion-icon></a>
           </div>
         </div>
         <!-- ./col -->

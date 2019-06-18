@@ -59,11 +59,23 @@
 				</div><!-- /carousel -->
 			</div>
 			<div class="col-sm-4" >
+				@if(isset($live))
+					<center><h4>Inkuru iri Live</h4></center>
+					<a href="{{ route('live_single', $live->slug) }}"><img src="{{asset('images/news/'.$live->image)}}" /></a>
+					<center><h6><a href="{{ route('live_single', $live->slug) }}">{{ substr($live->title,0, 100) }}{{ strlen($live->title) > 100 ? "..." : '' }}</a></h6></center>
+					<div class="info">
+						<p>By <a href="#">{{ $live->author }}</a></p>
+						<span><i class="fa fa-calendar"></i>{{ /*date('M j, Y h:ia', strtotime($live->created_at))*/$live->updated_at->diffForHumans() }}</span> 
+						<span><i class="fa fa-eye"></i>{{ $live->views }} Views</span>
+					</div>
+					<p>{{ substr(strip_tags($live->body), 0, 250) }}{{ strlen(strip_tags($live->body)) > 250 ? '...' : "" }}</p>
+				@else
 				<div id="owl-demo-1" class="owl-carousel">
 					<img src="{{asset('images/ads.png')}}" />
 					<img src="images/ads.png" />
 					<img src="images/ads.png" />
 				</div>
+				@endif
 				<!--<img src="images/pub/ads.png" />-->
 			</div>
 		</div>

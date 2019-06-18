@@ -11,6 +11,7 @@ use App\Tag;
 use Mail;
 use DB;
 use Purifier;
+use App\Live;
 
 class PagesController extends Controller
 {
@@ -41,9 +42,12 @@ class PagesController extends Controller
         $imgs3 = DB::select('select image,slug from posts order by id desc limit 4,2');
         $imgs4 = DB::select('select image,slug from posts order by id desc limit 6,2');
         $imgs5 = DB::select('select image,slug from posts order by id desc limit 8,2');
+        $live = Live::where('approved', '=', 1)->first();
         $aside = DB::table('posts')->where('views', '>=', 1000)->orderBy('views', 'desc')->limit(5)->get();
         //$posts = Post::orderBy('created_at', 'desc')->limit(5)->get();
-        return view('pages.home')->withOthers($other)->withFirsts($first)->withLists($lists)->withImgs1($imgs1)->withImgs2($imgs2)->withImgs3($imgs3)->withImgs4($imgs4)->withImgs5($imgs5)->withAsides($aside)->withTags($tags)->withTitles($titles);
+        return view('pages.home', [
+            'live' => $live
+        ])->withOthers($other)->withFirsts($first)->withLists($lists)->withImgs1($imgs1)->withImgs2($imgs2)->withImgs3($imgs3)->withImgs4($imgs4)->withImgs5($imgs5)->withAsides($aside)->withTags($tags)->withTitles($titles);
     }
 
     public function getRwanda(){

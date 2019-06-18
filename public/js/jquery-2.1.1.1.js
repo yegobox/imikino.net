@@ -9384,6 +9384,170 @@ $(document).ready(function() {
             }
         })
     });
+    $('#upload-formm').on('submit', function(event) {
+        event.preventDefault();
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+            }
+        });
+
+        // var file = $('#select_file').val();
+        // var data = 'select_file=' + file;
+        $.ajax({
+            url: "../../ajax_upload/actionn",
+            method: "post",
+            dataType: 'JSON',
+            data: new FormData(this),
+            contentType: false,
+            cache: false,
+            processData: false,
+            // uploadProgress: function(event, position, total, percentCompleted) {
+            //     $('.progress-bar').css('width', percentCompleted + "%");
+            //     $('.progress-bar .sr-only').text(percentCompleted + "% Completed");
+
+            // },
+            success: function(data) {
+                $('#message').css('display', 'block');
+                $('#message').html(data.message);
+                $('#message').addClass(data.class_name);
+                $('#uploaded_image').html(data.uploaded_image);
+                $('#txt1').html(data.txt1);
+            }
+        })
+    });
+
+    $('#upload-form22').on('submit', function(event) {
+        event.preventDefault();
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+            }
+        });
+
+        // var file = $('#select_file').val();
+        // var data = 'select_file=' + file;
+        $.ajax({
+            url: "../../ajax_upload/action22",
+            method: "post",
+            dataType: 'JSON',
+            data: new FormData(this),
+            contentType: false,
+            cache: false,
+            processData: false,
+            // uploadProgress: function(event, position, total, percentCompleted) {
+            //     $('.progress-bar').css('width', percentCompleted + "%");
+            //     $('.progress-bar .sr-only').text(percentCompleted + "% Completed");
+
+            // },
+            success: function(data) {
+                $('#message').css('display', 'block');
+                $('#message').html(data.message);
+                $('#message').addClass(data.class_name);
+                $('#uploaded_image2').html(data.uploaded_image2);
+                $('#txt2').html(data.txt2);
+            }
+        })
+    });
+
+    $('#upload-form33').on('submit', function(event) {
+        event.preventDefault();
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+            }
+        });
+
+        // var file = $('#select_file').val();
+        // var data = 'select_file=' + file;
+        $.ajax({
+            url: "../../ajax_upload/action33",
+            method: "post",
+            dataType: 'JSON',
+            data: new FormData(this),
+            contentType: false,
+            cache: false,
+            processData: false,
+            // uploadProgress: function(event, position, total, percentCompleted) {
+            //     $('.progress-bar').css('width', percentCompleted + "%");
+            //     $('.progress-bar .sr-only').text(percentCompleted + "% Completed");
+
+            // },
+            success: function(data) {
+                $('#message').css('display', 'block');
+                $('#message').html(data.message);
+                $('#message').addClass(data.class_name);
+                $('#uploaded_image3').html(data.uploaded_image3);
+                $('#txt3').html(data.txt3);
+            }
+        })
+    });
+
+    $('#upload-form44').on('submit', function(event) {
+        event.preventDefault();
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+            }
+        });
+
+        // var file = $('#select_file').val();
+        // var data = 'select_file=' + file;
+        $.ajax({
+            url: "../../ajax_upload/action44",
+            method: "post",
+            dataType: 'JSON',
+            data: new FormData(this),
+            contentType: false,
+            cache: false,
+            processData: false,
+            // uploadProgress: function(event, position, total, percentCompleted) {
+            //     $('.progress-bar').css('width', percentCompleted + "%");
+            //     $('.progress-bar .sr-only').text(percentCompleted + "% Completed");
+
+            // },
+            success: function(data) {
+                $('#message').css('display', 'block');
+                $('#message').html(data.message);
+                $('#message').addClass(data.class_name);
+                $('#uploaded_image4').html(data.uploaded_image4);
+                $('#txt4').html(data.txt4);
+            }
+        })
+    });
+
+    $('#upload-form55').on('submit', function(event) {
+        event.preventDefault();
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+            }
+        });
+
+        // var file = $('#select_file').val();
+        // var data = 'select_file=' + file;
+        $.ajax({
+            url: "../../ajax_upload/action55",
+            method: "post",
+            dataType: 'JSON',
+            data: new FormData(this),
+            contentType: false,
+            cache: false,
+            processData: false,
+            // uploadProgress: function(event, position, total, percentCompleted) {
+            //     $('.progress-bar').css('width', percentCompleted + "%");
+            //     $('.progress-bar .sr-only').text(percentCompleted + "% Completed");
+
+            // },
+            success: function(data) {
+                $('#message').css('display', 'block');
+                $('#message').html(data.message);
+                $('#message').addClass(data.class_name);
+                $('#uploaded_image5').html(data.uploaded_image5);
+                $('#txt5').html(data.txt5);
+            }
+        })
+    });
 });
 
 // $(document).on('submit', 'form', function(e) {

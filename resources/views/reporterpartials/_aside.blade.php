@@ -42,6 +42,19 @@
           <ul class="treeview-menu">
               <li class="{{ Request::is('reporter/reporterposts') ? "active" : ""}}"><a href="{{ route('reporterposts.index') }}"><i class="fa fa-circle-o"></i> All your posts</a></li>
             <li class="{{ Request::is('reporter/reporterposts/create') ? "active" : ""}}"><a href="{{ route('reporterposts.create') }}"><i class="fa fa-circle-o"></i> Create New Post</a></li>
+          </ul>
+        </li>
+        <li class="treeview {{ Request::is('reporter/livestream') ? "active" : "" || Request::is('reporter/livestream/create') ? "active" : ""}}">
+          <a href="#">
+            <i class="fa fa-files-o"></i>
+            <span>Live Streaming</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+              <li class="{{ Request::is('reporter/livestream') ? "active" : ""}}"><a href="{{ route('livestream.index') }}"><i class="fa fa-circle-o"></i> All your live posts</a></li>
+            <li class="{{ Request::is('reporter/livestream/create') ? "active" : ""}}"><a href="{{ route('livestream.create') }}"><i class="fa fa-circle-o"></i> Create New Live Post</a></li>
         </li>
         <!--<li>
           <a href="#">

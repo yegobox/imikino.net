@@ -87,6 +87,12 @@
             <span>Sports</span>
           </a>
         </li>
+        <li class="{{ Request::is('admin_livestream') ? "active" : ""}}">
+          <a href="{{ route('admin_livestream.index') }}">
+            <i class="fa fa-group"></i>
+            <span>Live Stream</span>
+          </a>
+        </li>
     </section>
     <!-- /.sidebar -->
   </aside>

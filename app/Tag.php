@@ -10,4 +10,9 @@ class Tag extends Model
     {
         return $this->belongsToMany('App\Post');
     }
+
+    public function lives()
+    {
+        return $this->belongsToMany('App\Live');
+    }
 }
