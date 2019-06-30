@@ -264,7 +264,7 @@ p {
 }
 
 a {
-    color: #7DC314;
+    color: rgb(255, 255, 255);
     -webkit-transition: all .2s ease-in-out;
     -moz-transition: all .2s ease-in-out;
     transition: all .2s ease-in-out;
@@ -273,7 +273,7 @@ a {
 a:hover,
 a:focus {
     text-decoration: none;
-    color: #000;
+    color: rgba(163, 236, 115, 0.938);
 }
 
 .center {
