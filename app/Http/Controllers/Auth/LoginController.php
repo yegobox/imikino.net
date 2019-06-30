@@ -25,6 +25,12 @@ class LoginController extends Controller
      *
      * @var string
      */
+    
+    public function showLoginForm()
+    {
+        return view('auth.login');
+    }
+    
     protected $redirectTo = '/home';
 
     /**
@@ -32,6 +38,7 @@ class LoginController extends Controller
      *
      * @return void
      */
+    
     public function __construct()
     {
         $this->middleware('guest')->except('logout');

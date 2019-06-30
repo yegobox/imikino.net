@@ -20,7 +20,7 @@ class RedirectIfAuthenticated
         switch ($guard) {
             case 'journalist':
                 if (Auth::guard($guard)->check()) {
-                return redirect()->route('admin.dashboard');
+                return redirect()->route('journalist.dashboard');
                 }
                 break;
             case 'follower':
