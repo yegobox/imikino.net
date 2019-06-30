@@ -32,7 +32,7 @@ class PagesController extends Controller
 
     public function getIndex(){
         $titles= DB::select('select * from posts order by id desc limit 5');
-        $tags = DB::select('select * from tags order by id desc limit 0,40');
+        $tags = DB::select('select * from tags order by id desc limit 0,5');
         $first = DB::select('select * from posts order by id desc limit 0,1');
         $other = DB::select('select * from posts order by id desc limit 1,4');
         $lists = POST::orderBy('created_at', 'desc')->paginate(20);
