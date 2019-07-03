@@ -48,6 +48,7 @@ class CommentsController extends Controller
         $comment = Comment::find($id);
         if($comment){
             $comment->approved = 0;
+            $comment->readed = 0;
             $comment->save();
             return redirect()->back()->with('success', 'Comment approved');
         }
@@ -69,6 +70,7 @@ class CommentsController extends Controller
         $comment->email = $request->email;
         $comment->phone = $request->phone;
         $comment->comment = $request->comment;
+        $comment->readed = 0;
         $comment->approved = false;
         $comment->post()->associate($post);
 

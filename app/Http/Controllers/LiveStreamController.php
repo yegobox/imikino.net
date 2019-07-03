@@ -90,6 +90,7 @@ class LiveStreamController extends Controller
         $post->slug = $request->slug;
         $post->author= $request->author;
         $post->views = 0;
+        $post->approved = 0;
         $post->sport_id = $request->sport_id;
         $post->location_id = $request->location_id;
         $post->body = Purifier::clean($request->body);

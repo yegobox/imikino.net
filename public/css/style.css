@@ -297,7 +297,8 @@ a:focus {
     text-align: left;
 }
 
-.post {}
+
+/* .post {} */
 
 .post:after,
 .post:before,
