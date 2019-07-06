@@ -3,7 +3,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta name="author" content="Igor Jean-Luc Ndiramiye">
 	
-	<title>@yield('title') | Imikino.net</title>
+	<title>@yield('title') | imikino.rw</title>
 	
 	<meta name="csrf-token" content="{{ csrf_token() }}">
 	

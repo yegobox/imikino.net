@@ -22,8 +22,8 @@
   attribution=install_email
   page_id="286094315130272"
   theme_color="#13cf13"
-    logged_in_greeting="Chat with Imikino.net now"
-    logged_out_greeting="Chat with Imikino.net now">
+    logged_in_greeting="Chat with imikino.rw now"
+    logged_out_greeting="Chat with imikino.rw now">
 </div>
 
 {{-- <script>

@@ -19,7 +19,7 @@
 								<div class="addthis_inline_follow_toolbox"></div>
 							{{--  <ul class="list-inline">
 								<li>
-									<a target="_blank" href="https://www.facebook.com/imikino.net/">
+									<a target="_blank" href="https://www.facebook.com/imikino.rw/">
 										<div class="box-facebook">
 											<span class="fa fa-facebook fa-2x icon"></span>
 										</div>

@@ -8,11 +8,11 @@
     <meta property="fb:app_id" content="465177240507172" />
     <meta property="og:title" content="{{ ucfirst($post->title) }}"/>
     <meta property="og:type" content="Blog post"/>
-    <meta property="og:url" content="https://imikino.net/{{ $post->slug }}"/>
+    <meta property="og:url" content="https://imikino.rw/{{ $post->slug }}"/>
     <meta property="og:image" content="{{asset('images/news/'. $post->image) }}"/>
-    <meta property="og:site_name" content="Imikino.net"/>
+    <meta property="og:site_name" content="imikino.rw"/>
 	
-	<title>@yield('title') | Imikino.net</title>
+	<title>@yield('title') | imikino.rw</title>
 	
 	<meta name="csrf-token" content="{{ csrf_token() }}">
 	
