@@ -58,7 +58,7 @@
 					</a>
 				</div><!-- /carousel -->
 			</div>
-			{{--  <div class="col-sm-12">
+			<div class="col-sm-4">
 				@if(isset($live))
 					<center><h4>Inkuru iri Live</h4></center>
 					<a href="{{ route('live_single', $live->slug) }}"><img src="{{asset('images/news/'.$live->image)}}" /></a>
@@ -77,7 +77,7 @@
 				</div>
 				@endif
 				<!--<img src="images/pub/ads.png" />-->
-			</div>  --}}
+			</div>
 		</div>
 	</div>
 	
