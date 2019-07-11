@@ -63,6 +63,9 @@ Route::prefix('reporter')->group(function() {
     Route::post('/login', 'Auth\JournalistLoginController@login')->name('journalist.login.submit');
     Route::get('/dashboard', 'JournalistController@index')->name('journalist.dashboard');
     Route::get('/profile', 'JournalistController@profile')->name('journalist.profile');
+    Route::get('/pictures', 'PictureController@index')->name('journalist.picture');
+    Route::get('/pictures/upload', 'PictureController@create')->name('journalist.picture.create');
+    Route::post('/pictures', 'PictureController@save')->name('journalist.picture.submit');
     Route::put('/profile/{id}', 'JournalistController@profileUpdate')->name('journalist.profile.update');
     Route::resource('reporterposts', 'ReporterPostController');
     Route::resource('livestream', 'LiveStreamController');

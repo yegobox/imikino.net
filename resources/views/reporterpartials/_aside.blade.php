@@ -55,6 +55,13 @@
           <ul class="treeview-menu">
               <li class="{{ Request::is('reporter/livestream') ? "active" : ""}}"><a href="{{ route('livestream.index') }}"><i class="fa fa-circle-o"></i> All your live posts</a></li>
             <li class="{{ Request::is('reporter/livestream/create') ? "active" : ""}}"><a href="{{ route('livestream.create') }}"><i class="fa fa-circle-o"></i> Create New Live Post</a></li>
+          </ul>
+        </li>
+        <li class="{{ Request::is('pictures') ? "active" : ""}}">
+          <a href="{{ route('journalist.picture') }}">
+            <i class="fa fa-image"></i>
+            <span>Gallery</span>
+          </a>
         </li>
         <!--<li>
           <a href="#">
@@ -64,7 +71,7 @@
         </li>
         <li class="{{ Request::is('comments') ? "active" : ""}}">
           <a href="{{ route('comments.index') }}">
-            <i class="fa fa-comment"></i>
+            <i class="fa fa-image"></i>
             <span>Comments</span>
           </a>
         </li>

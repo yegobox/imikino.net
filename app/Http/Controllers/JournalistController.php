@@ -8,6 +8,7 @@ use App\Post;
 use App\Comment;
 use Auth;
 use App\Journalist;
+use App\Picture;
 use DB;
 
 class JournalistController extends Controller
@@ -32,7 +33,10 @@ class JournalistController extends Controller
         $posts = Post::where('author', '=', Auth::user()->name);
         $comments = Comment::all();
         $commentss = Comment::where('approved', '=', 0)->orderBy('id', 'desc')->limit(5)->get();
-        return view('adminpages.journalist')->withPosts($posts)->withComments($comments)->withComs($commentss);
+        $pictures = Picture::all();
+        return view('adminpages.journalist', [
+            'pictures' => $pictures
+        ])->withPosts($posts)->withComments($comments)->withComs($commentss);
     }
 
     public function profile(){

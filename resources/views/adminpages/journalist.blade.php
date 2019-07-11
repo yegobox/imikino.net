@@ -48,6 +48,22 @@
           </div>
         </div>
         <!-- ./col -->
+        <!-- ./col -->
+        <div class="col-lg-6 col-xs-6">
+          <!-- small box -->
+          <div class="small-box bg-green">
+            <div class="inner">
+              <h3>{{ $pictures->count() }} <small style="color:white">pictures</small></h3>
+
+              <p>Gallerry</p>
+            </div>
+            <div class="icon">
+              <i class="fa fa-image"></i>
+            </div>
+            <a href="{{ route('journalist.picture') }}" class="small-box-footer">More </a>
+          </div>
+        </div>
+        <!-- ./col -->
       </div>
       <!-- /.row -->
       <!-- Main row -->
