@@ -21,6 +21,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('posts', 'PostController');
+//Ajax
 
 Route::post('ajax_upload/action', 'AjaxUploadController@action')->name('ajaxupload.action');
 Route::post('ajax_upload/action2', 'AjaxUploadController@action2')->name('ajaxupload.action2');
