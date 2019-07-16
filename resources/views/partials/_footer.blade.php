@@ -7,10 +7,12 @@
 							{{--  <h1><span style="color: #fff;">NEWSPAPER</span></h1>  --}}
 						</div>
 						<div class="col-md-12">
-							<center><img class="img-responsive" src="{{ asset('images/logo22.png') }}" alt="logo"/></center>
+							<center><img style="width:200px;height:50px" src="{{ asset('images/logo22.png') }}" alt="logo"/></center>
 						</div>
 						<div class="content">
-							<p>Never missed any post published in our site. Subscribe to our daily newsletter now.</p>
+							<p>
+								Never missed any post published in our site. Subscribe to our daily newsletter now.
+							</p>
 							<strong>Email address:</strong>
 							<form action="#" method="post">
 								<input type="text" name="your-name" value="" size="40" placeholder="Your Email" />

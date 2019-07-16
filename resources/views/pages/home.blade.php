@@ -127,7 +127,7 @@
 												<span style="font-size: 0.8em;">By <a href="#">{{ $list->author }}</a></span>
 											</p>
 										</div>
-										<div style="font-size: 0.9em; text-align:justify;line-height: 1.2;vertical-align:center" class="col-lg-6 col-sm-6 col-xs-6">
+										<div style="font-size: 0.9em;line-height: 1.2;vertical-align:center" class="col-lg-6 col-sm-6 col-xs-6">
 											<a href="{{ url($list->slug) }}">{{ substr($list->title, 0, 150) }}{{ strlen($list->title) > 150 ? '...' : "" }}</a>
 											<p style="text-align:justify;">
 												<span style="font-size: 0.7em;"><i class="fa fa-calendar"></i> {{ date('D jS, M h:ia', strtotime($list->created_at)) }}  <i class="fa fa-eye"></i>{{ $list->views }} Views</span>

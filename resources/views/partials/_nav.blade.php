@@ -2,7 +2,8 @@
 		<div style="margin-right: 5px" class="navbar-header">
 			<button type="button" class="btn btn-navbar navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse"><i class="fa fa-bars"></i></button>
 			<a class="" href="/">
-				<img style="height:50px;width:150px;" src="{{ asset('images/logo2.png') }}" alt="logo"/>
+				<img class="hidden-lg hidden-sm" style="height:60px;width:200px;margin-left:0px" src="{{ asset('images/logo2.png') }}" alt="logo"/>
+				<img class="hidden-sm hidden-xs" style="height:48px;width:150px;margin-left:0px" src="{{ asset('images/logo2.png') }}" alt="logo"/>
 				<!--<div style="font-family:cursive;font-size:20px;font-style:italic;text-shadow: 5px 4px 4px grey;" class="logo">
 					<span style="color:lightskyblue">Imi</span><span style="color:gold">kino</span><span style="color:seagreen">.net</span>
 				</div>-->
