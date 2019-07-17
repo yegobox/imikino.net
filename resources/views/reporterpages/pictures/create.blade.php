@@ -1,6 +1,6 @@
 @extends('reporter')
 
-  @section('title', 'All Posts')
+  @section('title', 'Add Picture')
   
   @section('content')
   <div class="content-wrapper">

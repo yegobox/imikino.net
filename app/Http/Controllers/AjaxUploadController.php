@@ -162,6 +162,290 @@ class AjaxUploadController extends Controller
         }
     }
 
+    function action6(Request $request){
+        $validation = Validator::make($request->all(), [
+            'image6' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'image6_txt' => 'required|max:255',
+            'post' => 'required'
+        ]);
+
+        if($validation->passes()){
+            $image = $request->file('image6');
+            $new_name6 = time(). '.' . $image->getClientOriginalExtension();
+            Image::make($image)->resize(1366, 768)->save(public_path('images/news/image6' . $new_name6));
+            DB::table('posts')->where('id', $request->post)->update(['image6' => $new_name6, 'image6_txt' => $request->image6_txt]);
+            return response()->json([
+                'message' => 'Image Uploaded Successfully',
+                'uploaded_image6' => '<img src="/images/news/image6'.$new_name6.'" class="img-responsive pad" alt="No Picture Available" />',
+                'txt6' => '<b>'.ucfirst($request->image6_txt).'</b>',
+                'class_name' => 'alert-success'
+            ]);
+        }else{
+            return response()->json([
+                'message' => $validation->errors()->all(),
+                'uploaded_image6' => '',
+                'txt6' => '',
+                'class_name' => 'alert-danger'
+            ]);
+        }
+    }
+
+    
+    function action7(Request $request){
+        $validation = Validator::make($request->all(), [
+            'image7' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'image7_txt' => 'required|max:255',
+            'post' => 'required'
+        ]);
+
+        if($validation->passes()){
+            $image = $request->file('image7');
+            $new_name7 = time(). '.' . $image->getClientOriginalExtension();
+            Image::make($image)->resize(1366, 768)->save(public_path('images/news/image7' . $new_name7));
+            DB::table('posts')->where('id', $request->post)->update(['image7' => $new_name7, 'image7_txt' => $request->image7_txt]);
+            return response()->json([
+                'message' => 'Image Uploaded Successfully',
+                'uploaded_image7' => '<img src="/images/news/image7'.$new_name7.'" class="img-responsive pad" alt="No Picture Available" />',
+                'txt7' => '<b>'.ucfirst($request->image7_txt).'</b>',
+                'class_name' => 'alert-success'
+            ]);
+        }else{
+            return response()->json([
+                'message' => $validation->errors()->all(),
+                'uploaded_image7' => '',
+                'txt7' => '',
+                'class_name' => 'alert-danger'
+            ]);
+        }
+    }
+
+    
+    function action8(Request $request){
+        $validation = Validator::make($request->all(), [
+            'image8' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'image8_txt' => 'required|max:255',
+            'post' => 'required'
+        ]);
+
+        if($validation->passes()){
+            $image = $request->file('image8');
+            $new_name8 = time(). '.' . $image->getClientOriginalExtension();
+            Image::make($image)->resize(1366, 768)->save(public_path('images/news/image8' . $new_name8));
+            DB::table('posts')->where('id', $request->post)->update(['image8' => $new_name8, 'image8_txt' => $request->image8_txt]);
+            return response()->json([
+                'message' => 'Image Uploaded Successfully',
+                'uploaded_image8' => '<img src="/images/news/image8'.$new_name8.'" class="img-responsive pad" alt="No Picture Available" />',
+                'txt8' => '<b>'.ucfirst($request->image8_txt).'</b>',
+                'class_name' => 'alert-success'
+            ]);
+        }else{
+            return response()->json([
+                'message' => $validation->errors()->all(),
+                'uploaded_image8' => '',
+                'txt8' => '',
+                'class_name' => 'alert-danger'
+            ]);
+        }
+    }
+
+    
+    function action9(Request $request){
+        $validation = Validator::make($request->all(), [
+            'image9' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'image9_txt' => 'required|max:255',
+            'post' => 'required'
+        ]);
+
+        if($validation->passes()){
+            $image = $request->file('image9');
+            $new_name9 = time(). '.' . $image->getClientOriginalExtension();
+            Image::make($image)->resize(1366, 768)->save(public_path('images/news/image9' . $new_name9));
+            DB::table('posts')->where('id', $request->post)->update(['image9' => $new_name9, 'image9_txt' => $request->image9_txt]);
+            return response()->json([
+                'message' => 'Image Uploaded Successfully',
+                'uploaded_image9' => '<img src="/images/news/image9'.$new_name9.'" class="img-responsive pad" alt="No Picture Available" />',
+                'txt9' => '<b>'.ucfirst($request->image9_txt).'</b>',
+                'class_name' => 'alert-success'
+            ]);
+        }else{
+            return response()->json([
+                'message' => $validation->errors()->all(),
+                'uploaded_image9' => '',
+                'txt9' => '',
+                'class_name' => 'alert-danger'
+            ]);
+        }
+    }
+    
+    function action10(Request $request){
+        $validation = Validator::make($request->all(), [
+            'image10' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'image10_txt' => 'required|max:255',
+            'post' => 'required'
+        ]);
+
+        if($validation->passes()){
+            $image = $request->file('image10');
+            $new_name10 = time(). '.' . $image->getClientOriginalExtension();
+            Image::make($image)->resize(1366, 768)->save(public_path('images/news/image10' . $new_name10));
+            DB::table('posts')->where('id', $request->post)->update(['image10' => $new_name10, 'image10_txt' => $request->image10_txt]);
+            return response()->json([
+                'message' => 'Image Uploaded Successfully',
+                'uploaded_image10' => '<img src="/images/news/image10'.$new_name10.'" class="img-responsive pad" alt="No Picture Available" />',
+                'txt10' => '<b>'.ucfirst($request->image10_txt).'</b>',
+                'class_name' => 'alert-success'
+            ]);
+        }else{
+            return response()->json([
+                'message' => $validation->errors()->all(),
+                'uploaded_image10' => '',
+                'txt10' => '',
+                'class_name' => 'alert-danger'
+            ]);
+        }
+    }
+    
+    function action11(Request $request){
+        $validation = Validator::make($request->all(), [
+            'image11' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'image11_txt' => 'required|max:255',
+            'post' => 'required'
+        ]);
+
+        if($validation->passes()){
+            $image = $request->file('image11');
+            $new_name11 = time(). '.' . $image->getClientOriginalExtension();
+            Image::make($image)->resize(1366, 768)->save(public_path('images/news/image10' . $new_name11));
+            DB::table('posts')->where('id', $request->post)->update(['image11' => $new_name11, 'image11_txt' => $request->image11_txt]);
+            return response()->json([
+                'message' => 'Image Uploaded Successfully',
+                'uploaded_image11' => '<img src="/images/news/image11'.$new_name11.'" class="img-responsive pad" alt="No Picture Available" />',
+                'txt11' => '<b>'.ucfirst($request->image11_txt).'</b>',
+                'class_name' => 'alert-success'
+            ]);
+        }else{
+            return response()->json([
+                'message' => $validation->errors()->all(),
+                'uploaded_image11' => '',
+                'txt11' => '',
+                'class_name' => 'alert-danger'
+            ]);
+        }
+    }
+    
+    function action12(Request $request){
+        $validation = Validator::make($request->all(), [
+            'image12' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'image12_txt' => 'required|max:255',
+            'post' => 'required'
+        ]);
+
+        if($validation->passes()){
+            $image = $request->file('image12');
+            $new_name12 = time(). '.' . $image->getClientOriginalExtension();
+            Image::make($image)->resize(1366, 768)->save(public_path('images/news/image12' . $new_name12));
+            DB::table('posts')->where('id', $request->post)->update(['image12' => $new_name12, 'image12_txt' => $request->image12_txt]);
+            return response()->json([
+                'message' => 'Image Uploaded Successfully',
+                'uploaded_image12' => '<img src="/images/news/image12'.$new_name12.'" class="img-responsive pad" alt="No Picture Available" />',
+                'txt12' => '<b>'.ucfirst($request->image12_txt).'</b>',
+                'class_name' => 'alert-success'
+            ]);
+        }else{
+            return response()->json([
+                'message' => $validation->errors()->all(),
+                'uploaded_image12' => '',
+                'txt12' => '',
+                'class_name' => 'alert-danger'
+            ]);
+        }
+    }
+
+    
+    function action13(Request $request){
+        $validation = Validator::make($request->all(), [
+            'image13' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'image13_txt' => 'required|max:255',
+            'post' => 'required'
+        ]);
+
+        if($validation->passes()){
+            $image = $request->file('image13');
+            $new_name13 = time(). '.' . $image->getClientOriginalExtension();
+            Image::make($image)->resize(1366, 768)->save(public_path('images/news/image13' . $new_name13));
+            DB::table('posts')->where('id', $request->post)->update(['image13' => $new_name13, 'image13_txt' => $request->image13_txt]);
+            return response()->json([
+                'message' => 'Image Uploaded Successfully',
+                'uploaded_image13' => '<img src="/images/news/image13'.$new_name13.'" class="img-responsive pad" alt="No Picture Available" />',
+                'txt13' => '<b>'.ucfirst($request->image13_txt).'</b>',
+                'class_name' => 'alert-success'
+            ]);
+        }else{
+            return response()->json([
+                'message' => $validation->errors()->all(),
+                'uploaded_image13' => '',
+                'txt13' => '',
+                'class_name' => 'alert-danger'
+            ]);
+        }
+    }
+    
+    function action14(Request $request){
+        $validation = Validator::make($request->all(), [
+            'image14' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'image14_txt' => 'required|max:255',
+            'post' => 'required'
+        ]);
+
+        if($validation->passes()){
+            $image = $request->file('image14');
+            $new_name14 = time(). '.' . $image->getClientOriginalExtension();
+            Image::make($image)->resize(1366, 768)->save(public_path('images/news/image14' . $new_name14));
+            DB::table('posts')->where('id', $request->post)->update(['image14' => $new_name14, 'image14_txt' => $request->image14_txt]);
+            return response()->json([
+                'message' => 'Image Uploaded Successfully',
+                'uploaded_image14' => '<img src="/images/news/image14'.$new_name14.'" class="img-responsive pad" alt="No Picture Available" />',
+                'txt14' => '<b>'.ucfirst($request->image14_txt).'</b>',
+                'class_name' => 'alert-success'
+            ]);
+        }else{
+            return response()->json([
+                'message' => $validation->errors()->all(),
+                'uploaded_image14' => '',
+                'txt14' => '',
+                'class_name' => 'alert-danger'
+            ]);
+        }
+    }
+    
+    function action15(Request $request){
+        $validation = Validator::make($request->all(), [
+            'image15' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'image15_txt' => 'required|max:255',
+            'post' => 'required'
+        ]);
+
+        if($validation->passes()){
+            $image = $request->file('image15');
+            $new_name15 = time(). '.' . $image->getClientOriginalExtension();
+            Image::make($image)->resize(1366, 768)->save(public_path('images/news/image15' . $new_name15));
+            DB::table('posts')->where('id', $request->post)->update(['image15' => $new_name15, 'image15_txt' => $request->image15_txt]);
+            return response()->json([
+                'message' => 'Image Uploaded Successfully',
+                'uploaded_image15' => '<img src="/images/news/image15'.$new_name15.'" class="img-responsive pad" alt="No Picture Available" />',
+                'txt15' => '<b>'.ucfirst($request->image15_txt).'</b>',
+                'class_name' => 'alert-success'
+            ]);
+        }else{
+            return response()->json([
+                'message' => $validation->errors()->all(),
+                'uploaded_image15' => '',
+                'txt15' => '',
+                'class_name' => 'alert-danger'
+            ]);
+        }
+    }
+
     function profile(Request $request){
         $validation = Validator::make($request->all(), [
             'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',

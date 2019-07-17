@@ -5,7 +5,7 @@
       <span class="logo-mini"><b>I</b></span>
       <!-- logo for regular state and mobile devices -->
       <span style="font-family:cursive;font-size:20px;font-style:italic;text-shadow: 5px 4px 4px black;" class="logo-lg">
-        <span style="color:lightskyblue">Imi</span><span style="color:gold">kino</span><span style="color:seagreen">.net</span>
+        <span style="color:lightskyblue">Imi</span><span style="color:gold">kino</span><span style="color:seagreen">.rw</span>
       </span>
     </a>
     <!-- Header Navbar: style can be found in header.less -->

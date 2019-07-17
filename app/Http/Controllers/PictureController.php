@@ -19,7 +19,7 @@ class PictureController extends Controller
 
     public function index()
     {
-        $pictures = Picture::where('reporter', '=', Auth::user()->name)->orderBy('id', 'desc')->paginate(5);
+        $pictures = Picture::orderBy('id', 'desc')->paginate(15);
         $posts = Post::where('author', '=', Auth::user()->name)->orderBy('id', 'desc')->paginate(5);
         $commentss = Comment::where('approved', '=', 0)->orderBy('id', 'desc')->limit(5)->get();
         return view('reporterpages.pictures.index', [

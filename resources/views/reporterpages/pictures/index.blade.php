@@ -1,6 +1,6 @@
 @extends('reporter')
 
-  @section('title', 'All Posts')
+  @section('title', 'All Pictures')
   
   @section('content')
   <div class="content-wrapper">
@@ -63,13 +63,15 @@
                   <th style="width: 10px">#</th>
                   <th>Image</th>
                   <th>Address</th>
+                  <th>Posted By</th>
                   <th style="width: 150px">Created at</th>
                 </tr>
                 @foreach ($pictures as $post)
                   <tr>
                     <th>{{ $post->id }}</th>
                     <td style="text-align: center"><p><img style="height: 100px" class="img-responsive" src="{{ asset('images/news/'.$post->image) }}" /></p></td>
-                    <td><b>{{ __('https://imikino.rw/images/news/'.$post->image) }}</b></td>
+                    <td><p><b>{{ __('https://imikino.rw/images/news/'.$post->image) }}</b></p></td>
+                    <td><b><em>{{ ucfirst($post->reporter) }}</em></b></td>
                     <td>{{ $post->created_at->diffForHumans() }}</td>
                   </tr>
                 @endforeach

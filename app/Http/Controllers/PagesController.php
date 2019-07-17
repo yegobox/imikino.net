@@ -54,7 +54,7 @@ class PagesController extends Controller
         $titles= DB::select('select * from posts order by id desc limit 5');
         $aside = Post::where('views', '>=', 1000)->orderBy('views', 'desc')->limit(5)->get();
         $newone = Post::orderBy('created_at', 'desc')->limit(5)->get();
-        $posts = Post::where('location_id', '=', 2)->paginate(5);
+        $posts = Post::where('location_id', '=', 2)->orderBy('id', 'desc')->paginate(10);
         return view('pages.rwanda')->withPosts($posts)->withAsides($aside)->withNewones($newone)->withTitles($titles);
     }
 
@@ -62,7 +62,7 @@ class PagesController extends Controller
         $titles= DB::select('select * from posts order by id desc limit 5');
         $aside = Post::where('views', '>=', 1000)->orderBy('views', 'desc')->limit(5)->get();
         $newone = Post::orderBy('created_at', 'desc')->limit(5)->get();
-        $posts = Post::where('location_id', '=', 3)->paginate(5);
+        $posts = Post::where('location_id', '=', 3)->orderBy('id', 'desc')->paginate(10);
         return view('pages.africa')->withPosts($posts)->withAsides($aside)->withNewones($newone)->withTitles($titles);
     }
 
@@ -70,7 +70,7 @@ class PagesController extends Controller
         $titles= DB::select('select * from posts order by id desc limit 5');
         $aside = Post::where('views', '>=', 1000)->orderBy('views', 'desc')->limit(5)->get();
         $newone = Post::orderBy('created_at', 'desc')->limit(5)->get();
-        $posts = Post::where('location_id', '=', 4)->paginate(5);
+        $posts = Post::where('location_id', '=', 4)->orderBy('id', 'desc')->paginate(10);
         return view('pages.england')->withPosts($posts)->withAsides($aside)->withNewones($newone)->withTitles($titles);
     }
 
@@ -78,7 +78,7 @@ class PagesController extends Controller
         $titles= DB::select('select * from posts order by id desc limit 5');
         $aside = Post::where('views', '>=', 1000)->orderBy('views', 'desc')->limit(5)->get();
         $newone = Post::orderBy('created_at', 'desc')->limit(5)->get();
-        $posts = Post::where('location_id', '=', 6)->paginate(5);
+        $posts = Post::where('location_id', '=', 6)->orderBy('id', 'desc')->paginate(10);
         return view('pages.spain')->withPosts($posts)->withAsides($aside)->withNewones($newone)->withTitles($titles);
     }
 
@@ -86,7 +86,7 @@ class PagesController extends Controller
         $titles= DB::select('select * from posts order by id desc limit 5');
         $aside = Post::where('views', '>=', 1000)->orderBy('views', 'desc')->limit(5)->get();
         $newone = Post::orderBy('created_at', 'desc')->limit(5)->get();
-        $posts = Post::where('location_id', '=', 5)->paginate(5);
+        $posts = Post::where('location_id', '=', 5)->orderBy('id', 'desc')->paginate(10);
         return view('pages.france')->withPosts($posts)->withAsides($aside)->withNewones($newone)->withTitles($titles);
     }
 
@@ -94,7 +94,7 @@ class PagesController extends Controller
         $titles= DB::select('select * from posts order by id desc limit 5');
         $aside = Post::where('views', '>=', 1000)->orderBy('views', 'desc')->limit(5)->get();
         $newone = Post::orderBy('created_at', 'desc')->limit(5)->get();
-        $posts = Post::where('location_id', '=', 7)->paginate(5);
+        $posts = Post::where('location_id', '=', 7)->orderBy('id', 'desc')->paginate(10);
         return view('pages.italy')->withPosts($posts)->withAsides($aside)->withNewones($newone)->withTitles($titles);
     }
 
@@ -102,7 +102,7 @@ class PagesController extends Controller
         $titles= DB::select('select * from posts order by id desc limit 5');
         $aside = Post::where('views', '>=', 1000)->orderBy('views', 'desc')->limit(5)->get();
         $newone = Post::orderBy('created_at', 'desc')->limit(5)->get();
-        $posts = Post::where('location_id', '=', 8)->paginate(5);
+        $posts = Post::where('location_id', '=', 8)->orderBy('id', 'desc')->paginate(10);
         return view('pages.germany')->withPosts($posts)->withAsides($aside)->withNewones($newone)->withTitles($titles);
     }
 
@@ -110,7 +110,7 @@ class PagesController extends Controller
         $titles= DB::select('select * from posts order by id desc limit 5');
         $aside = Post::where('views', '>=', 1000)->orderBy('views', 'desc')->limit(5)->get();
         $newone = Post::orderBy('created_at', 'desc')->limit(5)->get();
-        $posts = Post::where('location_id', '=', 9)->paginate(5);
+        $posts = Post::where('location_id', '=', 9)->orderBy('id', 'desc')->paginate(10);
         return view('pages.america')->withPosts($posts)->withAsides($aside)->withNewones($newone)->withTitles($titles);
     }
 
@@ -118,7 +118,7 @@ class PagesController extends Controller
         $titles= DB::select('select * from posts order by id desc limit 5');
         $aside = Post::where('views', '>=', 1000)->orderBy('views', 'desc')->limit(5)->get();
         $newone = Post::orderBy('created_at', 'desc')->limit(5)->get();
-        $posts = Post::where('location_id', '=', 10)->paginate(5);
+        $posts = Post::where('location_id', '=', 10)->orderBy('id', 'desc')->paginate(10);
         return view('pages.asia')->withPosts($posts)->withAsides($aside)->withNewones($newone)->withTitles($titles);
     }
 
@@ -126,7 +126,7 @@ class PagesController extends Controller
         $titles= DB::select('select * from posts order by id desc limit 5');
         $aside = Post::where('views', '>=', 1000)->orderBy('views', 'desc')->limit(5)->get();
         $newone = Post::orderBy('created_at', 'desc')->limit(5)->get();
-        $posts = Post::where('location_id', '=', 11)->paginate(5);
+        $posts = Post::where('location_id', '=', 11)->orderBy('id', 'desc')->paginate(10);
         return view('pages.other')->withPosts($posts)->withAsides($aside)->withNewones($newone)->withTitles($titles);
     }
 
@@ -134,7 +134,7 @@ class PagesController extends Controller
         $titles= DB::select('select * from posts order by id desc limit 5');
         $aside = Post::where('views', '>=', 1000)->orderBy('views', 'desc')->limit(5)->get();
         $newone = Post::orderBy('created_at', 'desc')->limit(5)->get();
-        $posts = Post::where('sport_id', '=', 3)->paginate(5);
+        $posts = Post::where('sport_id', '=', 3)->orderBy('id', 'desc')->paginate(10);
         return view('pages.basketball')->withPosts($posts)->withAsides($aside)->withNewones($newone)->withTitles($titles);
     }
 
@@ -142,7 +142,7 @@ class PagesController extends Controller
         $titles= DB::select('select * from posts order by id desc limit 5');
         $aside = Post::where('views', '>=', 1000)->orderBy('views', 'desc')->limit(5)->get();
         $newone = Post::orderBy('created_at', 'desc')->limit(5)->get();
-        $posts = Post::where('sport_id', '=', 1)->paginate(5);
+        $posts = Post::where('sport_id', '=', 1)->orderBy('id', 'desc')->paginate(10);
         return view('pages.football')->withPosts($posts)->withAsides($aside)->withNewones($newone)->withTitles($titles);
     }
 
@@ -150,7 +150,7 @@ class PagesController extends Controller
         $titles= DB::select('select * from posts order by id desc limit 5');
         $aside = Post::where('views', '>=', 1000)->orderBy('views', 'desc')->limit(5)->get();
         $newone = Post::orderBy('created_at', 'desc')->limit(5)->get();
-        $posts = Post::where('sport_id', '=', 2)->paginate(5);
+        $posts = Post::where('sport_id', '=', 2)->orderBy('id', 'desc')->paginate(10);
         return view('pages.volleyball')->withPosts($posts)->withAsides($aside)->withNewones($newone)->withTitles($titles);
     }
 
@@ -158,7 +158,7 @@ class PagesController extends Controller
         $titles= DB::select('select * from posts order by id desc limit 5');
         $aside = Post::where('views', '>=', 1000)->orderBy('views', 'desc')->limit(5)->get();
         $newone = Post::orderBy('created_at', 'desc')->limit(5)->get();
-        $posts = Post::where('sport_id', '=', 4)->paginate(5);
+        $posts = Post::where('sport_id', '=', 4)->orderBy('id', 'desc')->paginate(10);
         return view('pages.rugby')->withPosts($posts)->withAsides($aside)->withNewones($newone)->withTitles($titles);
     }
 
@@ -166,7 +166,7 @@ class PagesController extends Controller
         $titles= DB::select('select * from posts order by id desc limit 5');
         $aside = Post::where('views', '>=', 1000)->orderBy('views', 'desc')->limit(5)->get();
         $newone = Post::orderBy('created_at', 'desc')->limit(5)->get();
-        $posts = Post::where('sport_id', '=', 5)->paginate(5);
+        $posts = Post::where('sport_id', '=', 5)->orderBy('id', 'desc')->paginate(10);
         return view('pages.handball')->withPosts($posts)->withAsides($aside)->withNewones($newone)->withTitles($titles);
     }
 
@@ -174,7 +174,7 @@ class PagesController extends Controller
         $titles= DB::select('select * from posts order by id desc limit 5');
         $aside = Post::where('views', '>=', 1000)->orderBy('views', 'desc')->limit(5)->get();
         $newone = Post::orderBy('created_at', 'desc')->limit(5)->get();
-        $posts = Post::where('sport_id', '=', 6)->paginate(5);
+        $posts = Post::where('sport_id', '=', 6)->orderBy('id', 'desc')->paginate(10);
         return view('pages.swimming')->withPosts($posts)->withAsides($aside)->withNewones($newone)->withTitles($titles);
     }
 
@@ -182,7 +182,7 @@ class PagesController extends Controller
         $titles= DB::select('select * from posts order by id desc limit 5');
         $aside = Post::where('views', '>=', 1000)->orderBy('views', 'desc')->limit(5)->get();
         $newone = Post::orderBy('created_at', 'desc')->limit(5)->get();
-        $posts = Post::where('sport_id', '=', 7)->paginate(5);
+        $posts = Post::where('sport_id', '=', 7)->orderBy('id', 'desc')->paginate(10);
         return view('pages.cricket')->withPosts($posts)->withAsides($aside)->withNewones($newone)->withTitles($titles);
     }
 
@@ -190,7 +190,7 @@ class PagesController extends Controller
         $titles= DB::select('select * from posts order by id desc limit 5');
         $aside = Post::where('views', '>=', 1000)->orderBy('views', 'desc')->limit(5)->get();
         $newone = Post::orderBy('created_at', 'desc')->limit(5)->get();
-        $posts = Post::where('sport_id', '=', 8)->paginate(5);
+        $posts = Post::where('sport_id', '=', 8)->orderBy('id', 'desc')->paginate(10);
         return view('pages.cycling')->withPosts($posts)->withAsides($aside)->withNewones($newone)->withTitles($titles);
     }
 
@@ -198,7 +198,7 @@ class PagesController extends Controller
         $titles= DB::select('select * from posts order by id desc limit 5');
         $aside = Post::where('views', '>=', 1000)->orderBy('views', 'desc')->limit(5)->get();
         $newone = Post::orderBy('created_at', 'desc')->limit(5)->get();
-        $posts = Post::where('sport_id', '=', 9)->paginate(5);
+        $posts = Post::where('sport_id', '=', 9)->orderBy('id', 'desc')->paginate(10);
         return view('pages.athletic')->withPosts($posts)->withAsides($aside)->withNewones($newone)->withTitles($titles);
     }
 
@@ -206,7 +206,7 @@ class PagesController extends Controller
         $titles= DB::select('select * from posts order by id desc limit 5');
         $aside = Post::where('views', '>=', 1000)->orderBy('views', 'desc')->limit(5)->get();
         $newone = Post::orderBy('created_at', 'desc')->limit(5)->get();
-        $posts = Post::where('sport_id', '=', 8)->paginate(5);
+        $posts = Post::where('sport_id', '=', 8)->orderBy('id', 'desc')->paginate(10);
         return view('pages.videos')->withPosts($posts)->withAsides($aside)->withNewones($newone)->withTitles($titles);
     }
 

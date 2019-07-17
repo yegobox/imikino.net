@@ -55,7 +55,7 @@
             <div class="inner">
               <h3>{{ $pictures->count() }} <small style="color:white">pictures</small></h3>
 
-              <p>Gallerry</p>
+              <p>Gallery</p>
             </div>
             <div class="icon">
               <i class="fa fa-image"></i>

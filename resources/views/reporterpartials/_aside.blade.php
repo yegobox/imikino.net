@@ -57,7 +57,7 @@
             <li class="{{ Request::is('reporter/livestream/create') ? "active" : ""}}"><a href="{{ route('livestream.create') }}"><i class="fa fa-circle-o"></i> Create New Live Post</a></li>
           </ul>
         </li>
-        <li class="{{ Request::is('pictures') ? "active" : ""}}">
+        <li class="{{ Request::is('reporter/pictures') ? "active" : "" }} || {{ Request::is('reporter/pictures/upload') ? "active" : "" }}">
           <a href="{{ route('journalist.picture') }}">
             <i class="fa fa-image"></i>
             <span>Gallery</span>

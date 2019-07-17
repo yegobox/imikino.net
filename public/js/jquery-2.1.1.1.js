@@ -9352,6 +9352,345 @@ $(document).ready(function() {
     });
 
 
+    $('#upload-form6').on('submit', function(event) {
+        event.preventDefault();
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+            }
+        });
+
+        // var file = $('#select_file').val();
+        // var data = 'select_file=' + file;
+        $.ajax({
+            url: "../../ajax_upload/action6",
+            method: "post",
+            dataType: 'JSON',
+            data: new FormData(this),
+            contentType: false,
+            cache: false,
+            processData: false,
+            // uploadProgress: function(event, position, total, percentCompleted) {
+            //     $('.progress-bar').css('width', percentCompleted + "%");
+            //     $('.progress-bar .sr-only').text(percentCompleted + "% Completed");
+
+            // },
+            success: function(data) {
+                $('#message').css('display', 'block');
+                $('#message').html(data.message);
+                $('#message').addClass(data.class_name);
+                $('#uploaded_image6').html(data.uploaded_image6);
+                $('#txt6').html(data.txt6);
+            }
+        })
+    });
+
+
+    $('#upload-form7').on('submit', function(event) {
+        event.preventDefault();
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+            }
+        });
+
+        // var file = $('#select_file').val();
+        // var data = 'select_file=' + file;
+        $.ajax({
+            url: "../../ajax_upload/action7",
+            method: "post",
+            dataType: 'JSON',
+            data: new FormData(this),
+            contentType: false,
+            cache: false,
+            processData: false,
+            // uploadProgress: function(event, position, total, percentCompleted) {
+            //     $('.progress-bar').css('width', percentCompleted + "%");
+            //     $('.progress-bar .sr-only').text(percentCompleted + "% Completed");
+
+            // },
+            success: function(data) {
+                $('#message').css('display', 'block');
+                $('#message').html(data.message);
+                $('#message').addClass(data.class_name);
+                $('#uploaded_image7').html(data.uploaded_image7);
+                $('#txt7').html(data.txt7);
+            }
+        })
+    });
+
+
+    $('#upload-form8').on('submit', function(event) {
+        event.preventDefault();
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+            }
+        });
+
+        // var file = $('#select_file').val();
+        // var data = 'select_file=' + file;
+        $.ajax({
+            url: "../../ajax_upload/action8",
+            method: "post",
+            dataType: 'JSON',
+            data: new FormData(this),
+            contentType: false,
+            cache: false,
+            processData: false,
+            // uploadProgress: function(event, position, total, percentCompleted) {
+            //     $('.progress-bar').css('width', percentCompleted + "%");
+            //     $('.progress-bar .sr-only').text(percentCompleted + "% Completed");
+
+            // },
+            success: function(data) {
+                $('#message').css('display', 'block');
+                $('#message').html(data.message);
+                $('#message').addClass(data.class_name);
+                $('#uploaded_image8').html(data.uploaded_image8);
+                $('#txt8').html(data.txt8);
+            }
+        })
+    });
+
+
+    $('#upload-form9').on('submit', function(event) {
+        event.preventDefault();
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+            }
+        });
+
+        // var file = $('#select_file').val();
+        // var data = 'select_file=' + file;
+        $.ajax({
+            url: "../../ajax_upload/action9",
+            method: "post",
+            dataType: 'JSON',
+            data: new FormData(this),
+            contentType: false,
+            cache: false,
+            processData: false,
+            // uploadProgress: function(event, position, total, percentCompleted) {
+            //     $('.progress-bar').css('width', percentCompleted + "%");
+            //     $('.progress-bar .sr-only').text(percentCompleted + "% Completed");
+
+            // },
+            success: function(data) {
+                $('#message').css('display', 'block');
+                $('#message').html(data.message);
+                $('#message').addClass(data.class_name);
+                $('#uploaded_image9').html(data.uploaded_image9);
+                $('#txt9').html(data.txt9);
+            }
+        })
+    });
+
+
+    $('#upload-form10').on('submit', function(event) {
+        event.preventDefault();
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+            }
+        });
+
+        // var file = $('#select_file').val();
+        // var data = 'select_file=' + file;
+        $.ajax({
+            url: "../../ajax_upload/action10",
+            method: "post",
+            dataType: 'JSON',
+            data: new FormData(this),
+            contentType: false,
+            cache: false,
+            processData: false,
+            // uploadProgress: function(event, position, total, percentCompleted) {
+            //     $('.progress-bar').css('width', percentCompleted + "%");
+            //     $('.progress-bar .sr-only').text(percentCompleted + "% Completed");
+
+            // },
+            success: function(data) {
+                $('#message').css('display', 'block');
+                $('#message').html(data.message);
+                $('#message').addClass(data.class_name);
+                $('#uploaded_image10').html(data.uploaded_image10);
+                $('#txt10').html(data.txt10);
+            }
+        })
+    });
+
+
+    $('#upload-form11').on('submit', function(event) {
+        event.preventDefault();
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+            }
+        });
+
+        // var file = $('#select_file').val();
+        // var data = 'select_file=' + file;
+        $.ajax({
+            url: "../../ajax_upload/action11",
+            method: "post",
+            dataType: 'JSON',
+            data: new FormData(this),
+            contentType: false,
+            cache: false,
+            processData: false,
+            // uploadProgress: function(event, position, total, percentCompleted) {
+            //     $('.progress-bar').css('width', percentCompleted + "%");
+            //     $('.progress-bar .sr-only').text(percentCompleted + "% Completed");
+
+            // },
+            success: function(data) {
+                $('#message').css('display', 'block');
+                $('#message').html(data.message);
+                $('#message').addClass(data.class_name);
+                $('#uploaded_image11').html(data.uploaded_image11);
+                $('#txt11').html(data.txt11);
+            }
+        })
+    });
+
+
+    $('#upload-form12').on('submit', function(event) {
+        event.preventDefault();
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+            }
+        });
+
+        // var file = $('#select_file').val();
+        // var data = 'select_file=' + file;
+        $.ajax({
+            url: "../../ajax_upload/action12",
+            method: "post",
+            dataType: 'JSON',
+            data: new FormData(this),
+            contentType: false,
+            cache: false,
+            processData: false,
+            // uploadProgress: function(event, position, total, percentCompleted) {
+            //     $('.progress-bar').css('width', percentCompleted + "%");
+            //     $('.progress-bar .sr-only').text(percentCompleted + "% Completed");
+
+            // },
+            success: function(data) {
+                $('#message').css('display', 'block');
+                $('#message').html(data.message);
+                $('#message').addClass(data.class_name);
+                $('#uploaded_image12').html(data.uploaded_image12);
+                $('#txt12').html(data.txt12);
+            }
+        })
+    });
+
+
+    $('#upload-form13').on('submit', function(event) {
+        event.preventDefault();
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+            }
+        });
+
+        // var file = $('#select_file').val();
+        // var data = 'select_file=' + file;
+        $.ajax({
+            url: "../../ajax_upload/action13",
+            method: "post",
+            dataType: 'JSON',
+            data: new FormData(this),
+            contentType: false,
+            cache: false,
+            processData: false,
+            // uploadProgress: function(event, position, total, percentCompleted) {
+            //     $('.progress-bar').css('width', percentCompleted + "%");
+            //     $('.progress-bar .sr-only').text(percentCompleted + "% Completed");
+
+            // },
+            success: function(data) {
+                $('#message').css('display', 'block');
+                $('#message').html(data.message);
+                $('#message').addClass(data.class_name);
+                $('#uploaded_image13').html(data.uploaded_image13);
+                $('#txt13').html(data.txt13);
+            }
+        })
+    });
+
+
+    $('#upload-form14').on('submit', function(event) {
+        event.preventDefault();
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+            }
+        });
+
+        // var file = $('#select_file').val();
+        // var data = 'select_file=' + file;
+        $.ajax({
+            url: "../../ajax_upload/action14",
+            method: "post",
+            dataType: 'JSON',
+            data: new FormData(this),
+            contentType: false,
+            cache: false,
+            processData: false,
+            // uploadProgress: function(event, position, total, percentCompleted) {
+            //     $('.progress-bar').css('width', percentCompleted + "%");
+            //     $('.progress-bar .sr-only').text(percentCompleted + "% Completed");
+
+            // },
+            success: function(data) {
+                $('#message').css('display', 'block');
+                $('#message').html(data.message);
+                $('#message').addClass(data.class_name);
+                $('#uploaded_image14').html(data.uploaded_image14);
+                $('#txt14').html(data.txt14);
+            }
+        })
+    });
+
+
+    $('#upload-form15').on('submit', function(event) {
+        event.preventDefault();
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+            }
+        });
+
+        // var file = $('#select_file').val();
+        // var data = 'select_file=' + file;
+        $.ajax({
+            url: "../../ajax_upload/action15",
+            method: "post",
+            dataType: 'JSON',
+            data: new FormData(this),
+            contentType: false,
+            cache: false,
+            processData: false,
+            // uploadProgress: function(event, position, total, percentCompleted) {
+            //     $('.progress-bar').css('width', percentCompleted + "%");
+            //     $('.progress-bar .sr-only').text(percentCompleted + "% Completed");
+
+            // },
+            success: function(data) {
+                $('#message').css('display', 'block');
+                $('#message').html(data.message);
+                $('#message').addClass(data.class_name);
+                $('#uploaded_image15').html(data.uploaded_image15);
+                $('#txt15').html(data.txt15);
+            }
+        })
+    });
+
     $('#profile-picture').on('submit', function(event) {
         event.preventDefault();
         $.ajaxSetup({
