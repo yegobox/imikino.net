@@ -45,7 +45,7 @@ class PagesController extends Controller
         $live = Live::where('approved', '=', 1)->first();
         $aside = DB::table('posts')->where('views', '>=', 1000)->orderBy('views', 'desc')->limit(5)->get();
         //$posts = Post::orderBy('created_at', 'desc')->limit(5)->get();
-        return view('pages.home', [
+        return view(/*'pages.home'*/ '404', [
             'live' => $live
         ])->withOthers($other)->withFirsts($first)->withLists($lists)->withImgs1($imgs1)->withImgs2($imgs2)->withImgs3($imgs3)->withImgs4($imgs4)->withImgs5($imgs5)->withAsides($aside)->withTags($tags)->withTitles($titles);
     }
