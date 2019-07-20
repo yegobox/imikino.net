@@ -20,7 +20,7 @@ class TagController extends Controller
      */
     public function index()
     {
-        $tags = Tag::all();
+        $tags = Tag::orderBy('id', 'desc')->paginate(25);
         $commentss = Comment::where('approved', '=', 0)->orderBy('id', 'desc')->limit(5)->get();
         $notifications = Contact::where('readed', '=', 0)->orderBy('created_at', 'desc')->get();
         return view('adminpages.tags.index',[

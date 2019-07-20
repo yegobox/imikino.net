@@ -15,7 +15,7 @@ class MsgController extends Controller
     }
 
     public function index() {
-        $comments = Comment::where('approved', '=', 0)->orderBy('id', 'desc')->limit(5)->get()->limit(5)->get();
+        $comments = Comment::where('approved', '=', 0)->orderBy('id', 'desc')->limit(5)->get();
         $contact = Contact::orderBy('id', 'desc')->paginate(5);
         $notifications = Contact::where('readed', '=', 0)->orderBy('created_at', 'desc')->get();
         return view('adminpages.messages.index',[
@@ -27,7 +27,7 @@ class MsgController extends Controller
         $message = Contact::find($id);
         DB::table('contacts')->where('id', $id)->increment('readed');
         $notifications = Contact::where('readed', '=', 0)->orderBy('created_at', 'desc')->get();
-        $comments = Comment::where('approved', '=', 0)->orderBy('id', 'desc')->limit(5)->get()->limit(5)->get();
+        $comments = Comment::where('approved', '=', 0)->orderBy('id', 'desc')->limit(5)->get();
         return view('adminpages.messages.show',[
             'message' => $message,
             'notifications' => $notifications,

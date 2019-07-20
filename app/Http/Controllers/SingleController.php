@@ -17,7 +17,7 @@ class SingleController extends Controller
             'location_id' => $post->location->id,
             'sport_id' => $post->sport->id
             ])->limit(3)->get();
-        $aside = Post::where('views', '>=', 1000)->orderBy('views', 'desc')->limit(5)->get();
+        $aside = Post::where('views', '>=', 1000)->inRandomOrder()->limit(5)->get();
         $newone = Post::orderBy('created_at', 'desc')->limit(5)->get();
         $titles= DB::select('select * from posts order by id desc limit 5');
         return view('pages.single')->withPost($post)->withAsides($aside)->withNewones($newone)->withSames($sames)->withTitles($titles);
@@ -30,7 +30,7 @@ class SingleController extends Controller
             'location_id' => $post->location->id,
             'sport_id' => $post->sport->id
             ])->limit(3)->get();
-        $aside = Post::where('views', '>=', 1000)->orderBy('views', 'desc')->limit(5)->get();
+        $aside = Post::where('views', '>=', 1000)->inRandomOrder()->limit(5)->get();
         $newone = Post::orderBy('created_at', 'desc')->limit(5)->get();
         $titles= DB::select('select * from posts order by id desc limit 5');
         return view('pages.single')->withPost($post)->withAsides($aside)->withNewones($newone)->withSames($sames)->withTitles($titles);

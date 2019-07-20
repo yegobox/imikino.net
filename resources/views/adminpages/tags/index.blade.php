@@ -67,6 +67,9 @@
                     @endforeach
                 </tbody>
             </table>
+            <div class="text-center">
+                {!! $tags->links() !!}
+            </div>
         </div><!-- end of .clo-md-8 -->
 
         <div class="col-md-4">

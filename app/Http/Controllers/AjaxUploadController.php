@@ -315,7 +315,7 @@ class AjaxUploadController extends Controller
         if($validation->passes()){
             $image = $request->file('image11');
             $new_name11 = time(). '.' . $image->getClientOriginalExtension();
-            Image::make($image)->resize(1366, 768)->save(public_path('images/news/image10' . $new_name11));
+            Image::make($image)->resize(1366, 768)->save(public_path('images/news/image11' . $new_name11));
             DB::table('posts')->where('id', $request->post)->update(['image11' => $new_name11, 'image11_txt' => $request->image11_txt]);
             return response()->json([
                 'message' => 'Image Uploaded Successfully',
