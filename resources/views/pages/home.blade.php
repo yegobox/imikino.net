@@ -118,24 +118,29 @@
 								</div>
 							</div>
 							<div class="row hidden-lg hidden-md">
-							@foreach($lists as $list)
-								<div style="margin-bottom:20px" class="col-lg-12 col-sm-12">
-									<div class="row">
-										<div class="col-lg-6 col-sm-6 col-xs-6">
-											<a href="{{ url($list->slug) }}"><img class="img-responsive" src="{{ asset('images/news/'. $list->image) }}" /></a>
-											<p style="text-align:justify;">
-												<span style="font-size: 0.8em;">By <a href="#">{{ $list->author }}</a></span>
-											</p>
-										</div>
-										<div style="font-size: 0.9em;line-height: 1.2;vertical-align:center" class="col-lg-6 col-sm-6 col-xs-6">
-											<a href="{{ url($list->slug) }}">{{ substr($list->title, 0, 150) }}{{ strlen($list->title) > 150 ? '...' : "" }}</a>
-											<p style="text-align:justify;">
-												<span style="font-size: 0.7em;"><i class="fa fa-calendar"></i> {{ date('D jS, M h:ia', strtotime($list->created_at)) }}  <i class="fa fa-eye"></i>{{ $list->views }} Views</span>
-											</p>
+								@foreach($lists as $list)
+									<div style="margin-bottom:20px" class="col-lg-12 col-sm-12">
+										<div class="row">
+											<div class="col-lg-6 col-sm-6 col-xs-6">
+												<a href="{{ url($list->slug) }}"><img class="img-responsive" src="{{ asset('images/news/'. $list->image) }}" /></a>
+												<p style="text-align:justify;">
+													<span style="font-size: 0.8em;">By <a href="#">{{ $list->author }}</a></span>
+												</p>
+											</div>
+											<div style="font-size: 0.9em;line-height: 1.2;vertical-align:center" class="col-lg-6 col-sm-6 col-xs-6">
+												<a href="{{ url($list->slug) }}">{{ substr($list->title, 0, 150) }}{{ strlen($list->title) > 150 ? '...' : "" }}</a>
+												<p style="text-align:justify;">
+													<span style="font-size: 0.7em;"><i class="fa fa-calendar"></i> {{ date('D jS, M h:ia', strtotime($list->created_at)) }}  <i class="fa fa-eye"></i>{{ $list->views }} Views</span>
+												</p>
+											</div>
 										</div>
 									</div>
-								</div>
-							@endforeach
+								@endforeach
+
+								<figure class="op-ad">
+									<iframe width="300" height="250" style="border:0; margin:0;" src="https://www.facebook.com/adnw_request?placement=304625040323211_304625050323210&adtype=banner300x250"></iframe>
+								</figure>
+
 								<hr class="line">
 								<div class="box">
 									<center>
