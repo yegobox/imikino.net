@@ -40,7 +40,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-              <li class="{{ Request::is('reporter/reporterposts') ? "active" : ""}}"><a href="{{ route('reporterposts.index') }}"><i class="fa fa-circle-o"></i> All your posts</a></li>
+              <li class="{{ Request::is('reporter/reporterposts') ? "active" : ""}}"><a href="{{ route('reporterposts.index') }}"><i class="fa fa-circle-o"></i> All my posts</a></li>
             <li class="{{ Request::is('reporter/reporterposts/create') ? "active" : ""}}"><a href="{{ route('reporterposts.create') }}"><i class="fa fa-circle-o"></i> Create New Post</a></li>
           </ul>
         </li>
@@ -53,7 +53,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-              <li class="{{ Request::is('reporter/livestream') ? "active" : ""}}"><a href="{{ route('livestream.index') }}"><i class="fa fa-circle-o"></i> All your live posts</a></li>
+              <li class="{{ Request::is('reporter/livestream') ? "active" : ""}}"><a href="{{ route('livestream.index') }}"><i class="fa fa-circle-o"></i> All my live posts</a></li>
             <li class="{{ Request::is('reporter/livestream/create') ? "active" : ""}}"><a href="{{ route('livestream.create') }}"><i class="fa fa-circle-o"></i> Create New Live Post</a></li>
           </ul>
         </li>
@@ -63,12 +63,18 @@
             <span>Gallery</span>
           </a>
         </li>
-        <!--<li>
-          <a href="#">
+        @if(Auth::user()->job_title == 'Editor')
+        <li class="{{ Request::is('reporter/editor') ? "active" : "" }}">
+        <a href="{{ route('editor.index') }}">
             <i class="fa fa-users"></i>
-            <span>Journalists</span>
+            <span>
+              New Posts to Approve
+              <span class="label label-success">{{ App\Post::where('approved', null)->count() }}</span>
+            </span>
           </a>
         </li>
+        @endif
+        <!--
         <li class="{{ Request::is('comments') ? "active" : ""}}">
           <a href="{{ route('comments.index') }}">
             <i class="fa fa-image"></i>

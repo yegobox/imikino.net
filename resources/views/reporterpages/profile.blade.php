@@ -96,7 +96,7 @@
                       <!-- text input -->
                       <div class="form-group">
                         {{ Form::label('job_title', 'Job Title') }}
-                        {{ Form::text('job_title',null,['class' => 'form-control', /*'required' => ''*/'data-parsley-required' => 'true']) }}
+                        {{ Form::text('job_title',Auth::user()->job_title,['class' => 'form-control', 'disabled']) }}
                       </div>
 
                       <!-- text input -->

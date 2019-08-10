@@ -39,8 +39,9 @@ class JournalistController extends Controller
         ])->withPosts($posts)->withComments($comments)->withComs($commentss);
     }
 
-    public function profile(){
-        $user= Journalist::find(Auth::user()->id);
+    public function profile()
+    {
+        $user = Journalist::find(Auth::user()->id);
         $posts = Post::where('author', '=', Auth::user()->name);
         $comments = Comment::all();
         $commentss = Comment::where('approved', '=', 0)->orderBy('id', 'desc')->limit(5)->get();
@@ -52,12 +53,13 @@ class JournalistController extends Controller
         ]);
     }
 
-    public function profileUpdate(Request $request, $id){
+    public function profileUpdate(Request $request, $id)
+    {
         $this->validate($request, array(
             'name'          => 'required|max:255',
             'email'    => 'required|email',
             'phone'    => 'required|numeric|min:10',
-            'job_title'           => 'required|max:255'
+            'job_title'           => 'max:255'
         ));
 
         DB::table('journalists')->where('id', $id)->update(
@@ -65,8 +67,9 @@ class JournalistController extends Controller
                 'name' => $request->name,
                 'email' => $request->email,
                 'phone' => $request->phone,
-                'job_title' => $request->job_title
-            ]);
+                'job_title' => Auth::user()->job_title
+            ]
+        );
 
         $request->session()->flash('success', 'The blog post was successfully saved!');
 

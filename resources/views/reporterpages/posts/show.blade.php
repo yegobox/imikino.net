@@ -26,7 +26,16 @@
 
                 <div class="alert alert-info" role="alert">
                     <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                    <strong>Success:</strong> {{ Session::get('success') }}
+                    <strong>Success:</strong> {!! Session::get('success') !!}
+                </div>
+
+            @endif
+
+            @if (Session::has('disaproved'))
+
+                <div class="alert alert-warning" role="alert">
+                    <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <strong>Success:</strong> {!! Session::get('disaproved') !!}
                 </div>
 
             @endif
@@ -534,21 +543,30 @@
             </div>
           </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-8 col-md-offset-2">
             <div class="well">
-                <dl class="dl-horizontal">
-                    <label>Created At: Date</label>
-                    <p>{{ date('M j, Y h:ia', strtotime($post->created_at)) }}</p>
+                <dl class="dl-horizontal text-center">
+                    <label>Created: {{ $post->created_at->diffForHumans() }}</label>
                 </dl>
 
-                <dl class="dl-horizontal">
-                    <label>Last Updated: Date</label>
-                    <p>{{ date('M j, Y h:ia', strtotime($post->updated_at)) }}</p>
+                <dl class="dl-horizontal text-center">
+                    <label>Last Updated: {{ $post->updated_at->diffForHumans() }}</label>
                 </dl>
 
                 <hr>
 
                 <div class="row">
+                    @if (Auth::user()->job_title == 'Editor')
+                      @if ($post->approved == false)
+                        <div style="margin-bottom:10px" class="col-sm-12">
+                          <a href="{{ route('editor.approve', $post->id) }}" class="btn btn-warning btn-flat btn-block"><b>Approve</b></a>
+                        </div>
+                      @else($post->approved == true)
+                        <div style="margin-bottom:10px" class="col-sm-12">
+                          <a href="{{ route('editor.disapprove', $post->id) }}" class="btn btn-danger btn-flat btn-block"><b>Disapprove</b></a>
+                        </div>
+                      @endif
+                    @endif
                     <div class="col-sm-6">
                         {!! Html::linkRoute('reporterposts.edit', 'Edit', array($post->id ),array('class' => 'btn btn-primary btn-block')) !!}
                     </div>

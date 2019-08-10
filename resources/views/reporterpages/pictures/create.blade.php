@@ -30,7 +30,7 @@
               </div>
             </div>
             <!-- /.box-header -->
-            <div class="box-body no-padding">
+            <div class="box-body table-responsive no-padding">
               <div class="col-md-12">
                 {!! Form::open(['route' => 'journalist.picture.submit', 'data-parsley-validate' => 'true', 'files' => true]) !!}
                     <div class="form-group col-md-6">

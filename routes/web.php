@@ -69,7 +69,7 @@ Route::get('admin_livestream', 'LiveAdminController@index')->name('admin_livestr
 Route::get('admin_livestream/{id}', 'LiveAdminController@show')->name('admin_livestream.show');
 Route::delete('admin_livestream/{id}', 'LiveAdminController@destroy')->name('admin_livestream.destroy');
 
-Route::prefix('reporter')->group(function() {
+Route::prefix('reporter')->group(function () {
     Route::get('/login', 'Auth\JournalistLoginController@showLoginForm')->name('journalist.login');
     Route::post('/login', 'Auth\JournalistLoginController@login')->name('journalist.login.submit');
     Route::get('/dashboard', 'JournalistController@index')->name('journalist.dashboard');
@@ -80,6 +80,9 @@ Route::prefix('reporter')->group(function() {
     Route::put('/profile/{id}', 'JournalistController@profileUpdate')->name('journalist.profile.update');
     Route::resource('reporterposts', 'ReporterPostController');
     Route::resource('livestream', 'LiveStreamController');
+    Route::resource('editor', 'EditorController', ['except' => ['create', 'store', 'show', 'update', 'destroy', 'edit']]);
+    Route::get('editor/approve/{id}', 'EditorController@getApprove')->name('editor.approve');
+    Route::get('editor/disapprove/{id}', 'EditorController@getDisapprove')->name('editor.disapprove');
 });
 
 
@@ -156,11 +159,11 @@ Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 */
 
 Route::get('{slug}', ['as' => 'single', 'uses' => 'SingleController@getSingle'])
-->where('slug', '[\w\d\-\_]+');
+    ->where('slug', '[\w\d\-\_]+');
 
 
 Route::get('livestream/{slug}', ['as' => 'live_single', 'uses' => 'SingleController@getLive'])
-->where('slug', '[\w\d\-\_]+');
+    ->where('slug', '[\w\d\-\_]+');
 
 Route::post('getSearch', 'searchController@getSearch')->name('pages.postSearch');
 

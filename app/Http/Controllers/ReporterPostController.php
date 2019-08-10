@@ -83,7 +83,7 @@ class ReporterPostController extends Controller
 
         $post->title = $request->title;
         $post->slug = $request->slug;
-        $post->author= $request->author;
+        $post->author = $request->author;
         $post->views = 0;
         $post->sport_id = $request->sport_id;
         $post->location_id = $request->location_id;
@@ -93,9 +93,10 @@ class ReporterPostController extends Controller
         $post->image3_txt = $request->image3_txt;
         $post->image4_txt = $request->image4_txt;
         $post->image5_txt = $request->image5_txt;
+        $post->job_title = false;
 
         //save our image
-        if($request->hasFile('featured_image')) {
+        if ($request->hasFile('featured_image')) {
             $image = $request->file('featured_image');
             $filename = time() . '.' . $image->getClientOriginalExtension();
             $location = public_path('images/news/' . $filename);
@@ -109,7 +110,7 @@ class ReporterPostController extends Controller
         }
 
         //save our image 1
-        if($request->hasFile('image1')) {
+        if ($request->hasFile('image1')) {
             $image1 = $request->file('image1');
             $filename = time() . '.' . $image1->getClientOriginalExtension();
             $location = public_path('images/news/image1' . $filename);
@@ -123,7 +124,7 @@ class ReporterPostController extends Controller
         }
 
         //save our image 2
-        if($request->hasFile('image2')) {
+        if ($request->hasFile('image2')) {
             $image2 = $request->file('image1');
             $filename = time() . '.' . $image2->getClientOriginalExtension();
             $location = public_path('images/news/image2' . $filename);
@@ -137,7 +138,7 @@ class ReporterPostController extends Controller
         }
 
         //save our image 3
-        if($request->hasFile('image3')) {
+        if ($request->hasFile('image3')) {
             $image3 = $request->file('image3');
             $filename = time() . '.' . $image3->getClientOriginalExtension();
             $location = public_path('images/news/image3' . $filename);
@@ -151,7 +152,7 @@ class ReporterPostController extends Controller
         }
 
         //save our image 4
-        if($request->hasFile('image4')) {
+        if ($request->hasFile('image4')) {
             $image4 = $request->file('image4');
             $filename = time() . '.' . $image4->getClientOriginalExtension();
             $location = public_path('images/news/image4' . $filename);
@@ -165,7 +166,7 @@ class ReporterPostController extends Controller
         }
 
         //save our image 5
-        if($request->hasFile('image5')) {
+        if ($request->hasFile('image5')) {
             $image5 = $request->file('image5');
             $filename = time() . '.' . $image5->getClientOriginalExtension();
             $location = public_path('images/news/image5' . $filename);
@@ -181,11 +182,11 @@ class ReporterPostController extends Controller
         $post->save();
 
         $post->tags()->sync($request->tags, false);
-        
+
         $request->session()->flash('success', 'The blog post was successfully saved!');
-        
+
         // redirect to another page
-        
+
         return redirect()->route('reporterposts.show', $post->id);
     }
 
@@ -214,12 +215,12 @@ class ReporterPostController extends Controller
         $commentss = Comment::where('approved', '=', 0)->orderBy('id', 'desc')->limit(5)->get();
         $sports = Sport::all();
         $sports2 = array();
-        foreach($sports as $sport) {
+        foreach ($sports as $sport) {
             $sports2[$sport->id] = $sport->name;
         }
         $locations = Location::all();
         $locations2 = array();
-        foreach($locations as $location) {
+        foreach ($locations as $location) {
             $locations2[$location->id] = $location->name;
         }
         $tags = Tag::all();
@@ -247,9 +248,9 @@ class ReporterPostController extends Controller
                 'location_id'    => 'required|integer',
                 'body'           => 'required',
                 'featured_image' => 'sometimes|image',
-                'author' => 'required' 
+                'author' => 'required'
             ));
-        }else{
+        } else {
             $this->validate($request, array(
                 'title'          => 'required|max:255',
                 'slug'           => 'required|alpha_dash|min:5|max:255|unique:posts,slug',
@@ -257,7 +258,7 @@ class ReporterPostController extends Controller
                 'location_id'    => 'required|integer',
                 'body'           => 'required',
                 'featured_image' => 'sometimes|image',
-                'author' => 'required' 
+                'author' => 'required'
             ));
         }
 
@@ -276,7 +277,7 @@ class ReporterPostController extends Controller
         }
 
         //save our image 1
-        if($request->hasFile('image1')) {
+        if ($request->hasFile('image1')) {
             $image1 = $request->file('image1');
             $filename = time() . '.' . $image1->getClientOriginalExtension();
             $location = public_path('images/news/image1' . $filename);
@@ -290,7 +291,7 @@ class ReporterPostController extends Controller
         }
 
         //save our image 2
-        if($request->hasFile('image2')) {
+        if ($request->hasFile('image2')) {
             $image2 = $request->file('image1');
             $filename = time() . '.' . $image2->getClientOriginalExtension();
             $location = public_path('images/news/image2' . $filename);
@@ -304,7 +305,7 @@ class ReporterPostController extends Controller
         }
 
         //save our image 3
-        if($request->hasFile('image3')) {
+        if ($request->hasFile('image3')) {
             $image3 = $request->file('image3');
             $filename = time() . '.' . $image3->getClientOriginalExtension();
             $location = public_path('images/news/image3' . $filename);
@@ -318,7 +319,7 @@ class ReporterPostController extends Controller
         }
 
         //save our image 4
-        if($request->hasFile('image4')) {
+        if ($request->hasFile('image4')) {
             $image4 = $request->file('image4');
             $filename = time() . '.' . $image4->getClientOriginalExtension();
             $location = public_path('images/news/image4' . $filename);
@@ -332,7 +333,7 @@ class ReporterPostController extends Controller
         }
 
         //save our image 5
-        if($request->hasFile('image5')) {
+        if ($request->hasFile('image5')) {
             $image5 = $request->file('image5');
             $filename = time() . '.' . $image5->getClientOriginalExtension();
             $location = public_path('images/news/image5' . $filename);
@@ -367,7 +368,7 @@ class ReporterPostController extends Controller
 
         // Set flash data with success message
         $request->session()->flash('success', 'The blog post was successfully saved!');
-        
+
         // Redirect with flash data to posts.show
         return redirect()->route('reporterposts.show', $post->id);
     }
@@ -386,9 +387,9 @@ class ReporterPostController extends Controller
 
         $post->delete();
 
-        
+
         Session::flash('success', 'The post was successfully deleted.');
-        
+
 
         return redirect()->route('reporterposts.index');
     }

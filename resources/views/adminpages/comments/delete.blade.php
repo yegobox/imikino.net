@@ -22,7 +22,7 @@
       <div class="row">
         <div class="col-md-12">
           <div class="box">
-            <div class="box-body no-padding">
+            <div class="box-body table-responsive no-padding">
               <div class="col-md-8 col-md-offset-2">
                   <h1>DELETE THIS COMMENT</h1>
                   <p>

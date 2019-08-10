@@ -26,7 +26,7 @@
             <h3 class="box-title">Message from {{ ucfirst($message->name) }}</h3>
           </div>
           <!-- /.box-header -->
-          <div class="box-body no-padding">
+          <div class="box-body table-responsive no-padding">
               <div class="col-lg-12">
                     <h4>Name : {{ ucfirst($message->name) }}</h4>
                     <h4>Phone : {{ ucfirst($message->phone) }}</h4>

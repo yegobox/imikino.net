@@ -57,7 +57,7 @@
               </div>
             </div>
             <!-- /.box-header -->
-            <div class="box-body no-padding">
+            <div class="box-body table-responsive no-padding">
               <table class="table">
                 <tr>
                   <th style="width: 10px">#</th>

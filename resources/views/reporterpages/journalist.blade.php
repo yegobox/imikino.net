@@ -20,7 +20,7 @@
     <section class="content">
       <!-- Small boxes (Stat box) -->
       <div class="row">
-        <div class="col-lg-3 col-xs-6">
+        <div class="col-lg-6 col-xs-6">
           <!-- small box -->
           <div class="small-box bg-aqua">
             <div class="inner">
@@ -29,57 +29,60 @@
               <p>All Posts</p>
             </div>
             <div class="icon">
-              <i class="ion ion-bag"></i>
+              <i class="ion ion-md-pulse"></i>
             </div>
-            <a href="{{ route('posts.index') }}" class="small-box-footer">More <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="{{ route('reporterposts.index') }}" class="small-box-footer">More <ion-icon name="pulse"></ion-icon></a>
           </div>
         </div>
         <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-green">
-            <div class="inner">
-              <h3>53<sup style="font-size: 20px"></sup></h3>
-
-              <p>Journalists</p>
-            </div>
-            <div class="icon">
-              <i class="ion ion-stats-bars"></i>
-            </div>
-            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
-        <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
+        <div class="col-lg-6 col-xs-6">
           <!-- small box -->
           <div class="small-box bg-yellow">
             <div class="inner">
-              <h3>44</h3>
-
-              <p>Contact Messages</p>
+              <center><h3>Live Streaming</h3></center>
             </div>
             <div class="icon">
-              <i class="ion ion-person-add"></i>
+              <i class="ion ion-md-pulse"></i>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="{{ route('livestream.index') }}" class="small-box-footer">More <ion-icon name="pulse"></ion-icon></a>
           </div>
         </div>
+        <!-- ./col -->
+        <!-- ./col -->
+        <div class="col-lg-6 col-xs-6">
+          <!-- small box -->
+          <div class="small-box bg-green">
+            <div class="inner">
+              <h3>{{ $pictures->count() }} <small style="color:white">pictures</small></h3>
+
+              <p>Gallery</p>
+            </div>
+            <div class="icon">
+              <i class="fa fa-image"></i>
+            </div>
+            <a href="{{ route('journalist.picture') }}" class="small-box-footer">More </a>
+          </div>
+        </div>
+        <!-- ./col -->
+        
+        @if(Auth::user()->job_title == 'Editor')
         <!-- ./col -->
         <div class="col-lg-3 col-xs-6">
           <!-- small box -->
-          <div class="small-box bg-red">
+          <div class="small-box bg-navy">
             <div class="inner">
-              <h3>{{ $comments->count() }}</h3>
+              <h3>{{ App\Post::where('approved', null)->count() }}</h3>
 
-              <p>Comments</p>
+              <p>New Post to Approve</p>
             </div>
             <div class="icon">
-              <i class="ion ion-pie-graph"></i>
+              <i class="ion ion-chatbubble-working"></i>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="{{ route('comments.index') }}" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
+        @endif
       </div>
       <!-- /.row -->
       <!-- Main row -->
