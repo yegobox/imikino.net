@@ -92,6 +92,9 @@
 						</div>
 						<div class="box-content">
 							<div class="row hidden-sm hidden-xs">
+								<amp-auto-ads type="adsense"
+									data-ad-client="ca-pub-1415997400693835">
+								</amp-auto-ads>
 							@foreach($lists as $list)
 								<div style="margin-bottom:5px" class="col-md-6">
 									<div class="wrap-vid">
@@ -118,6 +121,9 @@
 								</div>
 							</div>
 							<div class="row hidden-lg hidden-md">
+								<amp-auto-ads type="adsense"
+									data-ad-client="ca-pub-1415997400693835">
+								</amp-auto-ads>
 								@foreach($lists as $list)
 									<div style="margin-bottom:20px" class="col-lg-12 col-sm-12">
 										<div class="row">
