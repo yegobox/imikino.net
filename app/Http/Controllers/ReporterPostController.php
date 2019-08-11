@@ -93,7 +93,6 @@ class ReporterPostController extends Controller
         $post->image3_txt = $request->image3_txt;
         $post->image4_txt = $request->image4_txt;
         $post->image5_txt = $request->image5_txt;
-        $post->job_title = false;
 
         //save our image
         if ($request->hasFile('featured_image')) {
