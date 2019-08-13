@@ -27,8 +27,14 @@ class PagesController extends Controller
 
     public function getFooter()
     {
-        $footer = DB::select('select title from posts order by id desc limit 5');
-        return view('partials._footer')->withFooters($footer);
+        // require_once('Net/Geo.php');
+        $net_geo = new Net_Geo();
+
+        $ip = $_SERVER['REMOTE_ADDR'];
+
+        $results = $net_geo->getRecord($ip);
+
+        dd($results);
     }
 
     public function getIndex()

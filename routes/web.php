@@ -130,6 +130,8 @@ Route::get('rwanda', 'PagesController@getRwanda');
 
 Route::get('videos', 'PagesController@getVideos');
 
+Route::get('loc', 'PagesController@getFooter');
+
 Route::get('/', ['uses' => 'PagesController@getIndex', 'as' => '/']);
 
 Route::get('inkuru/{tag}', 'PagesController@getTags')->name('tags');

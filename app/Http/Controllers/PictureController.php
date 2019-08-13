@@ -27,19 +27,21 @@ class PictureController extends Controller
         ])->withPosts($posts)->withComs($commentss);
     }
 
-    public function create(){
+    public function create()
+    {
         $posts = Post::where('author', '=', Auth::user()->name)->orderBy('id', 'desc')->paginate(5);
         $commentss = Comment::where('approved', '=', 0)->orderBy('id', 'desc')->limit(5)->get();
         return view('reporterpages.pictures.create')->withPosts($posts)->withComs($commentss);
     }
 
-    public function save(Request $request){
+    public function save(Request $request)
+    {
         $pic = new Picture;
         $this->validate($request, array(
             'image' => 'required|image',
         ));
 
-        if($request->hasFile('image')) {
+        if ($request->hasFile('image')) {
             $image5 = $request->file('image');
             $filename = time() . '.' . $image5->getClientOriginalExtension();
             $location = public_path('images/news/' . $filename);
@@ -47,7 +49,7 @@ class PictureController extends Controller
             //$location = public_path('images/news/');
             //or $location = storage_path('/app/posts/');
             //$image->move($location, $filename);
-            Image::make($image5)->resize(1366, 768)->save($location);
+            Image::make($image5)->resize(1366, 768)->insert('images/watermark.png', 'bottom-right')->save($location);
 
             $pic->image = $filename;
         }
@@ -56,11 +58,11 @@ class PictureController extends Controller
         $pic->used = "Not yet";
 
         $pic->save();
-        
+
         $request->session()->flash('success', 'Your picture was successfully saved!');
-        
+
         // redirect to another page
-        
+
         return redirect()->route('journalist.picture');
     }
-} 
+}

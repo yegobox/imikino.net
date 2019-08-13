@@ -146,7 +146,7 @@
                 </div>
 
                 <div class="form-group">
-                  {{ Form::hidden('author', Auth::user()->name, ['required' => '']) }}
+                  {{ Form::hidden('author', $post->author, ['required' => '']) }}
                 </div>
 
                 <div class="form-group">
