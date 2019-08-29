@@ -177,7 +177,7 @@
         <div class="col-md-4">
           <div class="box box-primary">
             <div class="box-header with-border">
-              <h3 class="box-title">Upload other images here</h3>
+              <h3 class="box-title">Upload Image 1 here</h3>
             </div>
             <div class="box-body">
                 
@@ -209,7 +209,13 @@
                       </div>
                   </div>  --}}
                 </form>
-
+            </div>
+          </div>
+          <div class="box box-primary">
+            <div class="box-header with-border">
+              <h3 class="box-title">Upload Image 2 here</h3>
+            </div>
+            <div class="box-body">
                 <form id="upload-form2" enctype="multipart/form-data">
                   <div class="row">
                       <div class="form-group col-md-6">
@@ -236,7 +242,13 @@
                       </div>
                   </div>  --}}
                 </form>
-
+            </div>
+          </div>
+          <div class="box box-primary">
+            <div class="box-header with-border">
+              <h3 class="box-title">Upload Image 3 here</h3>
+            </div>
+            <div class="box-body">
                 <form id="upload-form3" enctype="multipart/form-data">
                   <div class="row">
                       <div class="form-group col-md-6">
@@ -263,7 +275,13 @@
                       </div>
                   </div>  --}}
                 </form>
-                
+            </div>
+          </div>
+          <div class="box box-primary">
+            <div class="box-header with-border">
+              <h3 class="box-title">Upload Image 4 here</h3>
+            </div>
+            <div class="box-body">
                 <form id="upload-form4" enctype="multipart/form-data">
                   <div class="row">
                       <div class="form-group col-md-6">
@@ -290,8 +308,14 @@
                       </div>
                   </div>  --}}
                 </form>
+            </div>
+          </div>
 
-                
+          <div class="box box-primary">
+            <div class="box-header with-border">
+              <h3 class="box-title">Upload Image 5 here</h3>
+            </div>
+            <div class="box-body">
                 <form id="upload-form5" enctype="multipart/form-data">
                   <div class="row">
                       <div class="form-group col-md-6">
@@ -318,8 +342,14 @@
                       </div>
                   </div>  --}}
                 </form>
-
-                
+            </div>
+          </div>
+          
+          <div class="box box-primary">
+            <div class="box-header with-border">
+              <h3 class="box-title">Upload Image 6 here</h3>
+            </div>
+            <div class="box-body">
                 <form id="upload-form6" enctype="multipart/form-data">
                   <div class="row">
                       <div class="form-group col-md-6">
@@ -346,8 +376,14 @@
                       </div>
                   </div>  --}}
                 </form>
-
-                
+            </div>
+          </div>
+          
+          <div class="box box-primary">
+            <div class="box-header with-border">
+              <h3 class="box-title">Upload Image 7 here</h3>
+            </div>
+            <div class="box-body">
                 <form id="upload-form7" enctype="multipart/form-data">
                   <div class="row">
                       <div class="form-group col-md-6">
@@ -374,8 +410,14 @@
                       </div>
                   </div>  --}}
                 </form>
-
-                
+            </div>
+          </div>
+          
+          <div class="box box-primary">
+            <div class="box-header with-border">
+              <h3 class="box-title">Upload Image 8 here</h3>
+            </div>
+            <div class="box-body">
                 <form id="upload-form8" enctype="multipart/form-data">
                   <div class="row">
                       <div class="form-group col-md-6">
@@ -402,8 +444,14 @@
                       </div>
                   </div>  --}}
                 </form>
-
-                
+            </div>
+          </div>
+          
+          <div class="box box-primary">
+            <div class="box-header with-border">
+              <h3 class="box-title">Upload Image 9 here</h3>
+            </div>
+            <div class="box-body">
                 <form id="upload-form9" enctype="multipart/form-data">
                   <div class="row">
                       <div class="form-group col-md-6">
@@ -430,9 +478,14 @@
                       </div>
                   </div>  --}}
                 </form>
-
-
-                
+            </div>
+          </div>
+          
+          <div class="box box-primary">
+            <div class="box-header with-border">
+              <h3 class="box-title">Upload Image 10 here</h3>
+            </div>
+            <div class="box-body">
                 <form id="upload-form10" enctype="multipart/form-data">
                   <div class="row">
                       <div class="form-group col-md-6">
@@ -459,9 +512,14 @@
                       </div>
                   </div>  --}}
                 </form>
-
-
-                
+            </div>
+          </div>
+          
+          <div class="box box-primary">
+            <div class="box-header with-border">
+              <h3 class="box-title">Upload Image 11 here</h3>
+            </div>
+            <div class="box-body">
                 <form id="upload-form11" enctype="multipart/form-data">
                   <div class="row">
                       <div class="form-group col-md-6">
@@ -488,8 +546,14 @@
                       </div>
                   </div>  --}}
                 </form>
-
-                
+            </div>
+          </div>
+          
+          <div class="box box-primary">
+            <div class="box-header with-border">
+              <h3 class="box-title">Upload Image 12 here</h3>
+            </div>
+            <div class="box-body">
                 <form id="upload-form12" enctype="multipart/form-data">
                   <div class="row">
                       <div class="form-group col-md-6">
@@ -516,8 +580,14 @@
                       </div>
                   </div>  --}}
                 </form>
-
-                
+            </div>
+          </div>
+          
+          <div class="box box-primary">
+            <div class="box-header with-border">
+              <h3 class="box-title">Upload Image 13 here</h3>
+            </div>
+            <div class="box-body">
                 <form id="upload-form13" enctype="multipart/form-data">
                   <div class="row">
                       <div class="form-group col-md-6">
@@ -544,8 +614,14 @@
                       </div>
                   </div>  --}}
                 </form>
-
-                
+            </div>
+          </div>
+          
+          <div class="box box-primary">
+            <div class="box-header with-border">
+              <h3 class="box-title">Upload Image 14 here</h3>
+            </div>
+            <div class="box-body">
                 <form id="upload-form14" enctype="multipart/form-data">
                   <div class="row">
                       <div class="form-group col-md-6">
@@ -572,8 +648,14 @@
                       </div>
                   </div>  --}}
                 </form>
-
-                
+            </div>
+          </div>
+          
+          <div class="box box-primary">
+            <div class="box-header with-border">
+              <h3 class="box-title">Upload Image 15 here</h3>
+            </div>
+            <div class="box-body">
                 <form id="upload-form15" enctype="multipart/form-data">
                   <div class="row">
                       <div class="form-group col-md-6">
