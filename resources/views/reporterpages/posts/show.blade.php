@@ -193,6 +193,13 @@
                           <input style="display: none" type="text"  name="post" id="title" value="{{ $post->id }}"/>
                       </div>
                       <div class="form-group col-md-6">
+                        <div class="col-md-12">
+                          <div class="checkbox icheck">
+                            <label>
+                              <input type="checkbox" name="imikino"> Imikino's Photo
+                            </label>
+                          </div>
+                        </div>
                         <button id="upload" class="btn btn-block btn-flat btn-primary">Upload</button>
                       </div>
                   </div>
@@ -213,6 +220,13 @@
                           <input style="display: none" type="text"  name="post" id="title" value="{{ $post->id }}"/>
                       </div>
                       <div class="form-group col-md-6">
+                        <div class="col-md-12">
+                          <div class="checkbox icheck">
+                            <label>
+                              <input type="checkbox" name="imikino"> Imikino's Photo
+                            </label>
+                          </div>
+                        </div>
                         <button id="upload2" class="btn btn-block btn-flat btn-primary">Upload</button>
                       </div>
                   </div>
@@ -233,6 +247,13 @@
                           <input style="display: none" type="text"  name="post" id="title" value="{{ $post->id }}"/>
                       </div>
                       <div class="form-group col-md-6">
+                        <div class="col-md-12">
+                          <div class="checkbox icheck">
+                            <label>
+                              <input type="checkbox" name="imikino"> Imikino's Photo
+                            </label>
+                          </div>
+                        </div>
                         <button id="upload3" class="btn btn-block btn-flat btn-primary">Upload</button>
                       </div>
                   </div>
@@ -253,6 +274,13 @@
                           <input style="display: none" type="text"  name="post" id="title" value="{{ $post->id }}"/>
                       </div>
                       <div class="form-group col-md-6">
+                        <div class="col-md-12">
+                          <div class="checkbox icheck">
+                            <label>
+                              <input type="checkbox" name="imikino"> Imikino's Photo
+                            </label>
+                          </div>
+                        </div>
                         <button id="upload4" class="btn btn-block btn-flat btn-primary">Upload</button>
                       </div>
                   </div>
@@ -274,6 +302,13 @@
                           <input style="display: none" type="text"  name="post" id="title" value="{{ $post->id }}"/>
                       </div>
                       <div class="form-group col-md-6">
+                        <div class="col-md-12">
+                          <div class="checkbox icheck">
+                            <label>
+                              <input type="checkbox" name="imikino"> Imikino's Photo
+                            </label>
+                          </div>
+                        </div>
                         <button id="upload5" class="btn btn-block btn-flat btn-primary">Upload</button>
                       </div>
                   </div>
@@ -295,6 +330,13 @@
                           <input style="display: none" type="text"  name="post" id="title" value="{{ $post->id }}"/>
                       </div>
                       <div class="form-group col-md-6">
+                        <div class="col-md-12">
+                          <div class="checkbox icheck">
+                            <label>
+                              <input type="checkbox" name="imikino"> Imikino's Photo
+                            </label>
+                          </div>
+                        </div>
                         <button id="upload6" class="btn btn-block btn-flat btn-primary">Upload</button>
                       </div>
                   </div>
@@ -316,6 +358,13 @@
                           <input style="display: none" type="text"  name="post" id="title" value="{{ $post->id }}"/>
                       </div>
                       <div class="form-group col-md-6">
+                        <div class="col-md-12">
+                          <div class="checkbox icheck">
+                            <label>
+                              <input type="checkbox" name="imikino"> Imikino's Photo
+                            </label>
+                          </div>
+                        </div>
                         <button id="upload7" class="btn btn-block btn-flat btn-primary">Upload</button>
                       </div>
                   </div>
@@ -337,6 +386,13 @@
                           <input style="display: none" type="text"  name="post" id="title" value="{{ $post->id }}"/>
                       </div>
                       <div class="form-group col-md-6">
+                        <div class="col-md-12">
+                          <div class="checkbox icheck">
+                            <label>
+                              <input type="checkbox" name="imikino"> Imikino's Photo
+                            </label>
+                          </div>
+                        </div>
                         <button id="upload8" class="btn btn-block btn-flat btn-primary">Upload</button>
                       </div>
                   </div>
@@ -358,6 +414,13 @@
                           <input style="display: none" type="text"  name="post" id="title" value="{{ $post->id }}"/>
                       </div>
                       <div class="form-group col-md-6">
+                        <div class="col-md-12">
+                          <div class="checkbox icheck">
+                            <label>
+                              <input type="checkbox" name="imikino"> Imikino's Photo
+                            </label>
+                          </div>
+                        </div>
                         <button id="upload9" class="btn btn-block btn-flat btn-primary">Upload</button>
                       </div>
                   </div>
@@ -380,6 +443,13 @@
                           <input style="display: none" type="text"  name="post" id="title" value="{{ $post->id }}"/>
                       </div>
                       <div class="form-group col-md-6">
+                        <div class="col-md-12">
+                          <div class="checkbox icheck">
+                            <label>
+                              <input type="checkbox" name="imikino"> Imikino's Photo
+                            </label>
+                          </div>
+                        </div>
                         <button id="upload10" class="btn btn-block btn-flat btn-primary">Upload</button>
                       </div>
                   </div>
@@ -402,6 +472,13 @@
                           <input style="display: none" type="text"  name="post" id="title" value="{{ $post->id }}"/>
                       </div>
                       <div class="form-group col-md-6">
+                        <div class="col-md-12">
+                          <div class="checkbox icheck">
+                            <label>
+                              <input type="checkbox" name="imikino"> Imikino's Photo
+                            </label>
+                          </div>
+                        </div>
                         <button id="upload11" class="btn btn-block btn-flat btn-primary">Upload</button>
                       </div>
                   </div>
@@ -423,6 +500,13 @@
                           <input style="display: none" type="text"  name="post" id="title" value="{{ $post->id }}"/>
                       </div>
                       <div class="form-group col-md-6">
+                        <div class="col-md-12">
+                          <div class="checkbox icheck">
+                            <label>
+                              <input type="checkbox" name="imikino"> Imikino's Photo
+                            </label>
+                          </div>
+                        </div>
                         <button id="upload12" class="btn btn-block btn-flat btn-primary">Upload</button>
                       </div>
                   </div>
@@ -444,6 +528,13 @@
                           <input style="display: none" type="text"  name="post" id="title" value="{{ $post->id }}"/>
                       </div>
                       <div class="form-group col-md-6">
+                        <div class="col-md-12">
+                          <div class="checkbox icheck">
+                            <label>
+                              <input type="checkbox" name="imikino"> Imikino's Photo
+                            </label>
+                          </div>
+                        </div>
                         <button id="upload13" class="btn btn-block btn-flat btn-primary">Upload</button>
                       </div>
                   </div>
@@ -465,6 +556,13 @@
                           <input style="display: none" type="text"  name="post" id="title" value="{{ $post->id }}"/>
                       </div>
                       <div class="form-group col-md-6">
+                        <div class="col-md-12">
+                          <div class="checkbox icheck">
+                            <label>
+                              <input type="checkbox" name="imikino"> Imikino's Photo
+                            </label>
+                          </div>
+                        </div>
                         <button id="upload14" class="btn btn-block btn-flat btn-primary">Upload</button>
                       </div>
                   </div>
@@ -486,6 +584,13 @@
                           <input style="display: none" type="text"  name="post" id="title" value="{{ $post->id }}"/>
                       </div>
                       <div class="form-group col-md-6">
+                        <div class="col-md-12">
+                          <div class="checkbox icheck">
+                            <label>
+                              <input type="checkbox" name="imikino"> Imikino's Photo
+                            </label>
+                          </div>
+                        </div>
                         <button id="upload15" class="btn btn-block btn-flat btn-primary">Upload</button>
                       </div>
                   </div>

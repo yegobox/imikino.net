@@ -5,15 +5,27 @@ namespace App;
 
 //use Laravel\Scout\Searchable;
 use Illuminate\Database\Eloquent\Model;
+use Cviebrock\EloquentSluggable\Sluggable;
 
 class Post extends Model
 {
-    //use Searchable;
 
-    // protected fillable = [
-    //     ''
-    // ];
-    
+    // use Sluggable;
+
+    // /**
+    //  * Return the sluggable configuration array for this model.
+    //  *
+    //  * @return array
+    //  */
+    // public function sluggable()
+    // {
+    //     return [
+    //         'slug' => [
+    //             'source' => 'title'
+    //         ]
+    //     ];
+    // }
+
     public function Location()
     {
         return $this->belongsTo('App\Location');

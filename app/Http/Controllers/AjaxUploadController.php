@@ -34,7 +34,11 @@ class AjaxUploadController extends Controller
         if ($validation->passes()) {
             $image = $request->file('image1');
             $new_name = time() . '.' . $image->getClientOriginalExtension();
-            Image::make($image)->resize(1366, 768)->insert('images/watermark.png', 'bottom-right')->save(public_path('images/news/image1' . $new_name));
+            if(isset($request->imikino)){
+                Image::make($image)->resize(1366, 768)->insert('images/watermark.png', 'bottom-right')->save(public_path('images/news/image1' . $new_name));
+            }else{
+                Image::make($image)->resize(1366, 768)->save(public_path('images/news/image1' . $new_name));
+            }
             DB::table('posts')->where('id', $request->post)->update(['image1' => $new_name, 'image1_txt' => $request->image1_txt]);
             return response()->json([
                 'message' => 'Image Uploaded Successfully',
@@ -63,7 +67,11 @@ class AjaxUploadController extends Controller
         if ($validation->passes()) {
             $image = $request->file('image2');
             $new_name2 = time() . '.' . $image->getClientOriginalExtension();
-            Image::make($image)->resize(1366, 768)->insert('images/watermark.png', 'bottom-right')->save(public_path('images/news/image2' . $new_name2));
+            if(isset($request->imikino)){
+                Image::make($image)->resize(1366, 768)->insert('images/watermark.png', 'bottom-right')->save(public_path('images/news/image2' . $new_name2));
+            }else{
+                Image::make($image)->resize(1366, 768)->save(public_path('images/news/image2' . $new_name2));
+            }
             DB::table('posts')->where('id', $request->post)->update(['image2' => $new_name2, 'image2_txt' => $request->image2_txt]);
             return response()->json([
                 'message' => 'Image Uploaded Successfully',
@@ -92,7 +100,12 @@ class AjaxUploadController extends Controller
         if ($validation->passes()) {
             $image = $request->file('image3');
             $new_name3 = time() . '.' . $image->getClientOriginalExtension();
-            Image::make($image)->resize(1366, 768)->insert('images/watermark.png', 'bottom-right')->save(public_path('images/news/image3' . $new_name3));
+
+            if(isset($request->imikino)){
+                Image::make($image)->resize(1366, 768)->insert('images/watermark.png', 'bottom-right')->save(public_path('images/news/image3' . $new_name3));
+            }else{
+                Image::make($image)->resize(1366, 768)->save(public_path('images/news/image3' . $new_name3));
+            }
             DB::table('posts')->where('id', $request->post)->update(['image3' => $new_name3, 'image3_txt' => $request->image3_txt]);
             return response()->json([
                 'message' => 'Image Uploaded Successfully',
@@ -121,7 +134,11 @@ class AjaxUploadController extends Controller
         if ($validation->passes()) {
             $image = $request->file('image4');
             $new_name4 = time() . '.' . $image->getClientOriginalExtension();
-            Image::make($image)->resize(1366, 768)->insert('images/watermark.png', 'bottom-right')->save(public_path('images/news/image4' . $new_name4));
+            if(isset($request->imikino)){
+                Image::make($image)->resize(1366, 768)->insert('images/watermark.png', 'bottom-right')->save(public_path('images/news/image4' . $new_name4));
+            }else{
+                Image::make($image)->resize(1366, 768)->save(public_path('images/news/image4' . $new_name4));
+            }
             DB::table('posts')->where('id', $request->post)->update(['image4' => $new_name4, 'image4_txt' => $request->image4_txt]);
             return response()->json([
                 'message' => 'Image Uploaded Successfully',
@@ -150,7 +167,11 @@ class AjaxUploadController extends Controller
         if ($validation->passes()) {
             $image = $request->file('image5');
             $new_name5 = time() . '.' . $image->getClientOriginalExtension();
-            Image::make($image)->resize(1366, 768)->insert('images/watermark.png', 'bottom-right')->save(public_path('images/news/image5' . $new_name5));
+            if(isset($request->imikino)){
+                Image::make($image)->resize(1366, 768)->insert('images/watermark.png', 'bottom-right')->save(public_path('images/news/image5' . $new_name5));
+            }else{
+                Image::make($image)->resize(1366, 768)->save(public_path('images/news/image5' . $new_name5));
+            }
             DB::table('posts')->where('id', $request->post)->update(['image5' => $new_name5, 'image5_txt' => $request->image5_txt]);
             return response()->json([
                 'message' => 'Image Uploaded Successfully',
@@ -179,7 +200,11 @@ class AjaxUploadController extends Controller
         if ($validation->passes()) {
             $image = $request->file('image6');
             $new_name6 = time() . '.' . $image->getClientOriginalExtension();
-            Image::make($image)->resize(1366, 768)->insert('images/watermark.png', 'bottom-right')->save(public_path('images/news/image6' . $new_name6));
+            if(isset($request->imikino)){
+                Image::make($image)->resize(1366, 768)->insert('images/watermark.png', 'bottom-right')->save(public_path('images/news/image6' . $new_name6));
+            }else{
+                Image::make($image)->resize(1366, 768)->save(public_path('images/news/image6' . $new_name6));
+            }
             DB::table('posts')->where('id', $request->post)->update(['image6' => $new_name6, 'image6_txt' => $request->image6_txt]);
             return response()->json([
                 'message' => 'Image Uploaded Successfully',
@@ -209,7 +234,11 @@ class AjaxUploadController extends Controller
         if ($validation->passes()) {
             $image = $request->file('image7');
             $new_name7 = time() . '.' . $image->getClientOriginalExtension();
-            Image::make($image)->resize(1366, 768)->insert('images/watermark.png', 'bottom-right')->save(public_path('images/news/image7' . $new_name7));
+            if(isset($request->imikino)){
+                Image::make($image)->resize(1366, 768)->insert('images/watermark.png', 'bottom-right')->save(public_path('images/news/image7' . $new_name7));
+            }else{
+                Image::make($image)->resize(1366, 768)->save(public_path('images/news/image7' . $new_name7));
+            }
             DB::table('posts')->where('id', $request->post)->update(['image7' => $new_name7, 'image7_txt' => $request->image7_txt]);
             return response()->json([
                 'message' => 'Image Uploaded Successfully',
@@ -239,7 +268,11 @@ class AjaxUploadController extends Controller
         if ($validation->passes()) {
             $image = $request->file('image8');
             $new_name8 = time() . '.' . $image->getClientOriginalExtension();
-            Image::make($image)->resize(1366, 768)->insert('images/watermark.png', 'bottom-right')->save(public_path('images/news/image8' . $new_name8));
+            if(isset($request->imikino)){
+                Image::make($image)->resize(1366, 768)->insert('images/watermark.png', 'bottom-right')->save(public_path('images/news/image8' . $new_name8));
+            }else{
+                Image::make($image)->resize(1366, 768)->save(public_path('images/news/image8' . $new_name8));
+            }
             DB::table('posts')->where('id', $request->post)->update(['image8' => $new_name8, 'image8_txt' => $request->image8_txt]);
             return response()->json([
                 'message' => 'Image Uploaded Successfully',
@@ -269,7 +302,11 @@ class AjaxUploadController extends Controller
         if ($validation->passes()) {
             $image = $request->file('image9');
             $new_name9 = time() . '.' . $image->getClientOriginalExtension();
-            Image::make($image)->resize(1366, 768)->insert('images/watermark.png', 'bottom-right')->save(public_path('images/news/image9' . $new_name9));
+            if(isset($request->imikino)){
+                Image::make($image)->resize(1366, 768)->insert('images/watermark.png', 'bottom-right')->save(public_path('images/news/image9' . $new_name9));
+            }else{
+                Image::make($image)->resize(1366, 768)->save(public_path('images/news/image9' . $new_name9));
+            }
             DB::table('posts')->where('id', $request->post)->update(['image9' => $new_name9, 'image9_txt' => $request->image9_txt]);
             return response()->json([
                 'message' => 'Image Uploaded Successfully',
@@ -298,7 +335,11 @@ class AjaxUploadController extends Controller
         if ($validation->passes()) {
             $image = $request->file('image10');
             $new_name10 = time() . '.' . $image->getClientOriginalExtension();
-            Image::make($image)->resize(1366, 768)->insert('images/watermark.png', 'bottom-right')->save(public_path('images/news/image10' . $new_name10));
+            if(isset($request->imikino)){
+                Image::make($image)->resize(1366, 768)->insert('images/watermark.png', 'bottom-right')->save(public_path('images/news/image10' . $new_name10));
+            }else{
+                Image::make($image)->resize(1366, 768)->save(public_path('images/news/image10' . $new_name10));
+            }
             DB::table('posts')->where('id', $request->post)->update(['image10' => $new_name10, 'image10_txt' => $request->image10_txt]);
             return response()->json([
                 'message' => 'Image Uploaded Successfully',
@@ -327,7 +368,11 @@ class AjaxUploadController extends Controller
         if ($validation->passes()) {
             $image = $request->file('image11');
             $new_name11 = time() . '.' . $image->getClientOriginalExtension();
-            Image::make($image)->resize(1366, 768)->insert('images/watermark.png', 'bottom-right')->save(public_path('images/news/image11' . $new_name11));
+            if(isset($request->imikino)){
+                Image::make($image)->resize(1366, 768)->insert('images/watermark.png', 'bottom-right')->save(public_path('images/news/image11' . $new_name11));
+            }else{
+                Image::make($image)->resize(1366, 768)->save(public_path('images/news/image11' . $new_name11));
+            }
             DB::table('posts')->where('id', $request->post)->update(['image11' => $new_name11, 'image11_txt' => $request->image11_txt]);
             return response()->json([
                 'message' => 'Image Uploaded Successfully',
@@ -356,7 +401,11 @@ class AjaxUploadController extends Controller
         if ($validation->passes()) {
             $image = $request->file('image12');
             $new_name12 = time() . '.' . $image->getClientOriginalExtension();
-            Image::make($image)->resize(1366, 768)->insert('images/watermark.png', 'bottom-right')->save(public_path('images/news/image12' . $new_name12));
+            if(isset($request->imikino)){
+                Image::make($image)->resize(1366, 768)->insert('images/watermark.png', 'bottom-right')->save(public_path('images/news/image12' . $new_name12));
+            }else{
+                Image::make($image)->resize(1366, 768)->save(public_path('images/news/image12' . $new_name12));
+            }
             DB::table('posts')->where('id', $request->post)->update(['image12' => $new_name12, 'image12_txt' => $request->image12_txt]);
             return response()->json([
                 'message' => 'Image Uploaded Successfully',
@@ -386,7 +435,11 @@ class AjaxUploadController extends Controller
         if ($validation->passes()) {
             $image = $request->file('image13');
             $new_name13 = time() . '.' . $image->getClientOriginalExtension();
-            Image::make($image)->resize(1366, 768)->insert('images/watermark.png', 'bottom-right')->save(public_path('images/news/image13' . $new_name13));
+            if(isset($request->imikino)){
+                Image::make($image)->resize(1366, 768)->insert('images/watermark.png', 'bottom-right')->save(public_path('images/news/image13' . $new_name13));
+            }else{
+                Image::make($image)->resize(1366, 768)->save(public_path('images/news/image13' . $new_name13));
+            }
             DB::table('posts')->where('id', $request->post)->update(['image13' => $new_name13, 'image13_txt' => $request->image13_txt]);
             return response()->json([
                 'message' => 'Image Uploaded Successfully',
@@ -415,7 +468,11 @@ class AjaxUploadController extends Controller
         if ($validation->passes()) {
             $image = $request->file('image14');
             $new_name14 = time() . '.' . $image->getClientOriginalExtension();
-            Image::make($image)->resize(1366, 768)->insert('images/watermark.png', 'bottom-right')->save(public_path('images/news/image14' . $new_name14));
+            if(isset($request->imikino)){
+                Image::make($image)->resize(1366, 768)->insert('images/watermark.png', 'bottom-right')->save(public_path('images/news/image14' . $new_name14));
+            }else{
+                Image::make($image)->resize(1366, 768)->save(public_path('images/news/image14' . $new_name14));
+            }
             DB::table('posts')->where('id', $request->post)->update(['image14' => $new_name14, 'image14_txt' => $request->image14_txt]);
             return response()->json([
                 'message' => 'Image Uploaded Successfully',
@@ -444,7 +501,11 @@ class AjaxUploadController extends Controller
         if ($validation->passes()) {
             $image = $request->file('image15');
             $new_name15 = time() . '.' . $image->getClientOriginalExtension();
-            Image::make($image)->resize(1366, 768)->insert('images/watermark.png', 'bottom-right')->save(public_path('images/news/image15' . $new_name15));
+            if(isset($request->imikino)){
+                Image::make($image)->resize(1366, 768)->insert('images/watermark.png', 'bottom-right')->save(public_path('images/news/image15' . $new_name15));
+            }else{
+                Image::make($image)->resize(1366, 768)->save(public_path('images/news/image15' . $new_name15));
+            }
             DB::table('posts')->where('id', $request->post)->update(['image15' => $new_name15, 'image15_txt' => $request->image15_txt]);
             return response()->json([
                 'message' => 'Image Uploaded Successfully',

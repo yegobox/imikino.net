@@ -66,6 +66,7 @@
           <div class="box box-warning">
             <div class="box-body">
                 <!-- text input -->
+                <div class="col-md-12"><img class="img-responsive" src="{{ asset('images/news/'.$post->image) }}" alt="No Picture"/></div><br />
                 <div class="form-group">
                   {{ Form::label('title', 'Title') }}
                   {{ Form::text('title',null,['class' => 'form-control', /*'required' => ''*/'data-parsley-required' => 'true']) }}
