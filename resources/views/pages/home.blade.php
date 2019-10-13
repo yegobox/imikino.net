@@ -104,7 +104,7 @@
 												<a href="{{ url($list->slug) }}">
 													<i class="fa fa-text-o fa-5x" style="color:lightbluesky"></i>
 												</a>
-												<p style="font-size: 1.1em; font-weight: lighter; text-shadow: 5px 2px 4px #052B41;">{{ substr($list->title, 0, 80) }}{{ strlen($list->title) > 80 ? '...' : "" }}</p>
+												<p style="font-size: 1.5em; font-weight: bold; text-shadow: 5px 2px 4px #052B41;">{{ substr($list->title, 0, 80) }}{{ strlen($list->title) > 80 ? '...' : "" }}</p>
 											</div>
 											<img src="{{ asset('images/news/'. $list->image) }}" />
 										</div>
@@ -241,7 +241,6 @@
 						<div class="heading">
 							<h4>Kwamamaza</h4>
 						</div>
-						<img style="width:100%" src="images/pub/ads3.gif" /><br/><br/>
 						<img style="width:100%" src="images/pub/ads4.gif" />
 					</div>
 					{{-- <!---- Start Widget ---->

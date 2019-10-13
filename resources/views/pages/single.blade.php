@@ -26,10 +26,6 @@
                         <h4 class="vid-name text-center"></h4>
 						<p style="margin-top: 20px">{!! $post->body !!}</p>
 
-						<figure class="op-ad">
-							<iframe width="300" height="250" style="border:0; margin:0;" src="https://www.facebook.com/adnw_request?placement=475497512920524_475516192918656&adtype=banner300x250"></iframe>
-						</figure>
-
 						@if(isset($post->image1))
 						<img class="img-responsive pad" src="{{asset('images/news/image1'. $post->image1) }}" alt="No Picture Available">
 						<p class="text-center"><b>{{ $post->image1_txt }}</b></p>
@@ -54,12 +50,6 @@
 						<img class="img-responsive pad" src="{{asset('images/news/image5'. $post->image5) }}" alt="No Picture Available">
 						<p class="text-center"><b>{{ $post->image5_txt }}</b></p>
 						@endif
-
-						
-
-						<figure class="op-ad">
-							<iframe width="300" height="250" style="border:0; margin:0;" src="https://www.facebook.com/adnw_request?placement=475497512920524_475497546253854&adtype=banner300x250"></iframe>
-						</figure>
 						
 						@if(isset($post->image6))
 						<img class="img-responsive pad" src="{{asset('images/news/image6'. $post->image6) }}" alt="No Picture Available">
@@ -137,7 +127,7 @@
 									<li>{{ $error }}</li>
 								@endforeach
 								</ul>
-							</div> 
+							</div>
 
 						@endif
 						</div>
