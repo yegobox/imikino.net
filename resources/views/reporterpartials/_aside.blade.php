@@ -69,10 +69,26 @@
             <i class="fa fa-users"></i>
             <span>
               New Posts to Approve
-              <span class="label label-success">{{ App\Post::where('approved', null)->count() }}</span>
+              <span class="label label-success">{{ App\Post::where('approved', null)->orWhere('approved', 0)->count() }}</span>
             </span>
           </a>
         </li>
+        <li class="{{ Request::is('reporter/livescore') ? "active" : "" }}">
+        <a href="{{ route('journalist.livescore') }}">
+            <i class="fa fa-steam"></i>
+            <span>
+              Livescore
+            </span>
+          </a>
+        </li>
+        {{--  <li class="{{ Request::is('reporter/editor') ? "active" : "" }}">
+        <a href="{{ route('editor.index') }}">
+            <i class="fa fa-steam"></i>
+            <span>
+              Live score
+            </span>
+          </a>
+        </li>  --}}
         @endif
         <!--
         <li class="{{ Request::is('comments') ? "active" : ""}}">

@@ -465,7 +465,7 @@
                         <div class="col-md-12">
                           <div class="checkbox icheck">
                             <label>
-                              <input type="checkbox" name="imikino"> Imikino's Photo
+                              <input type="checkbox" name="imikino">{{ __("Imikino's Photo")}}
                             </label>
                           </div>
                         </div>
@@ -499,7 +499,7 @@
                         <div class="col-md-12">
                           <div class="checkbox icheck">
                             <label>
-                              <input type="checkbox" name="imikino"> Imikino's Photo
+                              <input type="checkbox" name="imikino"> {{ __("Imikino's Photo")}}
                             </label>
                           </div>
                         </div>
@@ -533,7 +533,7 @@
                         <div class="col-md-12">
                           <div class="checkbox icheck">
                             <label>
-                              <input type="checkbox" name="imikino"> Imikino's Photo
+                              <input type="checkbox" name="imikino"> {{ __("Imikino's Photo")}}
                             </label>
                           </div>
                         </div>
@@ -567,7 +567,7 @@
                         <div class="col-md-12">
                           <div class="checkbox icheck">
                             <label>
-                              <input type="checkbox" name="imikino"> Imikino's Photo
+                              <input type="checkbox" name="imikino"> {{ __("Imikino's Photo")}}
                             </label>
                           </div>
                         </div>
@@ -601,7 +601,7 @@
                         <div class="col-md-12">
                           <div class="checkbox icheck">
                             <label>
-                              <input type="checkbox" name="imikino"> Imikino's Photo
+                              <input type="checkbox" name="imikino"> {{ __("Imikino's Photo")}}
                             </label>
                           </div>
                         </div>
@@ -635,7 +635,7 @@
                         <div class="col-md-12">
                           <div class="checkbox icheck">
                             <label>
-                              <input type="checkbox" name="imikino"> Imikino's Photo
+                              <input type="checkbox" name="imikino"> {{ __("Imikino's Photo")}}
                             </label>
                           </div>
                         </div>
@@ -669,7 +669,7 @@
                         <div class="col-md-12">
                           <div class="checkbox icheck">
                             <label>
-                              <input type="checkbox" name="imikino"> Imikino's Photo
+                              <input type="checkbox" name="imikino"> {{ __("Imikino's Photo")}}
                             </label>
                           </div>
                         </div>

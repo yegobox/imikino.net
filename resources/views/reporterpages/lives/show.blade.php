@@ -115,7 +115,7 @@
               @foreach($post->comments as $comment)
               <div class="box-comment">
                 <!-- User image -->
-                <img class="img-circle img-sm" src="{{ "https://www.gravatar.com/avatar/" . md5(strtolower(trim($comment->email))) . "?d=mm" }}" alt="User Image">
+                <img class="img-circle img-sm" src='{{ "https://www.gravatar.com/avatar/" . md5(strtolower(trim($comment->email))) . "?d=mm" }}' alt="User Image">
 
                 <div class="comment-text">
                       <span class="username">

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Validator;
 use App\Post;
 use App\Location;
+use App\Contact;
 use App\Sport;
 use App\Tag;
 use App\Comment;
@@ -14,6 +15,7 @@ use App\Journalist;
 use Session;
 use Image;
 use Storage;
+use Auth;
 use DB;
 
 class AjaxUploadController extends Controller
@@ -23,11 +25,19 @@ class AjaxUploadController extends Controller
         return view('adminpages.posts.show');
     }
 
+    public function liveScore(){
+        $commentss = Comment::where('approved', '=', 0)->orderBy('id', 'desc')->limit(5)->get();
+        $notifications = Contact::where('readed', '=', 0)->orderBy('created_at', 'desc')->get();
+        return view('reporterpages.livescore.livescore',[
+            'notifications' => $notifications,
+        ])->withComs($commentss);
+    }
+
     function action(Request $request)
     {
         $validation = Validator::make($request->all(), [
             'image1' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
-            'image1_txt' => 'required|max:255',
+            'image1_txt' => 'sometimes|max:255',
             'post' => 'required'
         ]);
 
@@ -60,7 +70,7 @@ class AjaxUploadController extends Controller
     {
         $validation = Validator::make($request->all(), [
             'image2' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
-            'image2_txt' => 'required|max:255',
+            'image2_txt' => 'sometimes|max:255',
             'post' => 'required'
         ]);
 
@@ -93,7 +103,7 @@ class AjaxUploadController extends Controller
     {
         $validation = Validator::make($request->all(), [
             'image3' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
-            'image3_txt' => 'required|max:255',
+            'image3_txt' => 'sometimes|max:255',
             'post' => 'required'
         ]);
 
@@ -127,7 +137,7 @@ class AjaxUploadController extends Controller
     {
         $validation = Validator::make($request->all(), [
             'image4' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
-            'image4_txt' => 'required|max:255',
+            'image4_txt' => 'sometimes|max:255',
             'post' => 'required'
         ]);
 
@@ -160,7 +170,7 @@ class AjaxUploadController extends Controller
     {
         $validation = Validator::make($request->all(), [
             'image5' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
-            'image5_txt' => 'required|max:255',
+            'image5_txt' => 'sometimes|max:255',
             'post' => 'required'
         ]);
 
@@ -193,7 +203,7 @@ class AjaxUploadController extends Controller
     {
         $validation = Validator::make($request->all(), [
             'image6' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
-            'image6_txt' => 'required|max:255',
+            'image6_txt' => 'sometimes|max:255',
             'post' => 'required'
         ]);
 
@@ -227,7 +237,7 @@ class AjaxUploadController extends Controller
     {
         $validation = Validator::make($request->all(), [
             'image7' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
-            'image7_txt' => 'required|max:255',
+            'image7_txt' => 'sometimes|max:255',
             'post' => 'required'
         ]);
 
@@ -261,7 +271,7 @@ class AjaxUploadController extends Controller
     {
         $validation = Validator::make($request->all(), [
             'image8' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
-            'image8_txt' => 'required|max:255',
+            'image8_txt' => 'sometimes|max:255',
             'post' => 'required'
         ]);
 
@@ -295,7 +305,7 @@ class AjaxUploadController extends Controller
     {
         $validation = Validator::make($request->all(), [
             'image9' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
-            'image9_txt' => 'required|max:255',
+            'image9_txt' => 'sometimes|max:255',
             'post' => 'required'
         ]);
 
@@ -328,7 +338,7 @@ class AjaxUploadController extends Controller
     {
         $validation = Validator::make($request->all(), [
             'image10' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
-            'image10_txt' => 'required|max:255',
+            'image10_txt' => 'sometimes|max:255',
             'post' => 'required'
         ]);
 
@@ -361,7 +371,7 @@ class AjaxUploadController extends Controller
     {
         $validation = Validator::make($request->all(), [
             'image11' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
-            'image11_txt' => 'required|max:255',
+            'image11_txt' => 'sometimes|max:255',
             'post' => 'required'
         ]);
 
@@ -394,7 +404,7 @@ class AjaxUploadController extends Controller
     {
         $validation = Validator::make($request->all(), [
             'image12' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
-            'image12_txt' => 'required|max:255',
+            'image12_txt' => 'sometimes|max:255',
             'post' => 'required'
         ]);
 
@@ -428,7 +438,7 @@ class AjaxUploadController extends Controller
     {
         $validation = Validator::make($request->all(), [
             'image13' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
-            'image13_txt' => 'required|max:255',
+            'image13_txt' => 'sometimes|max:255',
             'post' => 'required'
         ]);
 
@@ -461,7 +471,7 @@ class AjaxUploadController extends Controller
     {
         $validation = Validator::make($request->all(), [
             'image14' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
-            'image14_txt' => 'required|max:255',
+            'image14_txt' => 'sometimes|max:255',
             'post' => 'required'
         ]);
 
@@ -494,7 +504,7 @@ class AjaxUploadController extends Controller
     {
         $validation = Validator::make($request->all(), [
             'image15' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
-            'image15_txt' => 'required|max:255',
+            'image15_txt' => 'sometimes|max:255',
             'post' => 'required'
         ]);
 
@@ -555,7 +565,7 @@ class AjaxUploadController extends Controller
     {
         $validation = Validator::make($request->all(), [
             'image1' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
-            'image1_txt' => 'required|max:255',
+            'image1_txt' => 'sometimes|max:255',
             'post' => 'required'
         ]);
 
@@ -584,7 +594,7 @@ class AjaxUploadController extends Controller
     {
         $validation = Validator::make($request->all(), [
             'image2' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
-            'image2_txt' => 'required|max:255',
+            'image2_txt' => 'sometimes|max:255',
             'post' => 'required'
         ]);
 
@@ -613,7 +623,7 @@ class AjaxUploadController extends Controller
     {
         $validation = Validator::make($request->all(), [
             'image3' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
-            'image3_txt' => 'required|max:255',
+            'image3_txt' => 'sometimes|max:255',
             'post' => 'required'
         ]);
 
@@ -642,7 +652,7 @@ class AjaxUploadController extends Controller
     {
         $validation = Validator::make($request->all(), [
             'image4' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
-            'image4_txt' => 'required|max:255',
+            'image4_txt' => 'sometimes|max:255',
             'post' => 'required'
         ]);
 
@@ -671,7 +681,7 @@ class AjaxUploadController extends Controller
     {
         $validation = Validator::make($request->all(), [
             'image5' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
-            'image5_txt' => 'required|max:255',
+            'image5_txt' => 'sometimes|max:255',
             'post' => 'required'
         ]);
 
