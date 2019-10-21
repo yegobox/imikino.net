@@ -20,7 +20,7 @@ class SingleController extends Controller
         $aside = Post::where('views', '>=', 1000)->inRandomOrder()->limit(5)->get();
         $newone = Post::orderBy('created_at', 'desc')->limit(5)->get();
         $titles= DB::select('select * from posts order by id desc limit 5');
-        return view('404')->withPost($post)->withAsides($aside)->withNewones($newone)->withSames($sames)->withTitles($titles);
+        return view('pages.single')->withPost($post)->withAsides($aside)->withNewones($newone)->withSames($sames)->withTitles($titles);
     }
 
     public function getLive($slug) {
