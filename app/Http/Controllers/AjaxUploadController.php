@@ -7,10 +7,12 @@ use Validator;
 use App\Post;
 use App\Location;
 use App\Contact;
+use App\Livescore;
 use App\Sport;
 use App\Tag;
 use App\Comment;
 use Purifier;
+use DateTime;
 use App\Journalist;
 use Session;
 use Image;
@@ -31,6 +33,34 @@ class AjaxUploadController extends Controller
         return view('reporterpages.livescore.livescore',[
             'notifications' => $notifications,
         ])->withComs($commentss);
+    }
+
+    function postLivescore(Request $request) {
+        $livescore = new Livescore;
+        $validation = Validator::make($request->all(), [
+            'teamOne' => 'required|max:255',
+            'teamTwo' => 'required|max:255',
+            'pitch' => 'required|max:255',
+            'time' => 'required|max:255'
+        ]);
+        if($validation->passes()){
+            $livescore->teamOne = $request->teamOne;
+            $livescore->teamTwo = $request->teamTwo;
+            $livescore->pitch = $request->pitch;
+
+            
+            $dateObject = DateTime::createFromFormat('m/d/Y H:i A',$request->time);
+            $livescore->time = $dateObject->format("Y-m-d H:i:s");
+
+            $livescore->save();
+        
+            $request->session()->flash('success', 'The match was posted successfully!');
+            
+            // redirect to another page
+            
+            return redirect()->route('journalist.livescore');
+        }
+        dd($request);
     }
 
     function action(Request $request)

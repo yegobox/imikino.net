@@ -2,6 +2,11 @@
 
 @section('title', 'Livescore')
 
+@section('stylesheets')
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+@endsection
+
 @section('content')
 <div class="content-wrapper">
   <!-- Content Header (Page header) -->
@@ -38,7 +43,7 @@
                     <center><h1 class="box-title">Add a new upcomming match</h1></center>
                 </div>
                 <div class="box-body">
-                    {!! Form::open(['route' => 'reporterposts.store', 'data-parsley-validate' => 'true', 'files' => true]) !!}
+                    {!! Form::open(['route' => 'journalist.livescore.post', 'data-parsley-validate' => 'true', 'files' => true]) !!}
                         <!-- text input -->
                         <div class="form-group">
                             {{ Form::label('teamOne', 'First Team') }}
@@ -55,10 +60,15 @@
                             {{ Form::text('pitch',null,['class' => 'form-control', /*'required' => ''*/'data-parsley-required' => 'true']) }}
                         </div>
                         <!-- text input -->
+                        
                         <div class="form-group">
-                            {{ Form::label('datetime', 'Date') }}
-                            
-                            {{ Form::datetime('datetime',null,['class' => 'form-control', /*'required' => ''*/'data-parsley-required' => 'true']) }}
+                            <label class="control-label">Starting Time</label>
+                            <div class='input-group date' id='datetimepicker1'>
+                                <input type='text' class="form-control" name="time" required/>
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                </span>
+                            </div>
                         </div>
 
                         {{ Form::submit('Create Upcoming match', ['class' => 'btn btn-success btn-lg btn-block'])}}
@@ -71,4 +81,14 @@
     </div>
   </section>
 </div>
+@endsection
+
+@section('scripts')
+<script src="https://cdn.jsdelivr.net/momentjs/2.14.1/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
+<script>
+    $(function () {
+        $('#datetimepicker1').datetimepicker();
+    });
+</script>
 @endsection
