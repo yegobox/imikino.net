@@ -82,6 +82,9 @@ Route::prefix('reporter')->group(function () {
     Route::resource('livestream', 'LiveStreamController');
     Route::middleware('auth:journalist')->get('livescore', 'AjaxUploadController@livescore')->name('journalist.livescore');
     Route::middleware('auth:journalist')->post('livescore', 'AjaxUploadController@postLivescore')->name('journalist.livescore.post');
+    Route::middleware('auth:journalist')->put('livescore/{id}', 'AjaxUploadController@editLivescore')->name('journalist.livescore.edit');
+    Route::middleware('auth:journalist')->patch('livescore/goals/{id}', 'AjaxUploadController@updateLivescore')->name('journalist.livescore.update');
+    Route::middleware('auth:journalist')->delete('livescore/{id}', 'AjaxUploadController@deleteLivescore')->name('journalist.livescore.delete');
     Route::resource('editor', 'EditorController', ['except' => ['create', 'store', 'show', 'update', 'destroy', 'edit']]);
     Route::get('editor/approve/{id}', 'EditorController@getApprove')->name('editor.approve');
     Route::get('editor/disapprove/{id}', 'EditorController@getDisapprove')->name('editor.disapprove');

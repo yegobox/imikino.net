@@ -76,7 +76,20 @@
 					<img src="images/ads.png" />
 				</div>
 				@endif
-				<!--<img src="images/pub/ads.png" />-->
+				@if($livescores->count() != 0)
+				<div style="height: 100%; margin:0px 2px" class="well well-sm row">
+					<div class="col-md-12">
+						<center><span style="font-weight:800">Livescore</span></center>
+					</div>
+					@foreach($livescores as $livescore)
+					<div class="col-md-12">
+						<span style="font-weight:700">{{ $livescore->teamOne }} </span><span style="font-weight:700">{{ isset($livescore->teamOneGoals) ? $livescore->teamOneGoals : "?" }}:{{ isset($livescore->teamTwoGoals) ? $livescore->teamTwoGoals : "?" }}</span><span style="font-weight:700"> {{ $livescore->teamTwo}}  </span><span class="badge">{{ date('d F, h:i A',strtotime($livescore->time)) }}</span>
+					</div>
+					@endforeach
+				</div>
+				@else
+				<div class="well well-sm"><span style="font-weight:700; text-align:center">Nta mukino uteganyijwe aka kanya.</span></div>
+				@endif
 			</div>
 		</div>
 	</div>

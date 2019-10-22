@@ -5,10 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Contact;
 use App\Post;
-use App\Location;
-use App\Sport;
+use App\Livescore;
 use App\Tag;
-use Mail;
 use DB;
 use Purifier;
 use App\Live;
@@ -51,10 +49,12 @@ class PagesController extends Controller
         $imgs4 = DB::table('posts')->select('image', 'slug')->where('approved', '=', true)->orderBy('id', 'desc')->skip(6)->take(2)->get();
         $imgs5 = DB::table('posts')->select('image', 'slug')->where('approved', '=', true)->orderBy('id', 'desc')->skip(8)->take(2)->get();
         $live = Live::where('approved', '=', 1)->first();
+        $livescores = Livescore::orderBy('time', 'desc')->take(3)->get();
         $aside = DB::table('posts')->where('views', '>=', 1000)->where('approved', '=', true)->orderBy('views', 'desc')->limit(5)->get();
         //$posts = Post::orderBy('created_at', 'desc')->limit(5)->get();
-        return view(/*'pages.home'*/'pages.home', [
-            'live' => $live
+        return view('pages.home', [
+            'live' => $live,
+            'livescores' => $livescores
         ])->withOthers($other)->withFirsts($first)->withLists($lists)->withImgs1($imgs1)->withImgs2($imgs2)->withImgs3($imgs3)->withImgs4($imgs4)->withImgs5($imgs5)->withAsides($aside)->withTags($tags)->withTitles($titles);
     }
 
