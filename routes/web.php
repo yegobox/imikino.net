@@ -80,6 +80,10 @@ Route::prefix('reporter')->group(function () {
     Route::put('/profile/{id}', 'JournalistController@profileUpdate')->name('journalist.profile.update');
     Route::resource('reporterposts', 'ReporterPostController');
     Route::resource('livestream', 'LiveStreamController');
+    Route::middleware('auth:journalist')->get('ratings', 'AjaxUploadController@ratings')->name('journalist.ratings');
+    Route::middleware('auth:journalist')->post('ratings', 'AjaxUploadController@postRating')->name('journalist.ratings.post');
+    Route::middleware('auth:journalist')->patch('ratings/goals/{id}', 'AjaxUploadController@updateRating')->name('journalist.ratings.update');
+    Route::middleware('auth:journalist')->delete('ratings/{id}', 'AjaxUploadController@deleteRating')->name('journalist.ratings.delete');
     Route::middleware('auth:journalist')->get('livescore', 'AjaxUploadController@livescore')->name('journalist.livescore');
     Route::middleware('auth:journalist')->post('livescore', 'AjaxUploadController@postLivescore')->name('journalist.livescore.post');
     Route::middleware('auth:journalist')->put('livescore/{id}', 'AjaxUploadController@editLivescore')->name('journalist.livescore.edit');

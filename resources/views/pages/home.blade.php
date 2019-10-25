@@ -375,6 +375,36 @@
 							<!--<img src="images/banner-2.jpg" class="img-responsive"/>-->
 						</div>
 					</div>
+					<div class="widget wid-vid">
+						<div class="heading">
+							<h4>Urutonde</h4>
+						</div>
+						<table class="table table-striped">
+							<tr>
+								<th>{{ '#' }}</th>
+								<th>Team</th>
+								<th>G</th>
+								<th>W</th>
+								<th>N</th>
+								<th>L</th>
+								<th>P</th>
+							</tr>
+							@php
+								$count = 1;
+							@endphp
+							@foreach ($ratings as $rating)
+							<tr>
+								<td>{{ $count++ }}</td>
+								<td><span>{{ ucfirst($rating->team) }}</span></td>
+								<td>{{ $rating->gamePlayed }}</td>
+								<td>{{ $rating->gameGained }}</td>
+								<td>{{ $rating->gameNulled }}</td>
+								<td>{{ $rating->gameFailed }}</td>
+								<td>{{ $rating->points }}</td>
+							</tr>
+							@endforeach
+						</table>
+					</div>
 					<!---- Start Widget ---->
 					<div class="widget wid-calendar">
 						<div class="heading"><h4>Calendar</h4></div>

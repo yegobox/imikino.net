@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Validator;
 use App\Contact;
 use App\Livescore;
+use App\Rating;
 use App\Comment;
 use DateTime;
 use App\Journalist;
@@ -20,7 +21,79 @@ class AjaxUploadController extends Controller
         return view('adminpages.posts.show');
     }
 
-    public function liveScore(){
+    function ratings() {
+        $ratings = Rating::orderBy('points', 'desc')->take(20)->get();
+        $commentss = Comment::where('approved', '=', 0)->orderBy('id', 'desc')->limit(5)->get();
+        $notifications = Contact::where('readed', '=', 0)->orderBy('created_at', 'desc')->get();
+        return view('reporterpages.ratings.index',[
+            'ratings' => $ratings,
+            'notifications' => $notifications,
+            'coms' => $commentss
+        ]);
+    }
+
+    function postRating(Request $request) {
+        $rating = new Rating;
+        $this->validate($request, array(
+            'team' => 'required|max:255',
+            'gamePlayed' => 'required|integer|max:255',
+            'gameGained' => 'required|integer',
+            'gameNulled' => 'required|integer',
+            'gameFailed' => 'required|integer',
+            'points' => 'required|integer'
+        ));
+        $rating->team = $request->team;
+        $rating->gamePlayed = $request->gamePlayed;
+        $rating->gameGained = $request->gameGained;
+        $rating->gameNulled = $request->gameNulled;
+        $rating->gameFailed = $request->gameFailed;
+        $rating->points = $request->points;
+        $rating->save();
+        
+        $request->session()->flash('success', 'The match was posted successfully!');
+        
+        // redirect to another page
+            
+        
+        return redirect()->back();
+    }
+
+    function updateRating(Request $request, $id){
+        $rating = Rating::find($id);
+        $this->validate($request, array(
+            'gamePlayed' => 'required|integer|max:255',
+            'gameGained' => 'required|integer',
+            'gameNulled' => 'required|integer',
+            'gameFailed' => 'required|integer',
+            'points' => 'required|integer'
+        ));
+
+        
+        $rating->gamePlayed = $request->gamePlayed;
+        $rating->gameGained = $request->gameGained;
+        $rating->gameNulled = $request->gameNulled;
+        $rating->gameFailed = $request->gameFailed;
+        $rating->points = $request->points;
+        $rating->save();
+        Session::flash('success', 'The team position was successfully updated.');
+        
+
+        return redirect()->back();
+    }
+
+    function deleteRating($id){
+        $rating = Rating::find($id);
+
+        $rating->delete();
+
+        
+        Session::flash('success', 'The team was successfully deleted on the list.');
+        
+
+        return redirect()->back();
+    }
+
+    public function liveScore() {
         $livescores = Livescore::orderBy('time', 'desc')->paginate(10);
         $commentss = Comment::where('approved', '=', 0)->orderBy('id', 'desc')->limit(5)->get();
         $notifications = Contact::where('readed', '=', 0)->orderBy('created_at', 'desc')->get();

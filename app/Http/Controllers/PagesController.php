@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Contact;
 use App\Post;
 use App\Livescore;
+use App\Rating;
 use App\Tag;
 use DB;
 use Purifier;
@@ -38,7 +39,7 @@ class PagesController extends Controller
     public function getIndex()
     {
         $titles = DB::table('posts')->select('title', 'slug')->where('approved', '=', true)->orderBy('id', 'desc')->limit(5)->get();
-        $tags = DB::table('tags')->orderBy('id', 'desc')->limit(1)->get();
+        $tags = DB::table('tags')->orderBy('id', 'desc')->inRandomOrder()->limit(10)->get();
         $first = DB::table('posts')->where('approved', '=', true)->orderBy('id', 'desc')->limit(1)->get();
         $other = DB::table('posts')->where('approved', '=', true)->orderBy('id', 'desc')->skip(1)->take(4)->get();
         $lists = POST::orderBy('created_at', 'desc')->paginate(20);
@@ -50,10 +51,12 @@ class PagesController extends Controller
         $imgs5 = DB::table('posts')->select('image', 'slug')->where('approved', '=', true)->orderBy('id', 'desc')->skip(8)->take(2)->get();
         $live = Live::where('approved', '=', 1)->first();
         $livescores = Livescore::orderBy('time', 'desc')->take(3)->get();
-        $aside = DB::table('posts')->where('views', '>=', 1000)->where('approved', '=', true)->orderBy('views', 'desc')->limit(5)->get();
+        $ratings = Rating::orderBy('points', 'desc')->take(20)->get();
+        $aside = DB::table('posts')->where('views', '>=', 1000)->where('approved', '=', true)->orderBy('views', 'desc')->inRandomOrder()->limit(5)->get();
         //$posts = Post::orderBy('created_at', 'desc')->limit(5)->get();
         return view('pages.home', [
             'live' => $live,
+            'ratings' => $ratings,
             'livescores' => $livescores
         ])->withOthers($other)->withFirsts($first)->withLists($lists)->withImgs1($imgs1)->withImgs2($imgs2)->withImgs3($imgs3)->withImgs4($imgs4)->withImgs5($imgs5)->withAsides($aside)->withTags($tags)->withTitles($titles);
     }

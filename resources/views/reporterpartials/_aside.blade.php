@@ -81,14 +81,14 @@
             </span>
           </a>
         </li>
-        {{--  <li class="{{ Request::is('reporter/editor') ? "active" : "" }}">
-        <a href="{{ route('editor.index') }}">
+        <li class="{{ Request::is('reporter/ratings') ? "active" : "" }}">
+        <a href="{{ route('journalist.ratings') }}">
             <i class="fa fa-steam"></i>
             <span>
-              Live score
+              Urutonde / Ratings
             </span>
           </a>
-        </li>  --}}
+        </li>
         @endif
         <!--
         <li class="{{ Request::is('comments') ? "active" : ""}}">
