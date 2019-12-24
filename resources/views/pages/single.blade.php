@@ -14,7 +14,7 @@
                         <div class="info text-center">
 							<div style="display:inline">
 								<span>By <b><a href="#">{{ ucfirst($post->author) }}</a></b></span>
-								<span><i class="fa fa-calendar"></i>{{ date('M j, Y h:ia', strtotime($post->created_at)) }}</span> 
+								<span><i class="fa fa-calendar"></i>{{ date('M j, Y h:ia', strtotime($post->created_at)) }}</span>
 								<span><i class="fa fa-eye"></i>{{ $post->views }} Views</span>
                         	</div>
                         </div><br/>
@@ -50,57 +50,57 @@
 						<img class="img-responsive pad" src="{{asset('images/news/image5'. $post->image5) }}" alt="No Picture Available">
 						<p class="text-center"><b>{{ $post->image5_txt }}</b></p>
 						@endif
-						
+
 						@if(isset($post->image6))
 						<img class="img-responsive pad" src="{{asset('images/news/image6'. $post->image6) }}" alt="No Picture Available">
 						<p class="text-center"><b>{{ $post->image6_txt }}</b></p>
 						@endif
-						
+
 						@if(isset($post->image7))
 						<img class="img-responsive pad" src="{{asset('images/news/image7'. $post->image7) }}" alt="No Picture Available">
 						<p class="text-center"><b>{{ $post->image7_txt }}</b></p>
 						@endif
-						
+
 						@if(isset($post->image8))
 						<img class="img-responsive pad" src="{{asset('images/news/image8'. $post->image8) }}" alt="No Picture Available">
 						<p class="text-center"><b>{{ $post->image8_txt }}</b></p>
 						@endif
-						
+
 						@if(isset($post->image9))
 						<img class="img-responsive pad" src="{{asset('images/news/image9'. $post->image9) }}" alt="No Picture Available">
 						<p class="text-center"><b>{{ $post->image9_txt }}</b></p>
 						@endif
-						
+
 						@if(isset($post->image10))
 						<img class="img-responsive pad" src="{{asset('images/news/image10'. $post->image10) }}" alt="No Picture Available">
 						<p class="text-center"><b>{{ $post->image10_txt }}</b></p>
 						@endif
-						
+
 						@if(isset($post->image11))
 						<img class="img-responsive pad" src="{{asset('images/news/image11'. $post->image11) }}" alt="No Picture Available">
 						<p class="text-center"><b>{{ $post->image11_txt }}</b></p>
 						@endif
-						
+
 						@if(isset($post->image12))
 						<img class="img-responsive pad" src="{{asset('images/news/image12'. $post->image12) }}" alt="No Picture Available">
 						<p class="text-center"><b>{{ $post->image12_txt }}</b></p>
 						@endif
-						
+
 						@if(isset($post->image13))
 						<img class="img-responsive pad" src="{{asset('images/news/image13'. $post->image13) }}" alt="No Picture Available">
 						<p class="text-center"><b>{{ $post->image13_txt }}</b></p>
 						@endif
-						
+
 						@if(isset($post->image14))
 						<img class="img-responsive pad" src="{{asset('images/news/image14'. $post->image14) }}" alt="No Picture Available">
 						<p class="text-center"><b>{{ $post->image14_txt }}</b></p>
 						@endif
-						
+
 						@if(isset($post->image15))
 						<img class="img-responsive pad" src="{{asset('images/news/image15'. $post->image15) }}" alt="No Picture Available">
 						<p class="text-center"><b>{{ $post->image15_txt }}</b></p>
 						@endif
-						
+
 						<div class="tags">
 							@foreach($post->tags as $tag)
 								<a href="{{ route('tags', $tag->id) }}"><span class="label label-success">{{ $tag->name }}</span></a>
@@ -163,14 +163,14 @@
 						</div>
 						<div class="line"></div>
 						@endif
-						
+
 						<div class="comment">
 							<h3 class="text-center">Gira icyo ubivugaho</h3>
 							{{ Form::open(['route' => ['comments.store', $post->id], 'method' => 'POST', 'name' => 'form1']) }}
 								<div class="row">
 									<div class="col-md-12">
 										<div class="form-group">
-                            				{{ Form::text('name', null, ['class' => 'form-control input-lg', 'placeholder' => 'Andika Izina hano', 'id' => 'name', 'required' => 'required']) }}
+                      {{ Form::text('name', null, ['class' => 'form-control input-lg', 'placeholder' => 'Andika Izina hano', 'id' => 'name', 'required' => 'required']) }}
 										</div>
 									</div>
 								</div>
@@ -221,7 +221,7 @@
 										<div class="info">
 											<br />
 											<h5>By <a href="#">{{ ucfirst($same->author) }}</a></h5>
-											<span><i class="fa fa-calendar"></i>{{ date('M j, Y', strtotime($same->created_at)) }}</span> 
+											<span><i class="fa fa-calendar"></i>{{ date('M j, Y', strtotime($same->created_at)) }}</span>
 											<span><i class="fa fa-eye"></i>{{ $same->views }} Views</span>
 										</div>
 									</div>

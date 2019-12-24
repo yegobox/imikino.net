@@ -40,8 +40,10 @@ class PagesController extends Controller
     {
         $titles = DB::table('posts')->select('title', 'slug')->where('approved', '=', true)->orderBy('id', 'desc')->limit(5)->get();
         $tags = DB::table('tags')->orderBy('id', 'desc')->inRandomOrder()->limit(10)->get();
-        $first = DB::table('posts')->where('approved', '=', true)->orderBy('id', 'desc')->limit(1)->get();
-        $other = DB::table('posts')->where('approved', '=', true)->orderBy('id', 'desc')->skip(1)->take(4)->get();
+        $first = DB::table('posts')->orderBy('id', 'desc')->limit(1)->get();
+        $other = DB::table('posts')->orderBy('id', 'desc')->skip(1)->take(4)->get();
+        // $first = DB::table('posts')->where('approved', '=', true)->orderBy('id', 'desc')->limit(1)->get();
+        // $other = DB::table('posts')->where('approved', '=', true)->orderBy('id', 'desc')->skip(1)->take(4)->get();
         $lists = POST::orderBy('created_at', 'desc')->paginate(20);
         //$list = DB::select('select * from posts order by id desc limit 0,20');
         $imgs1 = DB::table('posts')->select('image', 'slug')->where('approved', '=', true)->orderBy('id', 'desc')->limit(2)->get();
@@ -51,7 +53,7 @@ class PagesController extends Controller
         $imgs5 = DB::table('posts')->select('image', 'slug')->where('approved', '=', true)->orderBy('id', 'desc')->skip(8)->take(2)->get();
         $live = Live::where('approved', '=', 1)->first();
         $livescores = Livescore::orderBy('time', 'desc')->take(3)->get();
-        $ratings = Rating::orderBy('points', 'desc')->take(20)->get();
+        $ratings = Rating::orderBy('points', 'desc')->orderBy('goals', 'desc')->take(20)->get();
         $aside = DB::table('posts')->where('views', '>=', 1000)->where('approved', '=', true)->orderBy('views', 'desc')->inRandomOrder()->limit(5)->get();
         //$posts = Post::orderBy('created_at', 'desc')->limit(5)->get();
         return view('pages.home', [

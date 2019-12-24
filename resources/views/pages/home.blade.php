@@ -65,7 +65,7 @@
 					<center><h6><a href="{{ route('live_single', $live->slug) }}">{{ substr($live->title,0, 100) }}{{ strlen($live->title) > 100 ? "..." : '' }}</a></h6></center>
 					<div class="info">
 						<p>By <a href="#">{{ $live->author }}</a></p>
-						<span><i class="fa fa-calendar"></i>{{ /*date('M j, Y h:ia', strtotime($live->created_at))*/$live->updated_at->diffForHumans() }}</span> 
+						<span><i class="fa fa-calendar"></i>{{ /*date('M j, Y h:ia', strtotime($live->created_at))*/$live->updated_at->diffForHumans() }}</span>
 						<span><i class="fa fa-eye"></i>{{ $live->views }} Views</span>
 					</div>
 					<p>{{ substr(strip_tags($live->body), 0, 250) }}{{ strlen(strip_tags($live->body)) > 250 ? '...' : "" }}</p>
@@ -93,7 +93,7 @@
 			</div>
 		</div>
 	</div>
-	
+
 	<!-- /////////////////////////////////////////Content -->
 	<div id="page-content" class="index-page container">
 		<div class="row">
@@ -123,7 +123,7 @@
 										</div>
 										<div class="info">
 											<p>By <a href="#">{{ $list->author }}</a></p>
-											<span><i class="fa fa-calendar"></i>{{ date('M j, Y h:ia', strtotime($list->created_at)) }}</span> 
+											<span><i class="fa fa-calendar"></i>{{ date('M j, Y h:ia', strtotime($list->created_at)) }}</span>
 											<span><i class="fa fa-eye"></i>{{ $list->views }} Views</span>
 										</div>
 									</div>
@@ -237,7 +237,7 @@
 											<div align="center"><img style="position:relative;height:150px" src="{{ asset('images/news/'. $aside->image) }}" /></div>
 										</div>
 										<div class="info">
-											<span><i class="fa fa-calendar"></i>{{ date('M j, Y', strtotime($aside->created_at)) }}</span> 
+											<span><i class="fa fa-calendar"></i>{{ date('M j, Y', strtotime($aside->created_at)) }}</span>
 											<span><i class="fa fa-eye"></i>{{ $aside->views }} Views</span>
 										</div>
 									</div>
@@ -284,7 +284,7 @@
 						</script>
 					</div>
 					<!-- Composite End --> --}}
-					
+
 					<div class="col-sm-12">
 						@if(isset($live))
 							<center><h4>Inkuru iri Live</h4></center>
@@ -292,7 +292,7 @@
 							<center><h6><a href="{{ route('live_single', $live->slug) }}">{{ substr($live->title,0, 100) }}{{ strlen($live->title) > 100 ? "..." : '' }}</a></h6></center>
 							<div class="info">
 								<p>By <a href="#">{{ $live->author }}</a></p>
-								<span><i class="fa fa-calendar"></i>{{ /*date('M j, Y h:ia', strtotime($live->created_at))*/$live->updated_at->diffForHumans() }}</span> 
+								<span><i class="fa fa-calendar"></i>{{ /*date('M j, Y h:ia', strtotime($live->created_at))*/$live->updated_at->diffForHumans() }}</span>
 								<span><i class="fa fa-eye"></i>{{ $live->views }} Views</span>
 							</div>
 							<p>{{ substr(strip_tags($live->body), 0, 250) }}{{ strlen(strip_tags($live->body)) > 250 ? '...' : "" }}</p>
@@ -326,7 +326,7 @@
 								<div class="wrapper">
 									<a href="#"><h5>Curabitur tincidunt porta lorem.</h5></a>
 									<ul class="list-inline">
-										<li><i class="fa fa-calendar"></i>25/3/2015</li> 
+										<li><i class="fa fa-calendar"></i>25/3/2015</li>
 										<li><i class="fa fa-thumbs-up"></i>1,200</li>
 									</ul>
 								</div>
@@ -338,7 +338,7 @@
 								<div class="wrapper">
 									<a href="#"><h5>Curabitur tincidunt porta lorem.</h5></a>
 									<ul class="list-inline">
-										<li><i class="fa fa-calendar"></i>25/3/2015</li> 
+										<li><i class="fa fa-calendar"></i>25/3/2015</li>
 										<li><i class="fa fa-thumbs-up"></i>1,200</li>
 									</ul>
 								</div>
@@ -350,7 +350,7 @@
 								<div class="wrapper">
 									<a href="#"><h5>Curabitur tincidunt porta lorem.</h5></a>
 									<ul class="list-inline">
-										<li><i class="fa fa-calendar"></i>25/3/2015</li> 
+										<li><i class="fa fa-calendar"></i>25/3/2015</li>
 										<li><i class="fa fa-thumbs-up"></i>1,200</li>
 									</ul>
 								</div>
@@ -362,7 +362,7 @@
 								<div class="wrapper">
 									<a href="#"><h5>Curabitur tincidunt porta lorem.</h5></a>
 									<ul class="list-inline">
-										<li><i class="fa fa-calendar"></i>25/3/2015</li> 
+										<li><i class="fa fa-calendar"></i>25/3/2015</li>
 										<li><i class="fa fa-thumbs-up"></i>1,200</li>
 									</ul>
 								</div>
@@ -378,39 +378,43 @@
 					<div class="widget wid-vid">
 						<div class="heading">
 							<h4>Urutonde</h4>
+						</div><br />
+						<div class="table-responsive">
+							<table class="table table-striped table-bordered table-hover">
+								<tr>
+									<th>{{ '#' }}</th>
+									<th>Team</th>
+									<th>G</th>
+									<th>W</th>
+									<th>N</th>
+									<th>L</th>
+									<th>Goals</th>
+									<th>P</th>
+								</tr>
+								@php
+									$count = 1;
+								@endphp
+								@foreach ($ratings as $rating)
+								<tr class="{{ $count < 4 ? "success" : ""}}{{ $count > ($ratings->count() - 3) ? "danger" : ""}}">
+									<td>{{ $count++ }}</td>
+									<td><span>{{ ucfirst($rating->team) }}</span></td>
+									<td>{{ $rating->gamePlayed }}</td>
+									<td>{{ $rating->gameGained }}</td>
+									<td>{{ $rating->gameNulled }}</td>
+									<td>{{ $rating->gameFailed }}</td>
+									<td>{{ $rating->goals }}</td>
+									<td>{{ $rating->points }}</td>
+								</tr>
+								@endforeach
+							</table>
 						</div>
-						<table class="table table-striped">
-							<tr>
-								<th>{{ '#' }}</th>
-								<th>Team</th>
-								<th>G</th>
-								<th>W</th>
-								<th>N</th>
-								<th>L</th>
-								<th>P</th>
-							</tr>
-							@php
-								$count = 1;
-							@endphp
-							@foreach ($ratings as $rating)
-							<tr>
-								<td>{{ $count++ }}</td>
-								<td><span>{{ ucfirst($rating->team) }}</span></td>
-								<td>{{ $rating->gamePlayed }}</td>
-								<td>{{ $rating->gameGained }}</td>
-								<td>{{ $rating->gameNulled }}</td>
-								<td>{{ $rating->gameFailed }}</td>
-								<td>{{ $rating->points }}</td>
-							</tr>
-							@endforeach
-						</table>
 					</div>
 					<!---- Start Widget ---->
 					<div class="widget wid-calendar">
 						<div class="heading"><h4>Calendar</h4></div>
 						<div class="content">
 							<center>
-								<form action="" role="form">        
+								<form action="" role="form">
 									<div class="">
 										<div class="input-group date form_date" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">                </div>
 										<input type="hidden" id="dtp_input2" value="" /><br/>

@@ -16,7 +16,7 @@ class SingleController extends Controller
         $sames = Post::where([
             'location_id' => $post->location->id,
             'sport_id' => $post->sport->id
-            ])->limit(3)->get();
+            ])->whereNotIn('id', [$post->id])->limit(3)->get();
         $aside = Post::where('views', '>=', 1000)->inRandomOrder()->limit(5)->get();
         $newone = Post::orderBy('created_at', 'desc')->limit(5)->get();
         $titles= DB::select('select * from posts order by id desc limit 5');
@@ -29,7 +29,7 @@ class SingleController extends Controller
         $sames = Post::where([
             'location_id' => $post->location->id,
             'sport_id' => $post->sport->id
-            ])->limit(3)->get();
+            ])->whereNotIn('id', [$post->id])->limit(3)->get();
         $aside = Post::where('views', '>=', 1000)->inRandomOrder()->limit(5)->get();
         $newone = Post::orderBy('created_at', 'desc')->limit(5)->get();
         $titles= DB::select('select * from posts order by id desc limit 5');

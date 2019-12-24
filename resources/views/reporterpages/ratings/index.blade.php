@@ -30,11 +30,11 @@
                     <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
                     <strong>Success:</strong> {{ Session::get('success') }}
                 </div>
-    
+
             @endif
-    
+
             @if (count($errors) > 0)
-    
+
               <div class="alert alert-danger" role="alert">
                     <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
                     <strong>Errors:</strong>
@@ -43,8 +43,8 @@
                         <li>{{ $error }}</li>
                     @endforeach
                     </ul>
-                </div> 
-    
+                </div>
+
             @endif
           <div class="row">
             <div class="col-md-6">
@@ -61,6 +61,7 @@
                             <th>Won</th>
                             <th>Nulled</th>
                             <th>Lost</th>
+                            <th>Goals</th>
                             <th>Points</th>
                             <th>Controls</th>
                         </tr>
@@ -68,13 +69,14 @@
                             $count = 1;
                         @endphp
                         @foreach ($ratings as $rating)
-                        <tr>
+                        <tr class="{{ $count < 4 ? "success" : ""}}{{ $count > ($ratings->count() - 3) ? "danger" : ""}}">
                             <td>{{ $count++ }}</td>
                             <td><span>{{ ucfirst($rating->team) }}</span></td>
                             <td>{{ $rating->gamePlayed }}</td>
                             <td>{{ $rating->gameGained }}</td>
                             <td>{{ $rating->gameNulled }}</td>
                             <td>{{ $rating->gameFailed }}</td>
+                            <td>{{ $rating->goals }}</td>
                             <td>{{ $rating->points }}</td>
                             <td>
                                 <a class="btn btn-xs btn-success btn-flat" data-toggle="modal" data-target="#myModalUpdate{{ $rating->id }}"><span class="fa fa-pencil-square-o"></span></a>
@@ -126,6 +128,14 @@
                                             </div>
                                             <div class="row" style="margin-top: 10px">
                                                 <div class="col-xs-6 text-center">
+                                                    <b>Goals (Ibitego)</b>
+                                                </div>
+                                                <div class="col-xs-6">
+                                                        {{ Form::text('goals', $rating->goals,['class' => 'form-control col-xs-2', 'style' => 'width: 20%', 'required' => true]) }}
+                                                </div>
+                                            </div>
+                                            <div class="row" style="margin-top: 10px">
+                                                <div class="col-xs-6 text-center">
                                                     <b>Game Won</b>
                                                 </div>
                                                 <div class="col-xs-6">
@@ -161,9 +171,9 @@
                                     <div class="modal-footer">
                                       <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
                                       {!! Form::open(['route' =>['journalist.ratings.delete', $rating->id], 'method' => 'DELETE']) !!}
-              
+
                                       {!! Form::submit('Confirm', ['class' => 'btn btn-warning btn-sm']) !!}
-                                      
+
                                       {!! Form::close() !!}
                                     </div>
                                 </div>
@@ -208,6 +218,11 @@
                         <div class="form-group">
                             {{ Form::label('gameFailed', 'Game Failed (Imikino yatsinzwe)') }}
                             {{ Form::text('gameFailed',null,['class' => 'form-control', 'required' => true]) }}
+                        </div>
+                        <!-- text input -->
+                        <div class="form-group">
+                            {{ Form::label('goals', 'Goals (Ibitego)') }}
+                            {{ Form::text('goals',null,['class' => 'form-control', 'required' => true]) }}
                         </div>
                         <!-- text input -->
                         <div class="form-group">

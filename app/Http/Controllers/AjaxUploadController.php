@@ -22,7 +22,7 @@ class AjaxUploadController extends Controller
     }
 
     function ratings() {
-        $ratings = Rating::orderBy('points', 'desc')->take(20)->get();
+        $ratings = Rating::orderBy('points', 'desc')->orderBy('goals', 'desc')->take(20)->get();
         $commentss = Comment::where('approved', '=', 0)->orderBy('id', 'desc')->limit(5)->get();
         $notifications = Contact::where('readed', '=', 0)->orderBy('created_at', 'desc')->get();
         return view('reporterpages.ratings.index',[
@@ -40,6 +40,7 @@ class AjaxUploadController extends Controller
             'gameGained' => 'required|integer',
             'gameNulled' => 'required|integer',
             'gameFailed' => 'required|integer',
+            'goals' => 'required|integer',
             'points' => 'required|integer'
         ));
         $rating->team = $request->team;
@@ -47,14 +48,15 @@ class AjaxUploadController extends Controller
         $rating->gameGained = $request->gameGained;
         $rating->gameNulled = $request->gameNulled;
         $rating->gameFailed = $request->gameFailed;
+        $rating->goals = $request->goals;
         $rating->points = $request->points;
         $rating->save();
-        
+
         $request->session()->flash('success', 'The match was posted successfully!');
-        
+
         // redirect to another page
-            
-        
+
+
         return redirect()->back();
     }
 
@@ -65,18 +67,20 @@ class AjaxUploadController extends Controller
             'gameGained' => 'required|integer',
             'gameNulled' => 'required|integer',
             'gameFailed' => 'required|integer',
+            'goals' => 'required|integer',
             'points' => 'required|integer'
         ));
 
-        
+
         $rating->gamePlayed = $request->gamePlayed;
         $rating->gameGained = $request->gameGained;
         $rating->gameNulled = $request->gameNulled;
         $rating->gameFailed = $request->gameFailed;
+        $rating->goals = $request->goals;
         $rating->points = $request->points;
         $rating->save();
         Session::flash('success', 'The team position was successfully updated.');
-        
+
 
         return redirect()->back();
     }
@@ -86,9 +90,9 @@ class AjaxUploadController extends Controller
 
         $rating->delete();
 
-        
+
         Session::flash('success', 'The team was successfully deleted on the list.');
-        
+
 
         return redirect()->back();
     }
@@ -115,16 +119,16 @@ class AjaxUploadController extends Controller
         $livescore->teamTwo = $request->teamTwo;
         $livescore->pitch = $request->pitch;
 
-        
+
         $dateObject = DateTime::createFromFormat('m/d/Y H:i A',$request->time);
         $livescore->time = $dateObject->format("Y-m-d H:i:s");
         $livescore->save();
-        
+
         $request->session()->flash('success', 'The match was posted successfully!');
-        
+
         // redirect to another page
-            
-        
+
+
         return redirect()->route('journalist.livescore');
     }
 
@@ -132,7 +136,7 @@ class AjaxUploadController extends Controller
         $livescore = Livescore::find($id);
         $this->validate($request, array(
             'teamOneGoal'          => 'required|max:255',
-            'teamTwoGoal' => 'required|max:255' 
+            'teamTwoGoal' => 'required|max:255'
         ));
 
         $livescore->teamOneGoals = $request->teamOneGoal;
@@ -140,7 +144,7 @@ class AjaxUploadController extends Controller
 
         $livescore->save();
         Session::flash('success', 'The event was successfully updated.');
-        
+
 
         return redirect()->back();
     }
@@ -157,13 +161,13 @@ class AjaxUploadController extends Controller
         $livescore->teamTwo = $request->teamTwo;
         $livescore->pitch = $request->pitch;
 
-        
+
         $dateObject = DateTime::createFromFormat('m/d/Y H:i A',$request->time);
         $livescore->time = $dateObject->format("Y-m-d H:i:s");
         $livescore->save();
-        
+
         $request->session()->flash('success', 'The match was posted successfully!');
-        
+
         // redirect to another page
         return redirect()->back();
     }
@@ -173,9 +177,9 @@ class AjaxUploadController extends Controller
 
         $livescore->delete();
 
-        
+
         Session::flash('success', 'The event was successfully deleted.');
-        
+
 
         return redirect()->back();
     }
